@@ -1,8 +1,15 @@
 <script>
     import Nav from "../../lib/Nav.svelte";
+    import taskDataBase from "../../stores/taskDataBase";
 </script>
 
 <Nav/>
 <div>
-    <h1>This is the signup page</h1>
+    <form>
+        
+    </form>
 </div>
+
+<style>
+
+</style>
