@@ -7,40 +7,46 @@
     let editHow ="";
     let editDate ="";
 
-
+    // Switch between goal functions
     let toggleGoal = false;
     let toggleHow = false;
     let toggleDate = false;
 
-    const editTask = (/** @type {number} */ id, /** @type {string} */ check, /** @type {boolean}*/ toggle) =>{
+    // Switch between 
 
-        console.log(id,check,toggle)
-        
-        toggle = !toggle;
+    const editTask = (/** @type {number} */ id, /** @type {string} */ check) =>{
+        if(check =="how"){
+            toggleHow = !toggleHow;
+        }else if(check =="goal"){
+            toggleGoal = !toggleGoal;
+        }else{
+            toggleDate = !toggleDate
+        }
 
 
     };
 
     const submitEdit = () =>{
 
-        // taskDataBase.update(currentGoals =>{
 
+
+        // taskDataBase.update(currentGoals =>{
         //     return [...currentGoals]
         // })
 
-        // setTimeout(()=>{
-        //     toggle = !toggle;
-        // },2000)
-
-        // toggle = !toggle;
-    }
+        setTimeout(()=>{
+            toggleGoal = false;
+            toggleDate = false;
+            toggleHow = false;
+        },2000)
+    };
 
 </script>
 
 <Nav/>
 <h1 class ="title">Edit Goals</h1>
     <div class ="parent">
-    <form class ="form">
+    <form class ="form" >
     {#each $taskDataBase as task}
         <div class = "inside-form">
             <label for="goal">Original Goal: {task.goal}</label>
@@ -49,7 +55,7 @@
             type="text"
             bind:value={editGoal}
             />
-            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "goal", toggleGoal)}> <MdModeEdit/> </button>
+            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "goal")}> <MdModeEdit/> </button>
         </div>
 
         <div class = "inside-form">
@@ -59,7 +65,7 @@
             type="text"
             bind:value={editHow}
             />
-            <button class ="edit-icon" on:click ={()=> editTask(task.id, "how", toggleHow)} > <MdModeEdit/> </button>
+            <button class ="edit-icon" on:click ={()=> editTask(task.id, "how")} > <MdModeEdit/> </button>
         </div>
 
         <div class = "inside-form">
@@ -69,11 +75,11 @@
             type="date"
             bind:value={editDate}
             />
-        <button class ="edit-icon" on:click ={()=> editTask(task.id, "date", toggleDate)} > <MdModeEdit/> </button>
+        <button class ="edit-icon" on:click ={()=> editTask(task.id, "date")} > <MdModeEdit/> </button>
         </div>
         {/each}
         <div> 
-        <button class ="btn">Submit</button>
+        <button class ="btn" on:click ={()=> submitEdit()}>Submit</button>
         </div>
     </form>
 </div>
@@ -106,7 +112,7 @@
 
 .displayDate ,.displayGoal, .displayHow{
     width: 100%;
-    border-radius: 6px;
+    border-radius: 20px;
     font-size: 16px;
 }
 
