@@ -142,8 +142,9 @@
 
     .inside-form{
         display: flex;
-        border: 2px solid royalblue;
-        /* margin: 20px; */
+        border: 2px solid maroon;
+        margin: 10px;
+        border-radius: 10px;
     }
 
 .btn{
@@ -163,7 +164,7 @@ background-color: white;
 
 .grid{
     display:flex;
-    border: 8px solid black;
+    border: 4px solid black;
     margin-top:20px;
     justify-content: space-between;
 }
