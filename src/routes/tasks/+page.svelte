@@ -12,6 +12,7 @@
     <div class ="inside-tasks"> 
     <h2>Goal: {task.goal}</h2>
     <h2>Hours practicing per a day: {task.studyTime}</h2>
+    <h2>Due Date: {task.date}</h2>
     </div>
     
 
