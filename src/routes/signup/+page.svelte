@@ -8,50 +8,73 @@
     let editDate ="";
 
 
-    const editTask = () =>{
+    let toggleGoal = false;
+    let toggleHow = false;
+    let toggleDate = false;
 
+    const editTask = (/** @type {number} */ id, /** @type {string} */ check, /** @type {boolean}*/ toggle) =>{
+
+        console.log(id,check,toggle)
         
-        taskDataBase.update(currentGoals =>{
+        toggle = !toggle;
 
-            return [...currentGoals]
-        })
 
     };
+
+    const submitEdit = () =>{
+
+        // taskDataBase.update(currentGoals =>{
+
+        //     return [...currentGoals]
+        // })
+
+        // setTimeout(()=>{
+        //     toggle = !toggle;
+        // },2000)
+
+        // toggle = !toggle;
+    }
 
 </script>
 
 <Nav/>
 <h1 class ="title">Edit Goals</h1>
     <div class ="parent">
-    <form class ="form" on:submit|preventDefault={editTask}>
+    <form class ="form">
     {#each $taskDataBase as task}
         <div class = "inside-form">
             <label for="goal">Original Goal: {task.goal}</label>
-            <!-- <input
-            class =""
+            <input
+            class ={toggleGoal ? "displayGoal":"notDisplay"}
             type="text"
-            /> -->
-            <button class ="edit-icon"> <MdModeEdit/> </button>
+            bind:value={editGoal}
+            />
+            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "goal", toggleGoal)}> <MdModeEdit/> </button>
         </div>
 
         <div class = "inside-form">
             <label for="editHow"> Original How: {task.how}</label>
-            <!-- <input
-            class =""
+            <input
+            class ={toggleHow ? "displayHow":"notDisplay"}
             type="text"
-            /> -->
-            <button class ="edit-icon"> <MdModeEdit/> </button>
+            bind:value={editHow}
+            />
+            <button class ="edit-icon" on:click ={()=> editTask(task.id, "how", toggleHow)} > <MdModeEdit/> </button>
         </div>
 
         <div class = "inside-form">
             <label for="editDate"> Original Date: {task.date}</label>
-            <!-- <input
-            class =""
+            <input
+            class = {toggleDate ? "displayDate":"notDisplay"}
             type="date"
-            /> -->
-        <button class ="edit-icon"> <MdModeEdit/> </button>
+            bind:value={editDate}
+            />
+        <button class ="edit-icon" on:click ={()=> editTask(task.id, "date", toggleDate)} > <MdModeEdit/> </button>
         </div>
         {/each}
+        <div> 
+        <button class ="btn">Submit</button>
+        </div>
     </form>
 </div>
 
@@ -77,7 +100,11 @@
     margin: 10px;
 }
 
-.inside-form input{
+.notDisplay{
+    display: none;
+}
+
+.displayDate ,.displayGoal, .displayHow{
     width: 100%;
     border-radius: 6px;
     font-size: 16px;
@@ -101,5 +128,13 @@
 
 .edit-icon:hover{
     color:red;
+}
+
+.btn{
+    background-color: maroon;
+    color:white;
+    border-radius: 6px;
+    padding:10px;
+    width: 80px;
 }
 </style>

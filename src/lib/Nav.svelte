@@ -29,7 +29,7 @@
     }
 
     a:hover{
-        color:aqua;
+        color:blueviolet;
     }
 
 </style>
