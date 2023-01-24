@@ -25,8 +25,6 @@
     <h2>Due Date: {task.date}</h2>
     <button class ="delete" on:click={() => deleteTask(task.id)}> <FaTrashAlt/> </button>
     </div>
-    
-
     {/each}
 
 </div>
