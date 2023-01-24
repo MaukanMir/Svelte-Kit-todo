@@ -4,6 +4,7 @@
     import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
     import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
 
+    // Edit goal variables
     let editGoal = "";
     let editHow ="";
     let editDate ="";
@@ -13,12 +14,9 @@
     let toggleHow = false;
     let toggleDate = false;
 
-    // Switch between 
-
     const editTask = (/** @type {number} */ id, /** @type {string} */ check) =>{
 
         taskDataBase.update(currentGoals =>{
-        
         if(check =="how"){
             toggleHow = !toggleHow;
         }else if(check =="goal"){
@@ -26,8 +24,6 @@
         }else{
             toggleDate = !toggleDate
         }
-
-
         currentGoals.map(item=>{
         
             if(item.id === id){
@@ -39,18 +35,6 @@
         })
         return [...currentGoals]
         });
-
-
-
-    };
-
-    const submitEdit = () =>{
-        
-        setTimeout(()=>{
-            toggleGoal = false;
-            toggleDate = false;
-            toggleHow = false;
-        },2000)
     };
 
 </script>
@@ -70,13 +54,13 @@
             
             <button  class ="edit-icon" on:click ={()=> editTask(task.id, "goal")}>
                 <div class ="outer-button">
-                <div class="edit-icon-signal">
-                <MdModeEdit/>
-                </div>
-                <div class ="check">
-                <FaCheck/>
-                </div>
-            </div> 
+                    <div class="edit-icon-signal">
+                        <MdModeEdit/>
+                    </div>
+                    <div class ="check">
+                        <FaCheck/>
+                    </div>
+                </div> 
         </button>
         </div>
 
@@ -89,13 +73,13 @@
             />
             <button  class ="edit-icon" on:click ={()=> editTask(task.id, "how")}>
                 <div class ="outer-button">
-                <div class="edit-icon-signal">
-                <MdModeEdit/>
-                </div>
-                <div class ="check">
-                <FaCheck/>
-                </div>
-            </div> 
+                    <div class="edit-icon-signal">
+                        <MdModeEdit/>
+                    </div>
+                    <div class ="check">
+                        <FaCheck/>
+                    </div>
+                </div> 
         </button>
         </div>
 
@@ -182,8 +166,6 @@
     background-color: white;
     border:none;
 }
-
-
 
 .outer-button{
     display:flex;

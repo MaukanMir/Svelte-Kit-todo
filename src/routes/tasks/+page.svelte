@@ -1,6 +1,16 @@
 <script>
     import Nav from "../../lib/Nav.svelte";
     import taskDataBase from "../../stores/taskDataBase";
+    import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
+
+
+    const deleteTask = (/** @type {number} */ id) =>{
+
+        taskDataBase.update(currentData =>{
+            currentData = currentData.filter(item=> item.id != id)
+            return [...currentData]
+        });
+    };
 </script>
 
 <Nav/>
@@ -13,6 +23,7 @@
     <h2>Goal: {task.goal}</h2>
     <h2>Hours practicing per a day: {task.studyTime}</h2>
     <h2>Due Date: {task.date}</h2>
+    <button class ="delete" on:click={() => deleteTask(task.id)}> <FaTrashAlt/> </button>
     </div>
     
 
@@ -29,13 +40,25 @@
     .tasks{
         display:flex;
         flex-direction: column;
-        border: 6px solid black;
+        border: 4px solid black;
         margin:20px;
+        border-radius: 20px;
     }
 
     .inside-tasks{
-        border: 3px solid red;
+        border: 2px solid red;
         margin:10px;
         padding:10px;
+        border-radius: 10px;
+    }
+
+    .delete{
+        background-color: white;
+        border:none;
+        height: 30px;
+    }
+
+    .delete:hover{
+        color:red;
     }
 </style>
