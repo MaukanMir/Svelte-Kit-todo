@@ -2,16 +2,16 @@
 <script>
     // import components here
     import Nav from "../lib/Nav.svelte";
+    import Footer from "../lib/Footer.svelte"
     //import Store here
     import taskDataBase from "../stores/taskDataBase";
 
     // Dates
-    let currentDate = "";
-    let percentage_completed;
-    let remainingDays;
-    let today;
-    let totalHours;
-
+    let currentDate = new Date().toISOString().slice(0,10);
+    let percentage_completed = 0;
+    let remainingDays = 0;
+    let totalHours = 1;
+    console.log(new Date(currentDate))
 
 </script>
 
@@ -26,10 +26,13 @@
             <h2>Hours Alloted: {task.studyTime}</h2>
             <h2>Completed {percentage_completed}%</h2>
             <h2>Days Remaining: {remainingDays}</h2>
-            <h2>Total Hours: {totalHours}</h2>
+            <h2>Total Hours: {totalHours * (task.studyTime)}</h2>
+            <p>{new Date(task.date.replace(/-/g,"/")) - new Date(currentDate.replace(/-/g,"/"))}</p>
         </div>
     {/each}
 </div>
+
+<Footer/>
 
 <style>
 
@@ -37,6 +40,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height:100vh;
     }
 
     .inside-parent{
