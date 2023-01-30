@@ -20,6 +20,7 @@
     background-color: cadetblue;
     color:white;
     border: 4px solid black;
+    margin:20px;
 }
 .inner-footer{
     display:flex;
