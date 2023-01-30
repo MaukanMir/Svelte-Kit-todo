@@ -6,7 +6,6 @@
     // svelte imports here
 
     // Date conversions here
-    let dateObject = new Date();
     let startDate = new Date().toISOString().slice(0,10);
 
     // stores objects here
@@ -25,6 +24,7 @@
                 goal,
                 how,
                 date:startDate,
+                setDate: startDate,
                 studyTime,
             }
         taskDataBase.update(currentPolls =>{

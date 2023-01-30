@@ -9,8 +9,6 @@
     // Dates
     let currentTime = new Date(new Date().toISOString().slice(0,10)).getTime();
     let percentage_completed = 0;
-    let remainingDays = 0;
-    let totalHours = 1;
     let oneDay = (1000 * 3600 * 24);
 
 
@@ -27,9 +25,8 @@
             <h2>Date: {task.date}</h2>
             <h2>Hours Alloted: {task.studyTime}</h2>
             <h2>Completed {percentage_completed}%</h2>
-            <h2>Days Remaining: {remainingDays}</h2>
             <h2>Total Hours: {1 * (task.studyTime)}</h2>
-            <h2>Total Days Left: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h2>
+            <h2>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h2>
 
         </div>
     {/each}
