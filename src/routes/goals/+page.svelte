@@ -41,9 +41,7 @@
         }, 2000)
 
         toggle = !toggle;
-        
     };
-
 
 </script>
 
