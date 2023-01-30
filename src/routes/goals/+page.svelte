@@ -7,13 +7,7 @@
 
     // Date conversions here
     let dateObject = new Date();
-    let month = dateObject.getMonth() +1;
-    let day = dateObject.getDate();
-    let year = dateObject.getFullYear();
-    let fullDate = month +"/" + day +"/" + year;
     let startDate = new Date().toISOString().slice(0,10);
-    let endDate = new Date().toISOString().slice(0,10);
-    // let finish = (new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24);
 
     // stores objects here
     let goal = "";
@@ -111,8 +105,6 @@
 </div>
 
 <h3 class={toggle ? "displaySubmit": "notDisplay"}>Task Submitted!</h3>
-
-
 
 
 

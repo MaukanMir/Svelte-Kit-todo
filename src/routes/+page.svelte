@@ -7,11 +7,13 @@
     import taskDataBase from "../stores/taskDataBase";
 
     // Dates
-    let currentDate = new Date().toISOString().slice(0,10);
+    let currentTime = new Date(new Date().toISOString().slice(0,10)).getTime();
     let percentage_completed = 0;
     let remainingDays = 0;
     let totalHours = 1;
-    console.log(new Date(currentDate))
+    let oneDay = (1000 * 3600 * 24);
+
+
 
 </script>
 
@@ -26,8 +28,9 @@
             <h2>Hours Alloted: {task.studyTime}</h2>
             <h2>Completed {percentage_completed}%</h2>
             <h2>Days Remaining: {remainingDays}</h2>
-            <h2>Total Hours: {totalHours * (task.studyTime)}</h2>
-            <p>{new Date(task.date.replace(/-/g,"/")) - new Date(currentDate.replace(/-/g,"/"))}</p>
+            <h2>Total Hours: {1 * (task.studyTime)}</h2>
+            <h2>Total Days Left: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h2>
+
         </div>
     {/each}
 </div>
