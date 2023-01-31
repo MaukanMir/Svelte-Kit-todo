@@ -42,7 +42,7 @@
     justify-content: center;
 }
 
-.inner-footer:hover{
+.inner-footer li:hover{
 color: black;
 cursor:pointer;
 }
