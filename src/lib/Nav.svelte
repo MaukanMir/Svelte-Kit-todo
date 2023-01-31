@@ -1,13 +1,8 @@
-<script>
-
-</script>
-
-
 <nav class ="test">
     <a href="/">Home</a>
-    <a href="/tasks">Goals</a>
-    <a href="/signup">Edit Goals</a>
-    <a href="/goals">Create Goals</a>
+    <a href="/goals">Goals</a>
+    <a href="/editgoals">Edit Goals</a>
+    <a href="/creategoals">Create Goals</a>
 </nav>
 
 <style>
