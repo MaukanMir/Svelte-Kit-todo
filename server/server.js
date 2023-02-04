@@ -6,10 +6,12 @@ const dotenv = require("dotenv");
 dotenv.config();
 const port = process.env.PORT || 5000;
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const createGoalsRoute = require("./routes/createGoal")
 
 //Middleware
 app.use(express.json());
 app.use(cors());
+app.use("/api/createGoals", createGoalsRoute);
 
 // initiate MongoDB and start server
 // async function connect(){

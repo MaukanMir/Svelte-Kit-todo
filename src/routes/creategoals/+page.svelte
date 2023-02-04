@@ -31,11 +31,14 @@
             }
         taskDataBase.update(currentPolls =>{
             return [ ...currentPolls,newGoals]
-        })
+        }
+        )
+
+        console.log(newGoals)
 
         async function doPost (){
             const id = Math.random();
-            const res = await fetch("https://localhost:5000/api/creategoals",{
+            const res = await fetch("http://localhost:5000/api/creategoals",{
                 method:"POST",
                 body: JSON.stringify({
                     id,
