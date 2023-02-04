@@ -3,20 +3,31 @@ const mongoose = require("mongoose");
 const app = express();
 var cors = require('cors');
 const dotenv = require("dotenv");
-const port = process.env.PORT || 4000;
-
+dotenv.config();
+const port = process.env.PORT || 5000;
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 //Middleware
 app.use(express.json());
 app.use(cors());
 
 // initiate MongoDB and start server
-mongoose.connect(process.env.MONGO_URL)
-.then(()=> console.log("Db connection successful"))
-.catch((err)=>{
-    console.log(err)
-})
+// async function connect(){
+//     try{
+//         await mongoose.connect(process.env.MONGO_URL);
+//         console.log("Connected to Mongodb")
+//     }catch(err){console.log(err)}
+// }
+
+// connect();
+
+const client = new MongoClient(process.env.MONGO_URL, 
+{ useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+
+  client.close();
+});
 
 app.listen(port,()=>{
-    console.log("Backend server ius running: ", port)
+    console.log("Backend server is running on: ", port)
 })

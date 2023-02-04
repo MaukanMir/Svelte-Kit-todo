@@ -1,10 +1,12 @@
 <script>
+  import { json } from "@sveltejs/kit";
+
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
     // taskDatavabase imports here
     import taskDataBase from "../../stores/taskDataBase";
     // svelte imports here
-
+    
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
 
@@ -31,6 +33,27 @@
             return [ ...currentPolls,newGoals]
         })
 
+        async function doPost (){
+            const id = Math.random();
+            const res = await fetch("https://localhost:5000/api/creategoals",{
+                method:"POST",
+                body: JSON.stringify({
+                    id,
+                    goal,
+                    how,
+                    date:startDate,
+                    setDate: startDate,
+                    studyTime
+                })
+            }
+
+            // const json = await res.json();
+            // const result = JSON.stringify(json);
+
+            );
+
+        }
+
         goal ="";
         how =""
         studyTime =0;
@@ -47,10 +70,10 @@
 
 
 <Nav/>
-
+<!-- on:submit|preventDefault={addTask} -->
 <!--Start of initial submit-->
 <div class ="grid"> 
-<form class ="form" on:submit|preventDefault={addTask}>
+<form  class ="form" on:submit|preventDefault={addTask}>
 
     <!--Goals here-->
     <div class ="inside-form"> 
