@@ -13,22 +13,22 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/createGoals", createGoalsRoute);
 
-// initiate MongoDB and start server
-// async function connect(){
-//     try{
-//         await mongoose.connect(process.env.MONGO_URL);
-//         console.log("Connected to Mongodb")
-//     }catch(err){console.log(err)}
-// }
 
-// connect();
+const client = new MongoClient(
+    process.env.MONGO_URL, 
+    { 
+        useNewUrlParser: true, 
+        useUnifiedTopology: true, 
+        serverApi: ServerApiVersion.v1 
+    });
 
-const client = new MongoClient(process.env.MONGO_URL, 
-{ useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-
-  client.close();
-});
+mongoose.connect(process.env.MONGO_URL)
+.then(()=>{
+    console.log("connected to db")
+})
+.catch((err)=>{
+    console.log(err)
+})
 
 app.listen(port,()=>{
     console.log("Backend server is running on: ", port)

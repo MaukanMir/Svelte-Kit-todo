@@ -10,7 +10,7 @@ router.post("/", async (req,res)=>{
         const savedGoal = await newGoal.save();
         res.status(200).json(savedGoal);
     }catch(err){
-        console.log("here")
+        console.log(err)
         res.status(500).json(err);
     }
 
