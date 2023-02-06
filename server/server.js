@@ -10,7 +10,7 @@ const createGoalsRoute = require("./routes/createGoal")
 //Middleware
 app.use(express.json());
 app.use(cors());
-app.use("/api/createGoals", createGoalsRoute);
+app.use("/api/creategoals", createGoalsRoute);
 
 
 // get rid of annyoing error

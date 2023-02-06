@@ -34,10 +34,8 @@
         }
         )
 
-        console.log(newGoals)
-
+        const id = Math.random();
         async function doPost (){
-            const id = Math.random();
             const res = await fetch("http://localhost:5000/api/creategoals",{
                 method:"POST",
                 body: JSON.stringify({
@@ -48,14 +46,14 @@
                     setDate: startDate,
                     studyTime
                 })
-            }
+            })
 
-            // const json = await res.json();
-            // const result = JSON.stringify(json);
-
-            );
+            const { data } = await res.json();
+            return data
 
         }
+
+        doPost()
 
         goal ="";
         how =""

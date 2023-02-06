@@ -44,6 +44,7 @@
     <div class ="parent">
     <form class ="form" >
     {#each $taskDataBase as task}
+    <h1 class ="section-header">Goal:</h1>
         <div class = "inside-form">
             <label for="goal">Original Goal: {task.goal}</label>
             <input
@@ -102,13 +103,19 @@
         </button>
         </div>
 
-
         {/each}
     </form>
 </div>
 
 
 <style>
+
+    .section-header{
+        margin:10px;
+        display: flex;
+        justify-content: center;
+        color:salmon;
+    }
     .title{
         text-align: center;
     }
