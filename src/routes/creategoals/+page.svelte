@@ -1,5 +1,4 @@
 <script>
-  import { json } from "@sveltejs/kit";
 
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
@@ -20,9 +19,13 @@
 
 
     const addTask = () =>{
+
+        //Set random id
+        const id = Math.random();
+
         const newGoals = 
             {
-                id: Math.random(),
+                id,
                 goal,
                 how,
                 date:startDate,
@@ -34,26 +37,22 @@
         }
         )
 
-        const id = Math.random();
         async function doPost (){
-            const res = await fetch("http://localhost:5000/api/creategoals",{
+            await fetch("/api/server",{
                 method:"POST",
                 body: JSON.stringify({
                     id,
                     goal,
                     how,
-                    date:startDate,
+                    date: startDate,
                     setDate: startDate,
                     studyTime
                 })
             })
-
-            const { data } = await res.json();
-            return data
-
         }
 
         doPost()
+
 
         goal ="";
         how =""
@@ -71,7 +70,7 @@
 
 
 <Nav/>
-<!-- on:submit|preventDefault={addTask} -->
+
 <!--Start of initial submit-->
 <div class ="grid"> 
 <form  class ="form" on:submit|preventDefault={addTask}>
