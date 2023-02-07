@@ -1,8 +1,9 @@
 // get request to get all goals
 
-export async function get(){
+// @ts-ignore
+export async function GET(){
 
-    const body = await fetch("http://localhost:500/api/getgoals");
+    const body = await fetch("http://localhost:5000/api/getgoals");
     return {
         status:200,
         body:{body},
@@ -11,9 +12,9 @@ export async function get(){
 }
 
 // @ts-ignore
-export const POST asnyc = () =>{
-    
-    const body = fetch("http://localhost:5000/api/creategoals")
+export async function POST() {
+
+    const body = fetch("http://localhost:5000/api/creategoals");
 
     console.log(body);
     return new Response(JSON.stringify(

@@ -7,7 +7,8 @@ router.get("/", async (req,res)=>{
     try{
         const goals = await Goals.find();
         res.status(200).json(goals);
-    }catch(err){
+    }
+    catch(err){
         console.log(err)
         res.status(500).json(err)
     }

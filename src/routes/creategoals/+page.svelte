@@ -1,11 +1,8 @@
 <script>
-
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
     // taskDatavabase imports here
     import taskDataBase from "../../stores/taskDataBase";
-    // svelte imports here
-    
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
 
@@ -38,7 +35,7 @@
         )
 
         async function doPost (){
-            await fetch("/api/server",{
+            await fetch("/api/goalsdb",{
                 method:"POST",
                 body: JSON.stringify({
                     id,
