@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Goals = require("../models/goals");
 // Create goals
 router.post("/", async (req,res)=>{
-
+    
     const newGoal = new Goals(req.body);
     console.log(newGoal);
 

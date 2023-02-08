@@ -14,14 +14,7 @@ export async function GET(){
 // @ts-ignore
 export async function POST() {
 
-    const body = await fetch("http://localhost:5000/api/creategoals");
-    
-    return new Response(JSON.stringify(
-        {
-            message:"Success"
-        }), 
-    {
-        status:200
-    }
-    );
+    const body = await fetch("http://localhost:5000/api/creategoals")
+
+
 }

@@ -10,8 +10,10 @@ const createGoalsRoute = require("./routes/creategoal");
 const getAllGoals = require("./routes/getgoals");
 
 //Middleware
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
 
 //API routing here
 app.use("/api/creategoals", createGoalsRoute);
