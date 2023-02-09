@@ -26,12 +26,29 @@
         const res = await fetch("http://localhost:5000/api/getgoals");
         // load in data to variable
         posts = await res.json();
-        
     })
 
     const editTask = async (/** @type {number} */ id, /** @type {string} */ check) =>{
 
+        async function doPost (){
+
+            const singlePost = posts.filter(item=> item.id === id);
+
+            const res = await fetch(`http://localhost:5000/api/editgoals:{id}`,{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body: JSON.stringify({
+                    id,
+                    goal:editGoal,
+                    how:editHow,
+                    date:singlePost[0].date,
+                    setDate:editDate,
+                    studyTime:singlePost[0].studyTime
+                })
+            })
     };
+};
+
 
 
 
