@@ -1,6 +1,5 @@
 <script>
     import Nav from "../../lib/Nav.svelte";
-    import taskDataBase from "../../stores/taskDataBase";
     import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
     import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
 
@@ -14,33 +13,14 @@
     let toggleHow = false;
     let toggleDate = false;
 
-    const editTask = (/** @type {number} */ id, /** @type {string} */ check) =>{
+    const editTask = async (/** @type {number} */ id, /** @type {string} */ check) =>{
 
-        taskDataBase.update(currentGoals =>{
-        if(check =="how"){
-            toggleHow = !toggleHow;
-        }else if(check =="goal"){
-            toggleGoal = !toggleGoal;
-        }else{
-            toggleDate = !toggleDate
-        }
-        currentGoals.map(item=>{
-        
-            if(item.id === id){
-                item.goal = editGoal.length >0 ? editGoal: item.goal;
-                item.how = editHow.length > 0 ? editHow:item.how;
-                item.date = editDate.length >0 ? editDate:item.date;
-            }
-            
-        })
-        return [...currentGoals]
-        });
     };
 
 </script>
 
 <Nav/>
-<h1 class ="title">Edit Goals</h1>
+<!-- <h1 class ="title">Edit Goals</h1>
     <div class ="parent">
     <form class ="form" >
     {#each $taskDataBase as task}
@@ -105,7 +85,7 @@
 
         {/each}
     </form>
-</div>
+</div> -->
 
 
 <style>
