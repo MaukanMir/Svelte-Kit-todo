@@ -20,9 +20,8 @@
     })
 
 
-
-    const getGoals  = async (/** @type {number} */ id) =>{
-
+    const deleteTask  = async (/** @type {number} */ id) =>{
+        
 
     };
 </script>
