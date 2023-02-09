@@ -17,22 +17,23 @@
     const id = Math.random();
     const addTask = async () =>{
 
-
-        const newGoals = 
-            {
-                id,
-                goal,
-                how,
-                date:startDate,
-                setDate: startDate,
-                studyTime,
-            }
-        taskDataBase.update(currentPolls =>{
-            return [ ...currentPolls,newGoals]
-        }
-        )
-
-
+        async function doPost (){
+            const res = await fetch("http://localhost:5000/api/creategoals",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body: JSON.stringify({
+                    id,
+                    goal,
+                    how,
+                    startDate,
+                    studyTime
+                })
+            })
+            const json = await res.json();
+            const result = JSON.stringify(json);
+            console.log(json, result)
+        };
+        doPost();
         goal ="";
         how =""
         studyTime =0;
@@ -45,21 +46,6 @@
         toggle = !toggle;
     };
 
-    async function doPost (){
-            const res = await fetch("http://localhost:5000/api/creategoals",{
-                method:"POST",
-                body: JSON.stringify({
-                    id,
-                    goal,
-                    how,
-                    startDate,
-                    studyTime
-                })
-            })
-            const json = await res.json();
-            const result = JSON.stringify(json);
-            console.log(json, result)
-        }
 
 </script>
 
@@ -68,7 +54,7 @@
 
 <!--Start of initial submit-->
 <div class ="grid"> 
-<form  class ="form" on:submit|preventDefault={doPost}>
+<form  class ="form" on:submit|preventDefault={addTask}>
 
     <!--Goals here-->
     <div class ="inside-form"> 
