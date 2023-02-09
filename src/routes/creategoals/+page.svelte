@@ -1,8 +1,6 @@
 <script>
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
-    // taskDatavabase imports here
-    import taskDataBase from "../../stores/taskDataBase";
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
 
@@ -25,7 +23,8 @@
                     id,
                     goal,
                     how,
-                    startDate,
+                    date:startDate,
+                    setDate:startDate,
                     studyTime
                 })
             })

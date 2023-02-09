@@ -1,15 +1,29 @@
 <script>
+    //Component imports here
     import Nav from "../../lib/Nav.svelte";
-    import taskDataBase from "../../stores/taskDataBase";
+    // import icons here
     import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
+    // import svelte variables here
+    import { onMount } from "svelte";
+
+    /**
+   * @type {any[]}
+   */
+    let posts = [];
+
+    onMount(async ()=>{
+        // API Call here
+        const res = await fetch("http://localhost:5000/api/getgoals");
+        // load in data to variable
+        posts = await res.json();
+        
+    })
 
 
-    const deleteTask = (/** @type {number} */ id) =>{
 
-        taskDataBase.update(currentData =>{
-            currentData = currentData.filter(item=> item.id != id)
-            return [...currentData]
-        });
+    const getGoals  = async (/** @type {number} */ id) =>{
+
+
     };
 </script>
 
@@ -18,7 +32,7 @@
 <div class ="tasks">
     <h1>Tasks To Complete Today:</h1>
 
-    {#each $taskDataBase as task}
+    {#each posts as task}
     <div class ="inside-tasks"> 
     <h2>Goal: {task.goal}</h2>
     <h2>Hours practicing per a day: {task.studyTime}</h2>
