@@ -13,17 +13,35 @@
     let toggleHow = false;
     let toggleDate = false;
 
+    // import svelte variables here
+    import { onMount } from "svelte";
+
+    /**
+   * @type {any[]}
+   */
+    let posts = [];
+
+    onMount(async ()=>{
+        // API Call here
+        const res = await fetch("http://localhost:5000/api/getgoals");
+        // load in data to variable
+        posts = await res.json();
+        
+    })
+
     const editTask = async (/** @type {number} */ id, /** @type {string} */ check) =>{
 
     };
 
+
+
 </script>
 
 <Nav/>
-<!-- <h1 class ="title">Edit Goals</h1>
+<h1 class ="title">Edit Goals</h1>
     <div class ="parent">
     <form class ="form" >
-    {#each $taskDataBase as task}
+    {#each posts as task}
     <h1 class ="section-header">Goal:</h1>
         <div class = "inside-form">
             <label for="goal">Original Goal: {task.goal}</label>
@@ -85,7 +103,7 @@
 
         {/each}
     </form>
-</div> -->
+</div>
 
 
 <style>
