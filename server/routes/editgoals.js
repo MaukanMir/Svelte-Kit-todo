@@ -3,7 +3,7 @@ const Goals = require("../models/goals")
 
 // //UPDATE
 router.put("/:id", async (req, res) => {
-    
+
     try {
     const updatedCart = await Goals.findByIdAndUpdate(
         req.params.id,
@@ -17,3 +17,5 @@ router.put("/:id", async (req, res) => {
     res.status(500).json(err);
     }
 });
+
+module.exports = router;

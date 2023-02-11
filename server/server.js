@@ -8,6 +8,7 @@ dotenv.config();
 const port = process.env.PORT || 5000;
 const createGoalsRoute = require("./routes/creategoal");
 const getAllGoals = require("./routes/getgoals");
+const editGoals = require("./routes/editgoals");
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +19,7 @@ app.use(cors());
 //API routing here
 app.use("/api/creategoals", createGoalsRoute);
 app.use("/api/getgoals", getAllGoals);
+app.use("/api/editgoals",editGoals)
 
 
 // get rid of annyoing error

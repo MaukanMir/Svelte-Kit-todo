@@ -3,6 +3,7 @@
     import Nav from "../../lib/Nav.svelte";
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
+    let changeDate = "";
 
     // stores objects here
     let goal = "";
@@ -24,7 +25,7 @@
                     goal,
                     how,
                     date:startDate,
-                    setDate:startDate,
+                    setDate:changeDate,
                     studyTime
                 })
             })
@@ -95,7 +96,7 @@
         <input
         type ="date"
         required
-        bind:value={startDate}
+        bind:value={changeDate}
         id="complete"
         />
     </div>
