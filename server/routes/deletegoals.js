@@ -4,6 +4,8 @@ const Goals = require("../models/goals")
 // //DELETE
 router.delete("/:id", async (req, res) => {
 
+    console.log(req.params.id)
+
     try {
     await Goals.findByIdAndDelete(req.params.id);
     res.status(200).json("This product has been deleted..");

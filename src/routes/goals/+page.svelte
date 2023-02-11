@@ -11,6 +11,7 @@
    */
     let posts = [];
 
+    
     onMount(async ()=>{
         // API Call here
         const res = await fetch("http://localhost:5000/api/getgoals");
@@ -19,21 +20,25 @@
         
     })
 
+    // Delete task functionality 
+    async function deleteTask(/** @type {number} */ id){
 
-    const deleteTask  = async (/** @type {number} */ id) =>{
+        //Filter posts here
+        posts = posts.filter(item => item.id != id)
 
-
-        await fetch(`http://localhost:5000/api/deletegoals/:${id}`, {
+        // update database here
+        await fetch(`http://localhost:5000/api/deletegoals/${id}`, {
             method: 'DELETE',
-            headers:{"Content-Type":"application/json"}
-        })
-        .then(response => response.json())
-        .then(result => console.log(result))
+            // headers:{"Content-Type":"application/json"},
+            // body:JSON.stringify({
+            //     id:id
+            // })
+        }).then(response => response.json())
+        .then(data=> console.log(data))
 
     
     };
 
-    
 </script>
 
 <Nav/>
