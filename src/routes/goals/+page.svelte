@@ -21,16 +21,25 @@
 
 
     const deleteTask  = async (/** @type {number} */ id) =>{
-        
 
+
+        await fetch(`http://localhost:5000/api/deletegoals/:${id}`, {
+            method: 'DELETE',
+            headers:{"Content-Type":"application/json"}
+        })
+        .then(response => response.json())
+        .then(result => console.log(result))
+
+    
     };
+
+    
 </script>
 
 <Nav/>
 
 <div class ="tasks">
     <h1>Tasks To Complete Today:</h1>
-
     {#each posts as task}
     <div class ="inside-tasks"> 
     <h2>Goal: {task.goal}</h2>
@@ -39,7 +48,6 @@
     <button class ="delete" on:click={() => deleteTask(task.id)}> <FaTrashAlt/> </button>
     </div>
     {/each}
-
 </div>
 
 <style>
