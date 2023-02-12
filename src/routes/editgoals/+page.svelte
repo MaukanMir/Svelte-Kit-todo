@@ -68,191 +68,21 @@
 
 
 
-
-
 </script>
 
 <Nav/>
 
 <div>
+    <h1> Edit Goals </h1>
     {#each posts as task}
-    <h1> <a href ={`/editgoals/${task.id}`}> {task.goal}</a> </h1>
+
+    <h2> 
+        <a href ={`/editgoals/${task.id}`}> {task.goal}
+        </a> 
+    </h2>
     {/each}
 </div>
-
-<!-- <h1 class ="title">Edit Goals</h1>
-    <div class ="parent">
-    <form class ="form" >
-    {#each posts as task}
-    <h1 class ="section-header">Goal:</h1>
-        <div class = "inside-form">
-            <label for="goal">Original Goal: {task.goal}</label>
-            <input
-            class ={toggleGoal ? "displayGoal":"notDisplay"}
-            type="text"
-            bind:value={editGoal}
-            />
-            
-            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "goal")}>
-                <div class ="outer-button">
-                    <div class="edit-icon-signal">
-                        <MdModeEdit/>
-                    </div>
-                    <div class ="check">
-                        <FaCheck/>
-                    </div>
-                </div> 
-        </button>
-        </div>
-
-        <div class = "inside-form">
-            <label for="editHow"> Original How: {task.how}</label>
-            <input
-            class ={toggleHow ? "displayHow":"notDisplay"}
-            type="text"
-            bind:value={editHow}
-            />
-            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "how")}>
-                <div class ="outer-button">
-                    <div class="edit-icon-signal">
-                        <MdModeEdit/>
-                    </div>
-                    <div class ="check">
-                        <FaCheck/>
-                    </div>
-                </div> 
-        </button>
-        </div>
-
-        <div class = "inside-form">
-            <label for="editDate"> Hours per a day: {task.studyTime}</label>
-            <input
-            class = {toggleStudyTime ? "displayStudy":"notDisplay"}
-            type="date"
-            bind:value={editStudyTime}
-            />
-            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "StudyTime")}>
-                <div class ="outer-button">
-                    <div class="edit-icon-signal">
-                        <MdModeEdit/>
-                    </div>
-                    <div class ="check">
-                        <FaCheck/>
-                    </div>
-                </div> 
-        </button>
-        </div>
-
-        <div class = "inside-form">
-            <label for="editDate"> Original Date: {task.date}</label>
-            <input
-            class = {toggleDate ? "displayDate":"notDisplay"}
-            type="date"
-            bind:value={editDate}
-            />
-            <button  class ="edit-icon" on:click ={()=> editTask(task.id, "date")}>
-                <div class ="outer-button">
-                    <div class="edit-icon-signal">
-                        <MdModeEdit/>
-                    </div>
-                    <div class ="check">
-                        <FaCheck/>
-                    </div>
-                </div> 
-        </button>
-        </div>
-
-        {/each}
-    </form>
-</div> -->
-
-
 <style>
 
-    .section-header{
-        margin:10px;
-        display: flex;
-        justify-content: center;
-        color:salmon;
-    }
-    .title{
-        text-align: center;
-    }
-    .parent{
-        display:flex;
-        flex-direction: column;
-        border: 6px solid maroon;
-        margin-top:20px;
-    }
-.form{
-    display:flex;
-    flex-direction: column;
-    margin:10px;
-}
 
-.inside-form label{
-    font-size: 20px;
-    margin: 10px;
-}
-
-.notDisplay{
-    display: none;
-}
-
-.displayDate ,.displayGoal, .displayHow, .displayStudy{
-    width: 100%;
-    border-radius: 20px;
-    font-size: 16px;
-}
-
-.inside-form{
-    display:flex;
-    flex-direction:row;
-    border: 2px solid black;
-    margin:10px;
-    padding:10px;
-}
-
-.edit-icon{
-    height: 40px;
-    margin: 0 10px;
-    cursor:pointer;
-    background-color: white;
-    border:none;
-}
-
-.edit-icon-signal:hover{
-    color:red;
-}
-
-.edit-icon-signal{
-    height: 40px;
-    margin: 0 10px;
-    cursor:pointer;
-    background-color: white;
-    border:none;
-}
-
-.outer-button{
-    display:flex;
-    height: 30px;
-    margin: 0px 10px;
-    cursor:pointer;
-    background-color: white;
-    border:none;
-    justify-content: space-evenly;
-}
-
-.check{
-    height: 40px;
-    margin: 0 10px;
-    cursor:pointer;
-    background-color: white;
-    border:none;
-    justify-content: center;
-}
-
-.check:hover{
-    color:green;
-}
 </style>
