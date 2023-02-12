@@ -1,7 +1,16 @@
+
+
 <script>
-    import Nav from "../../lib/Nav.svelte";
+
+
+    import Nav from "../../../lib/Nav.svelte";
     import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
     import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
+
+    // Data import here
+    export let data;
+    // Edit Goal Id Here and convert to float
+    const editGoalId = parseFloat(data.data.editgoal);
 
     // Edit goal variables
     let editGoal = "";
@@ -28,6 +37,7 @@
         const res = await fetch("http://localhost:5000/api/getgoals");
         // load in data to variable
         posts = await res.json();
+        posts = posts.filter(item=> item.id === editGoalId)
     })
 
     const editTask = async (/** @type {number} */ id, /** @type {string} */ check) =>{
@@ -73,14 +83,7 @@
 </script>
 
 <Nav/>
-
-<div>
-    {#each posts as task}
-    <h1> <a href ={`/editgoals/${task.id}`}> {task.goal}</a> </h1>
-    {/each}
-</div>
-
-<!-- <h1 class ="title">Edit Goals</h1>
+<h1 class ="title">Edit Goals</h1>
     <div class ="parent">
     <form class ="form" >
     {#each posts as task}
@@ -164,7 +167,7 @@
 
         {/each}
     </form>
-</div> -->
+</div>
 
 
 <style>
