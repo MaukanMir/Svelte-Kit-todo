@@ -22,20 +22,19 @@
 
     // Delete task functionality 
     async function deleteTask(/** @type {number} */ id){
-
+        // Find deleted post
+        const deletedpost = posts.filter(item=> item.id === id);
         //Filter posts here
         posts = posts.filter(item => item.id != id)
-
+        console.log(deletedpost)
         // update database here
-        await fetch(`http://localhost:5000/api/deletegoals/${id}`, {
-            method: 'DELETE',
-            // headers:{"Content-Type":"application/json"},
-            // body:JSON.stringify({
-            //     id:id
-            // })
-        }).then(response => response.json())
-        .then(data=> console.log(data))
-
+        const res = await fetch("http://localhost:5000/api/deletegoals/" + deletedpost[0]._id, {
+            method: 'DELETE'
+        }).then(response =>{
+            if(!response.ok){console.log("opps")}
+            else{console.log("success");}
+        })
+        
     
     };
 
