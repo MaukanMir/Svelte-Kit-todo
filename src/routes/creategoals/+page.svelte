@@ -13,9 +13,8 @@
     //toggle classes
     let toggle = false;
 
-    const id = Math.random();
     const addTask = async () =>{
-
+        const id = Math.random();
         async function doPost (){
             const res = await fetch("http://localhost:5000/api/creategoals",{
                 method:"POST",
