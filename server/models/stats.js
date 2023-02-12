@@ -12,3 +12,9 @@ const StatsSchema = new Schema({
 );
 
 module.exports = mongoose.model("goals", StatsSchema)
+
+// User logs in
+// Vists goals check in page
+// Updates goals metrics
+// We give users badges and additional information on their progress
+// This could potentially increase user stickness
