@@ -48,7 +48,8 @@
     <div class ="inside-tasks"> 
     <h2>Goal: {task.goal}</h2>
     <h2>Hours practicing per a day: {task.studyTime}</h2>
-    <h2>Due Date: {task.date}</h2>
+    <h2>Start Date: {task.date}</h2>
+    <h2>Due Date: {task.setDate}</h2>
     <button class ="delete" on:click={() => deleteTask(task.id)}> <FaTrashAlt/> </button>
     </div>
     {/each}

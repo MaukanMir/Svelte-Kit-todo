@@ -24,7 +24,7 @@
     let posts = [];
 
     onMount(async ()=>{
-        // API Call here
+        // API Call to load in dataset
         const res = await fetch("http://localhost:5000/api/getgoals");
         // load in data to variable
         posts = await res.json();
@@ -42,7 +42,7 @@
 
             const singlePost = posts.filter(item=> item.id === id);
 
-            const res = await fetch(`http://localhost:5000/api/editgoals/{id}`,{
+            const res = await fetch(`http://localhost:5000/api/editgoals/{singlePost[0]._id}`,{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify({
@@ -56,9 +56,7 @@
             });
 
             doPost();
-
             // Change dates
-
             toggleGoal = !toggleGoal;
             toggleDate = !toggleDate;
             toggleHow = !toggleHow;
