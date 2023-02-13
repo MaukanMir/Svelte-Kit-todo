@@ -11,7 +11,7 @@
     export let data;
     // Edit Goal Id Here and convert to float
     const editGoalId = parseFloat(data.data.editgoal);
-
+    console.log(editGoalId)
     // Edit goal variables
     let editGoal = "";
     let editHow ="";
@@ -51,8 +51,8 @@
         async function doPost (){
 
             const singlePost = posts.filter(item=> item.id === id);
-
-            const res = await fetch(`http://localhost:5000/api/editgoals/{singlePost[0]._id}`,{
+            console.log(singlePost[0]._id)
+            const res = await fetch(`http://localhost:5000/api/editgoals/${singlePost[0]._id}`,{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify({
@@ -65,16 +65,17 @@
                 })
             });
 
-            doPost();
-            // Change dates
-            toggleGoal = !toggleGoal;
+        };
+        doPost();
+        // Change dates
+        toggleGoal = !toggleGoal;
             toggleDate = !toggleDate;
             toggleHow = !toggleHow;
             toggleStudyTime = !toggleStudyTime;
 
-    };
-
 };
+
+
 
 
 
