@@ -11,7 +11,6 @@
     export let data;
     // Edit Goal Id Here and convert to float
     const editGoalId = parseFloat(data.data.editgoal);
-    console.log(editGoalId)
     // Edit goal variables
     let editGoal = "";
     let editHow ="";
@@ -41,7 +40,7 @@
     })
 
     const editTask = async (/** @type {number} */ id, /** @type {string} */ check) =>{
-
+            console.log(check, toggleGoal)
             if(check ==="goal"){toggleGoal = !toggleGoal}
             else if(check ==="how"){toggleHow = !toggleHow}
             else if(check === "date"){toggleDate = !toggleDate}
@@ -49,11 +48,10 @@
 
             
         async function doPost (){
-
             const singlePost = posts.filter(item=> item.id === id);
             console.log(singlePost[0]._id)
-            const res = await fetch(`http://localhost:5000/api/editgoals/${singlePost[0]._id}`,{
-                method:"POST",
+            const res = await fetch("http://localhost:5000/api/editgoals/" + singlePost[0]._id,{
+                method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify({
                     id,
@@ -64,14 +62,8 @@
                     studyTime:singlePost[0].studyTime
                 })
             });
-
         };
         doPost();
-        // Change dates
-        toggleGoal = !toggleGoal;
-            toggleDate = !toggleDate;
-            toggleHow = !toggleHow;
-            toggleStudyTime = !toggleStudyTime;
 
 };
 
