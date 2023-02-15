@@ -2,10 +2,13 @@
 
 <script>
 
-
+    // component here
     import Nav from "../../../lib/Nav.svelte";
     import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
     import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
+
+    //Svelte imports here
+    import { redirect } from '@sveltejs/kit';
 
     // Data import here
     export let data;
@@ -63,13 +66,21 @@
                 })
             });
         };
+
         doPost();
 
+        async function load(){
+            return {
+                status:301,
+                redirect:"/goals"
+            }
+        }
+
+        load()
+
+
+
 };
-
-
-
-
 
 
 
