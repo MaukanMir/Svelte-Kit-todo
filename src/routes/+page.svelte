@@ -22,7 +22,7 @@
     });
 
 </script>
-
+<body>
 <Nav/>
 
 <div class ="parent">
@@ -42,7 +42,14 @@
 
 <Footer/>
 
+</body>
+
 <style>
+
+    body{
+        background-color: 	#191970;
+        color:white;
+    }
 
     .parent{
         display: flex;
@@ -53,7 +60,7 @@
 
     .inside-parent{
         justify-content: space-evenly;
-        border: 6px solid red;
+        border: 6px solid white;
         margin:10px;
     }
 
