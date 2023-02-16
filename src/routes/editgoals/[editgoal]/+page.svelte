@@ -68,15 +68,10 @@
         };
 
         doPost();
-
-        async function load(){
-            return {
-                status:301,
-                redirect:"/goals"
-            }
-        }
-
-        load()
+        const res = await fetch("http://localhost:5000/api/getgoals");
+        const filterOut = await res.json();
+        posts = filterOut.filter(item=> item.id === id);
+        console.log(posts)
 
 
 
