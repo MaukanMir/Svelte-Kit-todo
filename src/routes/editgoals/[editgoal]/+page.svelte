@@ -68,10 +68,19 @@
         };
 
         doPost();
-        const res = await fetch("http://localhost:5000/api/getgoals");
-        const filterOut = await res.json();
-        posts = filterOut.filter(item=> item.id === id);
-        console.log(posts)
+        if(posts[0].length >0){
+
+            posts = posts.map(item=> {
+                    posts[0].length >0 ? id:item.id,
+                    editGoal.length >0 ? editGoal:item.goal,
+                    editHow.length > 0 ? editHow: item.how,
+                    item.date,
+                    editDate.length >0 ? editDate : item.setDate,
+                    item.studyTime
+        })
+        }
+        
+
 
 
 
@@ -167,6 +176,9 @@
         {/each}
     </form>
 </div>
+<button>
+    <a href ="/editgoals">Submit</a>
+</button>
 
 
 <style>
