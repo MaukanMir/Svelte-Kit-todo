@@ -1,5 +1,7 @@
 <script>
+    // Component imports here
     import Nav from "../../lib/Nav.svelte";
+    import Footer from "../../lib/Footer.svelte";
 
     // import svelte variables here
     import { onMount } from "svelte";
@@ -34,12 +36,13 @@
     {/each}
 </div>
 </body>
-
+<Footer/>
 <style>
 
     body{
         background-color: #000036;
         margin:10px;
+        height:100vh;
     }
 
     h1{

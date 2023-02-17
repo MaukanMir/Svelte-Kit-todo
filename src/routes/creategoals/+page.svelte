@@ -1,6 +1,7 @@
 <script>
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
+    import Footer from "../../lib/Footer.svelte";
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
     let changeDate = "";
@@ -106,7 +107,7 @@
 </div>
 
 <h3 class={toggle ? "displaySubmit": "notDisplay"}>Task Submitted!</h3>
-
+<Footer/>
 
 
 <style>
@@ -117,6 +118,7 @@
         flex-direction: column;
         width: 100%;
         padding: 10px;
+        height:100vh;
     }
 
     .inside-form input{
