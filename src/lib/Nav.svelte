@@ -25,7 +25,7 @@
     }
 
     a:hover{
-        color: white;
+        color: red;
     }
 
 </style>

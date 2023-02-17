@@ -44,7 +44,7 @@
 }
 
 .inner-footer li:hover{
-color: 	white;
+color: 	red;
 cursor:pointer;
 }
 </style>

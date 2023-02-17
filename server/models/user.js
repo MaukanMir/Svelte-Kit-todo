@@ -2,9 +2,9 @@
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     
-    id:{type:Number},
-    email:{type:String},
-    password:{type:String},
+    username:{type:String, required:true, unique:true},
+    email:{type:String, required:true, unique:true},
+    password:{type:String, required:true, unique:true},
     createdAt:{type:String},
 
 },
