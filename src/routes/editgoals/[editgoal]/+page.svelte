@@ -89,6 +89,7 @@
 
 
 </script>
+<body>
 
 <Nav/>
 <h1 class ="title">Edit Goals</h1>
@@ -180,28 +181,35 @@
     <a href ="/editgoals">Submit</a>
 </button>
 
+</body>
+
 
 <style>
-
+    body{
+        background-color: #002147;
+        color:black;
+    }
     .section-header{
         margin:10px;
         display: flex;
         justify-content: center;
-        color:salmon;
+        color: black;
     }
     .title{
         text-align: center;
+        color:white;
     }
     .parent{
         display:flex;
         flex-direction: column;
-        border: 6px solid maroon;
+        border: 6px solid white;
         margin-top:20px;
     }
 .form{
     display:flex;
     flex-direction: column;
     margin:10px;
+    background-color: white;
 }
 
 .inside-form label{
