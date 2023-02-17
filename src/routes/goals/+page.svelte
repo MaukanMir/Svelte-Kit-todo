@@ -66,9 +66,10 @@
     .tasks{
         display:flex;
         flex-direction: column;
-        border: 4px solid black;
+        /* border: 4px solid whitesmoke; */
         margin:20px;
         border-radius: 20px;
+        color:white;
     }
 
     .inside-tasks{
@@ -76,12 +77,14 @@
         margin:10px;
         padding:10px;
         border-radius: 10px;
+        color:white;
     }
 
     .delete{
-        background-color: white;
+        background-color: #000036;
         border:none;
         height: 30px;
+        color:white;
     }
 
     .delete:hover{
