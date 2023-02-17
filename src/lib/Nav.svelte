@@ -11,7 +11,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        background-color: black;
+        background-color: #000036;
         padding: 20px;
         border-radius: 2%;
         height:100px;
@@ -24,7 +24,7 @@
     }
 
     a:hover{
-        color:blueviolet;
+        color: white;
     }
 
 </style>

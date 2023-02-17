@@ -1,19 +1,5 @@
 <script>
     import Nav from "../../lib/Nav.svelte";
-    import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
-    import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
-
-    // Edit goal variables
-    let editGoal = "";
-    let editHow ="";
-    let editDate ="";
-    let editStudyTime =0;
-
-    // Switch between goal functions
-    let toggleGoal = false;
-    let toggleHow = false;
-    let toggleDate = false;
-    let toggleStudyTime = false;
 
     // import svelte variables here
     import { onMount } from "svelte";
@@ -28,12 +14,13 @@
         const res = await fetch("http://localhost:5000/api/getgoals");
         // load in data to variable
         posts = await res.json();
-    })
+    });
 
 
 
 </script>
 
+<body>
 <Nav/>
 
 <div>
@@ -46,11 +33,23 @@
     </h2>
     {/each}
 </div>
+</body>
+
 <style>
+
+    body{
+        background-color: #000036;
+        margin:10px;
+    }
+
+    h1{
+        margin-left: 10px;
+        color:white;
+    }
 
 h2 > a{
     text-decoration: none;
-    color:blueviolet;
+    color:white;
     cursor: pointer;
     margin-left: 30px;
 }

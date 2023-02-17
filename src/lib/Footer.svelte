@@ -17,7 +17,7 @@
 .footer{
     display:flex;
     flex-direction: column;
-    background-color: cadetblue;
+    background-color: #000036;
     color:white;
     border: 4px solid black;
     margin:20px;
@@ -43,7 +43,7 @@
 }
 
 .inner-footer li:hover{
-color: black;
+color: 	white;
 cursor:pointer;
 }
 </style>
