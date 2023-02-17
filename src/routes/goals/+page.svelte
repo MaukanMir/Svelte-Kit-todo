@@ -40,7 +40,7 @@
     };
 
 </script>
-
+<body>
 <Nav/>
 
 <div class ="tasks">
@@ -56,8 +56,12 @@
     {/each}
 </div>
 <Footer/>
+</body>
 
 <style>
+    body{
+        background-color:#000036;
+    }
     .tasks h1{
         font-size: 32px;
         margin:10px;
@@ -69,7 +73,7 @@
         /* border: 4px solid whitesmoke; */
         margin:20px;
         border-radius: 20px;
-        color:white;
+        color:whitesmoke;
     }
 
     .inside-tasks{
@@ -77,14 +81,14 @@
         margin:10px;
         padding:10px;
         border-radius: 10px;
-        color:white;
+        color:whitesmoke;
     }
 
     .delete{
-        background-color: #000036;
+        color: white;
         border:none;
         height: 30px;
-        color:white;
+        background-color:#000036;
     }
 
     .delete:hover{

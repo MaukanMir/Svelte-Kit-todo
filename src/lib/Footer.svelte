@@ -19,7 +19,7 @@
     flex-direction: column;
     background-color: #000036;
     color:white;
-    border: 4px solid black;
+    border: 4px solid white;
     margin:20px;
 }
 .inner-footer{
@@ -30,6 +30,7 @@
     font-size: 20px;
     padding:10px;
     justify-content: space-around;
+    margin:20px;
 }
 
 .icons{

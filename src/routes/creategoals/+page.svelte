@@ -49,7 +49,7 @@
 
 </script>
 
-
+<body>
 <Nav/>
 
 <!--Start of initial submit-->
@@ -108,10 +108,13 @@
 
 <h3 class={toggle ? "displaySubmit": "notDisplay"}>Task Submitted!</h3>
 <Footer/>
-
+</body>
 
 <style>
 
+    body{
+        background-color: #000036;
+    }
     .form{
         
         display:flex;
@@ -119,7 +122,7 @@
         width: 100%;
         padding: 10px;
         height:100vh;
-        color:white;
+        color:whitesmoke;
     }
 
     .inside-form input{

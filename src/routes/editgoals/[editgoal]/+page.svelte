@@ -6,6 +6,7 @@
     import Nav from "../../../lib/Nav.svelte";
     import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
     import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
+    import Footer from "../../../lib/Footer.svelte"
 
     //Svelte imports here
     import { redirect } from '@sveltejs/kit';
@@ -181,35 +182,38 @@
     <a href ="/editgoals">Submit</a>
 </button>
 
+<Footer/>
 </body>
 
 
 <style>
     body{
-        background-color: #002147;
-        color:black;
+        background-color: #000036;
     }
     .section-header{
-        margin:10px;
+        margin:40px;
         display: flex;
         justify-content: center;
-        color: black;
+        color: white;
     }
     .title{
         text-align: center;
         color:white;
+        margin:30px;
     }
     .parent{
         display:flex;
         flex-direction: column;
         border: 6px solid white;
         margin-top:20px;
+        color:white;
     }
 .form{
     display:flex;
     flex-direction: column;
     margin:10px;
-    background-color: white;
+    background-color: #000036;
+    height:100vh;
 }
 
 .inside-form label{
@@ -230,7 +234,7 @@
 .inside-form{
     display:flex;
     flex-direction:row;
-    border: 2px solid black;
+    border: 2px solid white;
     margin:10px;
     padding:10px;
 }
@@ -239,7 +243,8 @@
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: white;
+    background-color: #000036;
+    color:white;
     border:none;
 }
 
@@ -251,7 +256,7 @@
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: white;
+    background-color: #000036;
     border:none;
 }
 
@@ -260,7 +265,7 @@
     height: 30px;
     margin: 0px 10px;
     cursor:pointer;
-    background-color: white;
+    background-color: #000036;
     border:none;
     justify-content: space-evenly;
 }
@@ -269,7 +274,7 @@
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: white;
+    background-color: #000036;
     border:none;
     justify-content: center;
 }

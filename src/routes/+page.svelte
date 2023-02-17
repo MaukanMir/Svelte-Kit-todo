@@ -18,9 +18,7 @@
         const res = await fetch("http://localhost:5000/api/getgoals");
         // load in data to variable
         posts = await res.json();
-        
     });
-
 </script>
 <body>
 <Nav/>
@@ -30,8 +28,8 @@
     {#each posts as task}
         <div class ="inside-parent"> 
             <h2>Goal: {task.goal}</h2>
-            <h2>Start Date:{task.setDate}</h2>
-            <h2> Due Date: {task.date}</h2>
+            <h2>Start Date:{task.date}</h2>
+            <h2> Due Date: {task.setDate}</h2>
             <h2>Hours Alloted: {task.studyTime}</h2>
             <h2>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h2>
             <h2>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h2>
@@ -47,7 +45,7 @@
 <style>
 
     body{
-        background-color: 	#191970;
+        background-color: #000036;
         color:white;
     }
 
@@ -55,7 +53,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* height:100vh; */
     }
 
     .inside-parent{
