@@ -15,6 +15,7 @@
         padding: 20px;
         border-radius: 2%;
         height:100px;
+        border: 4px solid white;
     }
 
     .test a{

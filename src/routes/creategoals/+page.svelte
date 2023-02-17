@@ -119,6 +119,7 @@
         width: 100%;
         padding: 10px;
         height:100vh;
+        color:white;
     }
 
     .inside-form input{
@@ -159,7 +160,7 @@ background-color: white;
 
 .grid{
     display:flex;
-    border: 4px solid black;
+    border: 4px solid white;
     margin-top:20px;
     justify-content: space-between;
 }

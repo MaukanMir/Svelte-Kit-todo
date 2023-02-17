@@ -1,6 +1,7 @@
 <script>
     //Component imports here
     import Nav from "../../lib/Nav.svelte";
+    import Footer from "../../lib/Footer.svelte"
     // import icons here
     import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
     // import svelte variables here
@@ -54,6 +55,7 @@
     </div>
     {/each}
 </div>
+<Footer/>
 
 <style>
     .tasks h1{
