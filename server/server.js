@@ -23,7 +23,7 @@ app.use("/api/creategoals", createGoalsRoute);
 app.use("/api/getgoals", getAllGoals);
 app.use("/api/editgoals",editGoals);
 app.use("/api/deletegoals", deleteGoals);
-app.use("/api/user", authRoutes)
+app.use("/api/auth", authRoutes)
 
 
 // get rid of annyoing error
