@@ -4,6 +4,7 @@
     <a href="/editgoals">Edit Goals</a>
     <a href="/creategoals">Create Goals</a>
     <a href="/register">Register</a>
+    <a href="/login">Login</a>
 </nav>
 
 <style>
