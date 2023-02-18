@@ -15,7 +15,7 @@
     
     onMount(async ()=>{
         // API Call here
-        const res = await fetch("http://localhost:5000/api/getgoals");
+        const res = await fetch("http://localhost:5000/api/getgoals/find/");
         // load in data to variable
         posts = await res.json();
         
