@@ -128,13 +128,10 @@
         padding:10px;
     }
     
-    .submit > a:hover{
-        text-decoration: none;
-        color:white
-    }
     
-    .submit:hover{
+    .submit:hover, .submit >a:hover{
         background-color: green;
+        color:white
     }
     
     .submit a{
@@ -142,9 +139,5 @@
         text-decoration: none;
     }
     
-    .form-sub-title{
-        text-align: center;
-        margin-top:50px;
-    }
     
     </style>
