@@ -154,6 +154,7 @@ const onSubmit = async () =>{
 
 .submit a{
     color:green;
+    text-decoration: none;
 }
 
 .form-sub-title{
