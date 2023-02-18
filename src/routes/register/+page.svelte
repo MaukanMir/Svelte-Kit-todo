@@ -8,6 +8,32 @@ import Footer from "../../lib/Footer.svelte";
 let email = "";
 let username ="";
 let password ="";
+
+// Submit form here
+const onSubmit = async () =>{
+
+    
+    async function createUser(){
+        const userId = Math.random();
+        const res = await fetch("http://localhost:5000/api/auth/register",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                userId,
+                email,
+                username,
+                password
+            })
+        });
+        const json = await res.json();
+        const result = JSON.stringify(json);
+        console.log(json, result)
+    }
+    createUser();
+
+};
+
+
 </script>
 
 
@@ -17,7 +43,7 @@ let password ="";
 <h1>Crossing Off Your Goals Begins Here!</h1>
 <div class ="container">
 
-    <form class ="form">
+    <form class ="form" on:submit|preventDefault={onSubmit}>
         <div class ="inner-form"> 
         <label for ="email">Email</label>
         <input
@@ -63,12 +89,13 @@ let password ="";
 <style>
     body{
         background-color:gainsboro;
+        background-color: #000036;
         height: 100vh;
     }
 
     h1{
         text-align: center;
-        color:#000036;
+        color:white;
     }
 
 .container{
@@ -120,7 +147,5 @@ let password ="";
     text-align: center;
     margin-top:50px;
 }
-
-
 
 </style>
