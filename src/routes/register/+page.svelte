@@ -12,8 +12,9 @@ let password ="";
 // Submit form here
 const onSubmit = async () =>{
 
-    
+    // Create user information here
     async function createUser(){
+        // Create user random signature here
         const userId = Math.random();
         const res = await fetch("http://localhost:5000/api/auth/register",{
             method:"POST",
@@ -29,6 +30,7 @@ const onSubmit = async () =>{
         const result = JSON.stringify(json);
         console.log(json, result)
     }
+    // Call function here
     createUser();
 
 };
@@ -74,7 +76,10 @@ const onSubmit = async () =>{
         bind:value={password}
         />
     </div>
-    <button class ="submit">Sign Up</button>
+    <button class ="submit">
+        <a href ="/"> Sign Up </a>
+        
+    </button>
     <p class ="form-sub-title">
         Already have an account? Sign in
         <a href="/login"> here </a>
@@ -138,9 +143,17 @@ const onSubmit = async () =>{
     padding:10px;
 }
 
+.submit > a:hover{
+    text-decoration: none;
+    color:white
+}
+
 .submit:hover{
     background-color: green;
-    color:white;
+}
+
+.submit a{
+    color:green;
 }
 
 .form-sub-title{
