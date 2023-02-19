@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 const GoalsSchema = new Schema({
-    
-    userId:{type:Number, required:true, unique:true},
+
+    userId:{type:String,required:true},
+    id:{type:Number, required:true, unique:true},
     goal:{type:String},
     how:{type:String},
     date:{type:String},

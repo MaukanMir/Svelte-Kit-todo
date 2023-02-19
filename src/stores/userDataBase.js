@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-const userDataBase = writable([
+export const userDataBase = writable([
     {
         userId:""
     },

@@ -13,14 +13,13 @@ import { userDataBase } from "../../stores/userDataBase";
 let email = "";
 let username ="";
 let password ="";
+let $:user;
 
 // Submit form here
 const onSubmit = async () =>{
 
     // Create user information here
     async function createUser(){
-        // Create user random signature here
-        const userId = Math.random();
         const res = await fetch("http://localhost:5000/api/auth/register",{
             method:"POST",
             headers:{"Content-Type":"application/json"},

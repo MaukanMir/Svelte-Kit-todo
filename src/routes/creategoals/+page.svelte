@@ -15,13 +15,13 @@
     let toggle = false;
 
     const addTask = async () =>{
-        const userId = Math.random();
+        const id = Math.random();
         async function doPost (){
             const res = await fetch("http://localhost:5000/api/creategoals",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify({
-                    userId,
+                    id,
                     goal,
                     how,
                     date:startDate,
