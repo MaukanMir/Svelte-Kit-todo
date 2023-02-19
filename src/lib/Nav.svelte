@@ -11,7 +11,7 @@
     <a href="/goals">Goals</a>
     <a href="/editgoals">Edit Goals</a>
     <a href="/creategoals">Create Goals</a>
-    {#if !user === false}
+    {#if !user}
     <a href="/register">Register</a>
     {:else}
     <a href="/login">Login</a>

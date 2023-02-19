@@ -67,7 +67,10 @@
         <button class ="submit">
             Login
         </button>
-
+        <p class ="form-sub-title">
+            Have you not made an account? Register
+            <a href="/register"> here </a>
+        </p>
         </form>
     
     </div>
@@ -101,7 +104,7 @@
         border-radius: 10px;
         padding:20px;
         background-color: white;
-        height: 500px;
+        height: 400px;
         width: 400px;
     }
     
@@ -136,7 +139,10 @@
         color:white
     }
     
-
+    .form-sub-title{
+        margin-top: 40px;
+        text-align: center;
+    }
     
     
     </style>

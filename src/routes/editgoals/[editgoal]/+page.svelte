@@ -8,8 +8,7 @@
     import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
     import Footer from "../../../lib/Footer.svelte"
 
-    //Svelte imports here
-    import { redirect } from '@sveltejs/kit';
+
 
     // Data import here
     export let data;
