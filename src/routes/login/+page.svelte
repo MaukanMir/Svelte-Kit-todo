@@ -14,13 +14,11 @@
     
         // Create user information here
         async function createUser(){
-            // Create user random signature here
-            const userId = Math.random();
+            // Fetch user information from DB
             const res = await fetch("http://localhost:5000/api/auth/login",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
-                    userId,
                     username,
                     password
                 })
@@ -28,6 +26,7 @@
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(json, result)
+            console.log(json.username)
         }
         // Call function here
         createUser();
