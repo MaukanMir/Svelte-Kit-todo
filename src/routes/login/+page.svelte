@@ -65,7 +65,7 @@
             />
         </div>
         <button class ="submit">
-            <a href ="/"> Login </a>
+            Login
         </button>
 
         </form>
@@ -125,18 +125,18 @@
     .submit{
         border-radius: 10px;
         padding:10px;
+        background-color: #000036;
+        color:white;
+        font-size: 16px;
     }
     
     
-    .submit:hover, .submit >a:hover{
+    .submit:hover {
         background-color: green;
         color:white
     }
     
-    .submit a{
-        color:green;
-        text-decoration: none;
-    }
+
     
     
     </style>

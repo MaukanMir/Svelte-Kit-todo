@@ -4,7 +4,8 @@ import Nav from "../../lib/Nav.svelte";
 import Footer from "../../lib/Footer.svelte";
 // Svelte store import here
 import { userDataBase } from "../../stores/userDataBase";
-
+import {onDestroy} from "svelte"
+import { redirect } from '@sveltejs/kit';
 
 // Set userDataBase Here
 
@@ -13,13 +14,20 @@ import { userDataBase } from "../../stores/userDataBase";
 let email = "";
 let username ="";
 let password ="";
-let $:user;
+
+
+async function load(){
+    if(username && email && password){
+        throw redirect(307, "/login")
+    }
+}
 
 // Submit form here
 const onSubmit = async () =>{
 
     // Create user information here
     async function createUser(){
+        console.log(email,username, password)
         const res = await fetch("http://localhost:5000/api/auth/register",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -32,13 +40,23 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
         console.log(json, result)
+
+        // user = json.username != undefined ? json.username:"";
+
+        // userDataBase.update(item => {
+        //     return [...user]
+        // })
     }
     // Call function here
     createUser();
-
+    load()
 
 
 };
+
+onDestroy(()=>{
+        console.log("Recycled")
+    });
 
 
 </script>
@@ -82,7 +100,7 @@ const onSubmit = async () =>{
         />
     </div>
     <button class ="submit">
-        <!-- <a href ="/"> Sign Up </a> -->
+        Sign Up
     </button>
     <p class ="form-sub-title">
         Already have an account? Sign in
@@ -145,21 +163,17 @@ const onSubmit = async () =>{
 .submit{
     border-radius: 10px;
     padding:10px;
+    color:white;
+    background-color: #000036;
 }
 
-.submit > a:hover{
-    text-decoration: none;
-    color:white
-}
+
 
 .submit:hover{
     background-color: green;
+    color:white;
 }
 
-.submit a{
-    color:green;
-    text-decoration: none;
-}
 
 .form-sub-title{
     text-align: center;
