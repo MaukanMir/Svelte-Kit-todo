@@ -2,20 +2,33 @@
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
-
+    
     // import svelte variables here
     import { onMount } from "svelte";
+    //Svelte store components import here
+    import {get} from "svelte/store";
+    import {userDataBase} from "../../stores/userDataBase";
+
+    const user = get(userDataBase)[0];
 
     /**
    * @type {any[]}
    */
     let posts = [];
+    let toggle = false;
 
     onMount(async ()=>{
+        if(user){
+        
         // API Call to load in dataset
-        const res = await fetch("http://localhost:5000/api/getgoals");
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
         // load in data to variable
         posts = await res.json();
+        }
+        else{
+            toggle = !toggle;
+        }
+
     });
 
 
@@ -35,6 +48,13 @@
     </h2>
     {/each}
 </div>
+<div class = {toggle ? "display": "notDisplay"}>
+    <h2>You currently have no goals. </h2>
+    <h3>
+        Click <a href="/creategoals"> Here </a> to get started!
+    </h3>
+</div>
+
 </body>
 <Footer/>
 <style>
@@ -59,6 +79,20 @@ h2 > a{
 
 h2 > a:hover{
     color:orangered
+}
+
+.display{
+    background-color: white;
+    color:#000036;
+    height: 400px;
+    width: 450px;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+}
+
+.notDisplay{
+    display:none;
 }
 
 </style>

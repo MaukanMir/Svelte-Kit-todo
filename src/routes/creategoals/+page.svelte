@@ -5,6 +5,7 @@
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
     let changeDate = "";
+    
 
     // stores objects here
     let goal = "";

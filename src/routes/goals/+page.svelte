@@ -6,20 +6,32 @@
     import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
     // import svelte variables here
     import { onMount } from "svelte";
+    //Svelte store components import here
+    import {get} from "svelte/store";
+    import {userDataBase} from "../../stores/userDataBase";
+
+    const user = get(userDataBase)[0];
 
     /**
    * @type {any[]}
    */
     let posts = [];
+    let toggle = false;
 
     
     onMount(async ()=>{
-        // API Call here
-        const res = await fetch("http://localhost:5000/api/getgoals/find/");
+        if(user){
+        
+        // API Call to load in dataset
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
         // load in data to variable
         posts = await res.json();
-        
-    })
+        }
+        else{
+            toggle = !toggle;
+        }
+
+    });
 
     // Delete task functionality 
     async function deleteTask(/** @type {number} */ id){

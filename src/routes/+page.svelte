@@ -22,7 +22,7 @@
     onMount(async ()=>{
         // API Call here
         if(user){
-            const res = await fetch("http://localhost:5000/api/getgoals/" + user[0]);
+            const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
         // load in data to variable
         posts = await res.json();
         }
