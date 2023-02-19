@@ -4,23 +4,25 @@ import Nav from "../../lib/Nav.svelte";
 import Footer from "../../lib/Footer.svelte";
 // Svelte store import here
 import { userDataBase } from "../../stores/userDataBase";
+//Svelte key componets here
 import {onDestroy} from "svelte"
-import { redirect } from '@sveltejs/kit';
+import { goto } from '$app/navigation'
+import {get} from "svelte/store";
 
 // Set userDataBase Here
-
-
+let user = get(userDataBase);
+console.log(user)
 // Login variables here
 let email = "";
 let username ="";
 let password ="";
 
-
 async function load(){
     if(username && email && password){
-        throw redirect(307, "/login")
+        goto("/")
     }
 }
+
 
 // Submit form here
 const onSubmit = async () =>{
@@ -41,11 +43,10 @@ const onSubmit = async () =>{
         const result = JSON.stringify(json);
         console.log(json, result)
 
-        // user = json.username != undefined ? json.username:"";
+        userDataBase.set([username])
 
-        // userDataBase.update(item => {
-        //     return [...user]
-        // })
+    
+
     }
     // Call function here
     createUser();

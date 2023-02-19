@@ -5,6 +5,12 @@
     import Footer from "../lib/Footer.svelte"
     // svelete components imported here
     import {onMount} from "svelte";
+    // Svelte store import here
+    import {userDataBase} from "../stores/userDataBase";
+    import {get} from "svelte/store"
+
+    const user = get(userDataBase)[0]
+    console.log(user)
     // Dates
     let currentTime = new Date(new Date().toISOString().slice(0,10)).getTime();
     let oneDay = (1000 * 3600 * 24);
@@ -15,9 +21,11 @@
 
     onMount(async ()=>{
         // API Call here
-        const res = await fetch("http://localhost:5000/api/getgoals");
+        if(user){
+            const res = await fetch("http://localhost:5000/api/getgoals/" + user[0]);
         // load in data to variable
         posts = await res.json();
+        }
     });
 </script>
 <body>
