@@ -2,6 +2,11 @@
 // Svelte Component imports here
 import Nav from "../../lib/Nav.svelte";
 import Footer from "../../lib/Footer.svelte";
+// Svelte store import here
+import { userDataBase } from "../../stores/userDataBase";
+
+
+// Set userDataBase Here
 
 
 // Login variables here
@@ -20,9 +25,8 @@ const onSubmit = async () =>{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
-                userId,
-                email,
                 username,
+                email,
                 password
             })
         });
@@ -32,6 +36,8 @@ const onSubmit = async () =>{
     }
     // Call function here
     createUser();
+
+
 
 };
 
@@ -77,8 +83,7 @@ const onSubmit = async () =>{
         />
     </div>
     <button class ="submit">
-        <a href ="/"> Sign Up </a>
-        
+        <!-- <a href ="/"> Sign Up </a> -->
     </button>
     <p class ="form-sub-title">
         Already have an account? Sign in

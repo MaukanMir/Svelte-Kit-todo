@@ -4,7 +4,6 @@ const Goals = require("../models/goals");
 // GET all orders
 router.get("/find/:userid", async (req,res)=>{
     
-
     try{
         const goals = await Goals.find();
         res.status(200).json(goals);
