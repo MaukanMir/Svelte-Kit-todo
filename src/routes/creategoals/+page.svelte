@@ -5,8 +5,12 @@
     // Date conversions here
     let startDate = new Date().toISOString().slice(0,10);
     let changeDate = "";
-    
+    //Svelte store components import here
+    import {get} from "svelte/store";
+    import {userDataBase} from "../../stores/userDataBase";
 
+    const user = get(userDataBase)[0];
+    console.log(user)
     // stores objects here
     let goal = "";
     let how ="";
@@ -22,6 +26,7 @@
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify({
+                    userId:user,
                     id,
                     goal,
                     how,
