@@ -2,7 +2,16 @@
     // Svelte Component imports here
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
-    
+    // Svelte store import here
+    import { userDataBase } from "../../stores/userDataBase";
+    //Svelte key componets here
+    import {onDestroy} from "svelte"
+    import { goto } from '$app/navigation'
+    import {get} from "svelte/store";
+
+// Set userDataBase Here
+let user = get(userDataBase);
+console.log(user)
     
     // Login variables here
 
@@ -11,6 +20,14 @@
 
     // error state
     let error =""
+
+    // Reroute user here
+
+    async function load(){
+        if(username && password){
+            goto("/")
+        }
+    }
     
     // Submit form here
     const onSubmit = async () =>{
@@ -32,6 +49,9 @@
         }
         // Call function here
         createUser();
+        // Set store global state to user
+        userDataBase.set([username]);
+        load();
     
     };
     </script>
