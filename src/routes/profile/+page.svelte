@@ -4,20 +4,22 @@
     import Footer from "../../lib/Footer.svelte";
     // import svelte store componets here
     import {userDataBase} from "../../stores/userDataBase";
+    import {userInfoDb} from "../../stores/userInfoDb";
     import {get} from "svelte/store";
     // svelte components here
     import {onMount} from "svelte";
 
     let user = get(userDataBase)[0];
-    let userInfo;
+    let userInfo = get(userInfoDb)
+    console.log(userInfo)
 
     //Get all user information here
-    onMount(async ()=>{
-        if(user){
-            const res = await fetch("http://localhost:5000/api/user/find/" + user);
-            userInfo = await res.json();
-        }
-    })
+    // onMount(async ()=>{
+    //     if(user){
+    //         const res = await fetch("http://localhost:5000/api/user/find/" + userInfo._id);
+    //         userInfo = await res.json();
+    //     }
+    // })
 
     //edit profile
 

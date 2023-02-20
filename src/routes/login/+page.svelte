@@ -4,6 +4,7 @@
     import Footer from "../../lib/Footer.svelte";
     // Svelte store import here
     import { userDataBase } from "../../stores/userDataBase";
+    import {userInfoDb} from "../../stores/userInfoDb"
     //Svelte key componets here
     import {onDestroy} from "svelte"
     import { goto } from '$app/navigation'
@@ -11,6 +12,10 @@
 
 // Set userDataBase Here
 let user = get(userDataBase);
+/**
+   * @type {{ _id: any; username: any; email: any; }[]}
+   */
+let userInfo;
 console.log(user)
     
     // Login variables here
@@ -46,12 +51,27 @@ console.log(user)
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(result)
-            console.log(json._id)
+            // save user info here
+            userInfo =[
+                {
+                    _id:json._id,
+                    username:json.username,
+                    email:json.email
+                }
+            ]
+            
         }
         // Call function here
         createUser();
         // Set store global state to user
         userDataBase.set([username]);
+
+        userInfoDb.update(item=>{
+            return [...userInfo]
+        })
+
+        // userInfoDb.set([...userInfo]);
+        console.log(get(userInfoDb))
         load();
     
     };
