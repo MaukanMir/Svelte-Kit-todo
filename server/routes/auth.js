@@ -47,4 +47,23 @@ router.post("/login", async (req, res) => {
     }
 });
 
+
+// UPDATE USER
+
+router.post("/find/:username", async (req,res)=> {
+
+    try{
+        const user = await User.findByIdAndUpdate(
+            req.params.username,
+            {
+                $set:req.body
+            },
+            {new:true}
+        );
+        res.status(200).json(user)
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
+
 module.exports = router;

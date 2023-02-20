@@ -14,6 +14,15 @@
     let editPassword ="";
     let editEmail ="";
 
+    const editUserInfo = async() =>{
+
+        const editUser = async() =>{
+            
+
+        }
+
+    }
+
 
 
 </script>
@@ -22,6 +31,13 @@
 <body>
 
     <Nav/>
+
+    <div class ="welcome">
+        
+        <h1 class ="welcome-header">Welcome Back, {user}!</h1>
+
+
+    </div>
 
     <div class ="container">
 
@@ -58,7 +74,7 @@
                 bind:value={editPassword}
                 />
             </div>
-
+            <button class ="submit">Submit</button>
         </form>
 
         {/if}
@@ -81,7 +97,21 @@
         justify-content: center;
     }
 
+    .inside-container{
+        border-radius: 10px;
+        justify-content: center;
 
+    }
 
+    .submit{
+        color:white;
+        background-color: #000036;
+        padding:5px;
+        margin-top: 10px;
+    }
+
+    .submit:hover{
+        background-color: green;
+    }
 
 </style>
