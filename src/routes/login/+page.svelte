@@ -46,6 +46,7 @@ console.log(user)
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(result)
+            console.log(json._id)
         }
         // Call function here
         createUser();

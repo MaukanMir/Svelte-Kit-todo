@@ -13,6 +13,8 @@
     <a href="/creategoals">Create Goals</a>
     {#if !user}
     <a href="/register">Register</a>
+    {:else if user}
+    <a href="/profile">{user[0].toUpperCase() + user.substring(1)}</a>
     {:else}
     <a href="/login">Login</a>
     {/if}
