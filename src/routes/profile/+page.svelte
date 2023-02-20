@@ -103,15 +103,31 @@
         background-color: #000036;
     }
 
+    .welcome-header{
+        color:white;
+    }
+
     .container{
         display: flex;
         justify-content: center;
+        margin:10px;
     }
 
     .inside-container{
         border-radius: 10px;
         justify-content: center;
+        color:#000036;
+        background-color: white;
+        margin:10px;
+        height:400px;
+        width:400px;
+    }
 
+    .form{
+        margin:15px;
+        padding:5px;
+        display: flex;
+        flex-direction: column;
     }
 
     .submit{
@@ -119,6 +135,8 @@
         background-color: #000036;
         padding:5px;
         margin-top: 10px;
+        border-radius: 10px;
+        margin:10px;
     }
 
     .submit:hover{

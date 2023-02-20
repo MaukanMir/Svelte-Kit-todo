@@ -5,10 +5,10 @@ const CryptoJS = require("crypto-js");
 
 // GET USER INFO
 
-router.get("/find:/id", async (req,res)=>{
+router.get("/find/:id", async (req,res)=>{
 
     try{
-        user = await findByIdAndUpdate(req.params.id);
+        user = await User.findById(req.params.id);
         const {password,...others} = user._doc;
         res.status(200).json(others);
     }catch(err){
@@ -18,7 +18,7 @@ router.get("/find:/id", async (req,res)=>{
 
 
 // UPDATE USER
-router.post("/find/:id", async (req,res)=> {
+router.post("/:id", async (req,res)=> {
 
     if(req.body.password){
         req.body.password = CryptoJS.AES.encrypt(
