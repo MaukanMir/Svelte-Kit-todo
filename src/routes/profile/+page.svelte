@@ -5,8 +5,19 @@
     // import svelte store componets here
     import {userDataBase} from "../../stores/userDataBase";
     import {get} from "svelte/store";
+    // svelte components here
+    import {onMount} from "svelte";
 
     let user = get(userDataBase)[0];
+    let userInfo;
+
+    //Get all user information here
+    onMount(async ()=>{
+        if(user){
+            const res = await fetch("http://localhost:5000/api/user/find/" + user);
+            userInfo = await res.json();
+        }
+    })
 
     //edit profile
 
@@ -14,6 +25,7 @@
     let editPassword ="";
     let editEmail ="";
 
+    // API call here to edit user info
     const editUserInfo = async() =>{
 
         const editUser = async() =>{
@@ -35,8 +47,6 @@
     <div class ="welcome">
         
         <h1 class ="welcome-header">Welcome Back, {user}!</h1>
-
-
     </div>
 
     <div class ="container">
