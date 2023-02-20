@@ -48,11 +48,14 @@
     </h2>
     {/each}
 </div>
+
+<div class ="center"> 
 <div class = {toggle ? "display": "notDisplay"}>
     <h2>You currently have no goals. </h2>
     <h3>
         Click <a href="/creategoals"> Here </a> to get started!
     </h3>
+</div>
 </div>
 
 </body>
@@ -81,6 +84,11 @@ h2 > a:hover{
     color:orangered
 }
 
+.center{
+    display: flex;
+    justify-content: center;
+}
+
 .display{
     background-color: white;
     color:#000036;
@@ -89,6 +97,8 @@ h2 > a:hover{
     border-radius: 10px;
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .notDisplay{

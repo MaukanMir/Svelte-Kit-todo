@@ -8,6 +8,9 @@
 
     let username ="";
     let password ="";
+
+    // error state
+    let error =""
     
     // Submit form here
     const onSubmit = async () =>{
@@ -25,24 +28,22 @@
             });
             const json = await res.json();
             const result = JSON.stringify(json);
-            console.log(json, result)
-            console.log(json.username)
+            console.log(result)
         }
         // Call function here
         createUser();
     
     };
-    
-    
     </script>
-    
     
     <!--HTML COMPONENTS HERE-->
     <body>
     <Nav/>
     <h1>Welcome Back!</h1>
     <div class ="container">
-    
+        {#if error ==="Wrong credentials!"}
+        <h3 class ="display">{error}</h3>
+        {:else}
         <form class ="form" on:submit|preventDefault={onSubmit}>
             <div class ="inner-form"> 
             <label for ="username">Username </label>
@@ -72,13 +73,17 @@
             <a href="/register"> here </a>
         </p>
         </form>
-    
+    {/if}
     </div>
     </body>
     <Footer/>
     
     
     <style>
+
+        .display{
+            color:red;
+        }
         body{
             background-color:gainsboro;
             background-color: #000036;

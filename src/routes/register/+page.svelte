@@ -16,6 +16,9 @@ console.log(user)
 let email = "";
 let username ="";
 let password ="";
+// create error state
+
+let error = "";
 
 async function load(){
     if(username && email && password){

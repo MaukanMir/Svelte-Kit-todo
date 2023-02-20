@@ -20,6 +20,12 @@
     let editDate ="";
     let editStudyTime =0;
 
+    //Svelte store components import here
+    import {get} from "svelte/store";
+    import {userDataBase} from "../../../stores/userDataBase";
+
+    const user = get(userDataBase)[0];
+
     // Switch between goal functions
     let toggleGoal = false;
     let toggleHow = false;
@@ -36,7 +42,7 @@
 
     onMount(async ()=>{
         // API Call to load in dataset
-        const res = await fetch("http://localhost:5000/api/getgoals");
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
         // load in data to variable
         posts = await res.json();
         posts = posts.filter(item=> item.id === editGoalId)
@@ -80,10 +86,6 @@
         })
         }
         
-
-
-
-
 };
 
 
