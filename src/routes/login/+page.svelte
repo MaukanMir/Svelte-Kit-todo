@@ -59,6 +59,8 @@ console.log(user)
                     email:json.email
                 }
             ]
+
+            userInfoDb.set(userInfo);
             
         }
         // Call function here
@@ -66,9 +68,6 @@ console.log(user)
         // Set store global state to user
         userDataBase.set([username]);
 
-        userInfoDb.update(item=>{
-            return [...userInfo]
-        })
 
         // userInfoDb.set([...userInfo]);
         console.log(get(userInfoDb))

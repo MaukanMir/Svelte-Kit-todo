@@ -10,16 +10,17 @@
     import {onMount} from "svelte";
 
     let user = get(userDataBase)[0];
-    let userInfo = get(userInfoDb)
-    console.log(userInfo)
+    let userInfo = get(userInfoDb)[0]
+    console.log(get(userDataBase))
+    console.log(get(userInfoDb))
 
     //Get all user information here
-    // onMount(async ()=>{
-    //     if(user){
-    //         const res = await fetch("http://localhost:5000/api/user/find/" + userInfo._id);
-    //         userInfo = await res.json();
-    //     }
-    // })
+    onMount(async ()=>{
+        if(user){
+            const res = await fetch("http://localhost:5000/api/user/find/" + userInfo._id);
+            userInfo = await res.json();
+        }
+    })
 
     //edit profile
 
