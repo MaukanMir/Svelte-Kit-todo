@@ -169,6 +169,4 @@ console.log(user)
         margin-top: 40px;
         text-align: center;
     }
-    
-    
     </style>
