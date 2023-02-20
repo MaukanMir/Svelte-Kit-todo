@@ -47,20 +47,39 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// GET USER INFO
 
-// UPDATE USER
-
-router.post("/find/:username", async (req,res)=> {
+router.get("/find:/id", async, (req,res)=>{
 
     try{
-        const user = await User.findByIdAndUpdate(
-            req.params.username,
+        user = await.findByIdAndUpdate(req.params.id);
+        const {password,...others} = user._doc;
+        res.status(200).json(others);
+    }catch(err){
+        res.status(500).json(err);
+    }
+})
+
+
+// UPDATE USER
+router.post("/find/:id", async (req,res)=> {
+
+    if(req.body.password){
+        req.body.password = CryptoJS.AES.encrypt(
+            req.body.password,
+            process.env.PASS_SEC
+        ).toString();
+    }
+
+    try{
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
             {
                 $set:req.body
             },
             {new:true}
         );
-        res.status(200).json(user)
+        res.status(200).json(updatedUser)
     }catch(err){
         res.status(500).json(err)
     }

@@ -17,11 +17,11 @@
     const editUserInfo = async() =>{
 
         const editUser = async() =>{
-            
+
 
         }
 
-    }
+    };
 
 
 
