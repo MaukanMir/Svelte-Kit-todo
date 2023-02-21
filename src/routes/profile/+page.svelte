@@ -32,6 +32,29 @@
     const editUserInfo = async() =>{
 
         const editUser = async() =>{
+            // Fetch user information from DB
+            const res = await fetch("http://localhost:5000/api/user/login",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    // userInfo._id,
+                    editUsername,
+                    editPassword
+                })
+            });
+            const json = await res.json();
+            const result = JSON.stringify(json);
+            console.log(result)
+            // save user info here
+            const userUpdateInfo =[
+                {
+                    _id:json._id,
+                    username:json.username,
+                    email:json.email
+                }
+            ]
+
+            userInfoDb.set(userUpdateInfo);
         }
 
     };
