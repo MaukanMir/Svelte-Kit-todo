@@ -23,6 +23,10 @@
         }
     })
 
+    async function load(){
+        goto("/login")
+    }
+
     //edit profile
 
     let editUsername = "";
@@ -55,7 +59,7 @@
                     email:json.email
                 }
             ]
-
+            // Set svelte stores with updated user information
             userInfoDb.set(userUpdateInfo);
             userDataBase.set([userUpdateInfo[0].username])
         }
@@ -63,8 +67,20 @@
     };
 
     const signOut = ()=>{
-        user
-    }
+
+        const signOutUser =[
+                {
+                    _id:"",
+                    username:"",
+                    email:""
+                }
+            ]
+        // Set svelte stores to null
+        userInfoDb.set(signOutUser);
+        userDataBase.set([""]);
+        // redirect user to login page
+        load()
+    };
 
 
 
@@ -83,7 +99,7 @@
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
         <h3>email: {userInfo.email}</h3>
-        <button class ="signout">Log Off</button>
+        <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
 
     <div class ="container">
