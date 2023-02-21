@@ -25,6 +25,7 @@
     //edit profile
 
     let editUsername = "";
+    let currentPassword ="";
     let editPassword ="";
     let editEmail ="";
 
@@ -37,9 +38,9 @@
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
-                    // userInfo._id,
-                    editUsername,
-                    editPassword
+                    id: userInfo._id,
+                    username:editUsername,
+                    password:currentPassword
                 })
             });
             const json = await res.json();
@@ -104,6 +105,16 @@
             </div>
 
             <div class ="form">
+                <label for ="currentPassword">Current Password</label>
+                <input
+                type="password"
+                required
+                placeholder="Password"
+                bind:value={currentPassword}
+                />
+            </div>
+
+            <div class ="form">
                 <label for ="editPassword">Edit Password</label>
                 <input
                 type="password"
@@ -156,8 +167,8 @@
         justify-content: center;
         color:#000036;
         background-color: white;
-        margin:10px;
-        height:400px;
+        margin:20px;
+        height:500px;
         width:400px;
     }
 
@@ -175,9 +186,6 @@
         margin-top:10px;
     }
 
-    .form label{
-        font:32px;
-    }
 
     .submit{
         display: flex;
