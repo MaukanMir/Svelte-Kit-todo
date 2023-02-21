@@ -9,6 +9,7 @@
     // svelte components here
     import {onMount} from "svelte";
     import {goto} from "$app/navigation";
+    import FaUserEdit from 'svelte-icons/fa/FaUserEdit.svelte'
 
     let user = get(userDataBase)[0];
     let userInfo = get(userInfoDb)[0]
@@ -30,12 +31,6 @@
     async function loadPage(){
         goto("/editprofile");
     }
-
-    //edit profile
-
-    let editUsername = "";
-    let currentPassword ="";
-    let editEmail ="";
 
 
     const signOut = ()=>{
@@ -70,7 +65,8 @@
     <div class ="profile">
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
-        <h3>email: {userInfo.email}</h3>
+        <h3>Email: {userInfo.email}</h3>
+        <div class="edit-icon"> <FaUserEdit/> </div>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
 
@@ -89,10 +85,24 @@
         text-align: center;
     }
 
+    .edit-icon{
+        display: flex;
+        justify-content: center;
+        height:100px;
+        width: 100px;
+        margin-left:10px;
+        cursor: pointer;
+
+    }
+
     .profile{
-        color:white;
-        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        color:#000036;
+        background-color: white;
         border-radius: 10px;
+        justify-content: center;
+
     }
 
     .profile h2, h3{
