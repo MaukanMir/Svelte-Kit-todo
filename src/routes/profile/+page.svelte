@@ -61,7 +61,7 @@
                 <input
                 type="text"
                 required
-                placeholder="Username"
+                placeholder={userInfo.username}
                 bind:value={editUsername}
                 />
             </div>
@@ -71,7 +71,7 @@
                 <input
                 type="text"
                 required
-                placeholder="Email"
+                placeholder={userInfo.email}
                 bind:value={editEmail}
                 />
             </div>
@@ -85,7 +85,7 @@
                 bind:value={editPassword}
                 />
             </div>
-            <button class ="submit">Submit</button>
+            <button class ="submit">Save</button>
         </form>
 
         {/if}
@@ -139,7 +139,7 @@
     }
 
     .form label{
-        font:20px;
+        font:32px;
     }
 
     .submit{
