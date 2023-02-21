@@ -34,13 +34,14 @@
 
         const editUser = async() =>{
             // Fetch user information from DB
-            const res = await fetch("http://localhost:5000/api/user/login",{
+            const res = await fetch("http://localhost:5000/api/user/" + userInfo._id,{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
                     id: userInfo._id,
                     username:editUsername,
-                    password:currentPassword
+                    password:currentPassword,
+                    editPassword:editPassword
                 })
             });
             const json = await res.json();
