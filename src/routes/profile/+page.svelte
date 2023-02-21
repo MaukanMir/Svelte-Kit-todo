@@ -46,14 +46,18 @@
     <Nav/>
 
     <div class ="welcome">
-        
         <h1 class ="welcome-header">Welcome Back, {user}!</h1>
+    </div>
+
+    <div class ="profile">
+        <h2>Current User Settings:</h2>
+        <h3>Username: {userInfo.username}</h3>
+        <h3>email: {userInfo.email}</h3>
     </div>
 
     <div class ="container">
 
         {#if user}
-
         <form class="inside-container">
 
             <div class ="form">
@@ -106,6 +110,16 @@
     .welcome-header{
         color:white;
         text-align: center;
+    }
+
+    .profile{
+        color:white;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+
+    .profile h2, h3{
+        margin:20px;
     }
 
     .container{
