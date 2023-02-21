@@ -105,6 +105,7 @@
 
     .welcome-header{
         color:white;
+        text-align: center;
     }
 
     .container{
@@ -128,15 +129,28 @@
         padding:5px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    .form input{
+        border-radius: 10px;
+        padding:10px;
+        margin-top:10px;
+    }
+
+    .form label{
+        font:20px;
     }
 
     .submit{
+        display: flex;
         color:white;
         background-color: #000036;
-        padding:5px;
-        margin-top: 10px;
+        padding:10px;
         border-radius: 10px;
-        margin:10px;
+        width: 350px;
+        justify-content: center;
+        margin-left: 20px;
     }
 
     .submit:hover{
