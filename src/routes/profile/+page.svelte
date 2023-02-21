@@ -8,6 +8,7 @@
     import {get} from "svelte/store";
     // svelte components here
     import {onMount} from "svelte";
+    import {goto} from "$app/navigation";
 
     let user = get(userDataBase)[0];
     let userInfo = get(userInfoDb)[0]
@@ -26,7 +27,6 @@
 
     let editUsername = "";
     let currentPassword ="";
-    let editPassword ="";
     let editEmail ="";
 
     // API call here to edit user info
@@ -40,8 +40,8 @@
                 body:JSON.stringify({
                     id: userInfo._id,
                     username:editUsername,
+                    email:editEmail,
                     password:currentPassword,
-                    editPassword:editPassword
                 })
             });
             const json = await res.json();
@@ -57,9 +57,14 @@
             ]
 
             userInfoDb.set(userUpdateInfo);
+            userDataBase.set([userUpdateInfo[0].username])
         }
 
     };
+
+    const signOut = ()=>{
+        user
+    }
 
 
 
@@ -78,6 +83,7 @@
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
         <h3>email: {userInfo.email}</h3>
+        <button class ="signout">Log Off</button>
     </div>
 
     <div class ="container">
@@ -114,16 +120,6 @@
                 bind:value={currentPassword}
                 />
             </div>
-
-            <div class ="form">
-                <label for ="editPassword">Edit Password</label>
-                <input
-                type="password"
-                required
-                placeholder="Password"
-                bind:value={editPassword}
-                />
-            </div>
             <button class ="submit">Save</button>
         </form>
 
@@ -155,6 +151,20 @@
 
     .profile h2, h3{
         margin:20px;
+    }
+
+    .signout{
+        background-color: green;
+        color:white;
+        padding:10px;
+        margin:10px;
+        border-radius: 10px;
+        width:200px;
+        font-size: 16px;
+    }
+
+    .signout:hover{
+        background-color: red;
     }
 
     .container{
