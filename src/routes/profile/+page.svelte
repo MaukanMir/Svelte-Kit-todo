@@ -61,7 +61,7 @@
     <div class ="welcome">
         <h1 class ="welcome-header">Welcome Back, {user}!</h1>
     </div>
-
+    <div class ="center"> 
     <div class ="profile">
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
@@ -69,6 +69,7 @@
         <div class="edit-icon"> <FaUserEdit/> </div>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
+</div>
 
     <Footer/>
 </body>
@@ -83,6 +84,11 @@
     .welcome-header{
         color:white;
         text-align: center;
+    }
+
+    .center{
+        display: flex;
+        justify-content: center;
     }
 
     .edit-icon{
@@ -102,6 +108,8 @@
         background-color: white;
         border-radius: 10px;
         justify-content: center;
+        height: 400px;
+        width:400px;
 
     }
 
