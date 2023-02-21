@@ -24,7 +24,11 @@
     })
 
     async function load(){
-        goto("/login")
+        goto("/login");
+    }
+
+    async function loadPage(){
+        goto("/editprofile");
     }
 
     //edit profile
@@ -33,38 +37,6 @@
     let currentPassword ="";
     let editEmail ="";
 
-    // API call here to edit user info
-    const editUserInfo = async() =>{
-
-        const editUser = async() =>{
-            // Fetch user information from DB
-            const res = await fetch("http://localhost:5000/api/user/" + userInfo._id,{
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({
-                    id: userInfo._id,
-                    username:editUsername,
-                    email:editEmail,
-                    password:currentPassword,
-                })
-            });
-            const json = await res.json();
-            const result = JSON.stringify(json);
-            console.log(result)
-            // save user info here
-            const userUpdateInfo =[
-                {
-                    _id:json._id,
-                    username:json.username,
-                    email:json.email
-                }
-            ]
-            // Set svelte stores with updated user information
-            userInfoDb.set(userUpdateInfo);
-            userDataBase.set([userUpdateInfo[0].username])
-        }
-
-    };
 
     const signOut = ()=>{
 
@@ -101,48 +73,6 @@
         <h3>email: {userInfo.email}</h3>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
-
-    <div class ="container">
-
-        {#if user}
-        <form class="inside-container">
-
-            <div class ="form">
-                <label for ="editUsername">Edit Username</label>
-                <input
-                type="text"
-                required
-                placeholder={userInfo.username}
-                bind:value={editUsername}
-                />
-            </div>
-
-            <div class ="form">
-                <label for ="editEmail">Edit Email</label>
-                <input
-                type="text"
-                required
-                placeholder={userInfo.email}
-                bind:value={editEmail}
-                />
-            </div>
-
-            <div class ="form">
-                <label for ="currentPassword">Current Password</label>
-                <input
-                type="password"
-                required
-                placeholder="Password"
-                bind:value={currentPassword}
-                />
-            </div>
-            <button class ="submit">Save</button>
-        </form>
-
-        {/if}
-
-    </div>
-
 
     <Footer/>
 </body>
