@@ -66,7 +66,8 @@
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
         <h3>Email: {userInfo.email}</h3>
-        <div class="edit-icon"> <FaUserEdit/> </div>
+        <h3>Edit Profile</h3>
+        <button class="edit-icon" on:click={()=> loadPage()}> <FaUserEdit/> </button>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
 </div>
@@ -98,7 +99,9 @@
         width: 100px;
         margin-left:10px;
         cursor: pointer;
-
+        background-color: white;
+        border:none;
+        color:#000036;
     }
 
     .profile{
@@ -110,6 +113,7 @@
         justify-content: center;
         height: 400px;
         width:400px;
+        align-items: center;
 
     }
 

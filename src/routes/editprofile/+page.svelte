@@ -60,7 +60,10 @@
 <body>
 <Nav/>
 
+<h1 class="welcome-header">Edit Profile Here</h1>
+
 <div class ="container">
+
 
     {#if user}
     <form class="inside-container">
@@ -109,6 +112,11 @@
     body{
         height:100vh;
         background-color: #000036;
+    }
+
+    .welcome-header{
+        color:white;
+        text-align: center;
     }
 
 

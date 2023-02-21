@@ -67,8 +67,6 @@ console.log(user)
         createUser();
         // Set store global state to user
         userDataBase.set([username]);
-
-
         // userInfoDb.set([...userInfo]);
         console.log(get(userInfoDb))
         load();
