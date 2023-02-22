@@ -66,7 +66,7 @@
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
         <h3>Email: {userInfo.email}</h3>
-        <h3>Edit Profile</h3>
+        <h3>Edit Profile:</h3>
         <button class="edit-icon" on:click={()=> loadPage()}> <FaUserEdit/> </button>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
