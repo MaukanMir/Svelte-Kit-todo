@@ -66,6 +66,7 @@
         <h2>Current User Settings:</h2>
         <h3>Username: {userInfo.username}</h3>
         <h3>Email: {userInfo.email}</h3>
+        <h3>Goals Completed: 0</h3>
         <h3>Edit Profile:</h3>
         <button class="edit-icon" on:click={()=> loadPage()}> <FaUserEdit/> </button>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
@@ -110,15 +111,15 @@
         color:#000036;
         background-color: white;
         border-radius: 10px;
-        justify-content: center;
-        height: 400px;
-        width:400px;
-        align-items: center;
+        height: 600px;
+        width:500px;
 
     }
 
     .profile h2, h3{
         margin:20px;
+        border-bottom: 3px solid #000036;
+        padding:5px;
     }
 
     .signout{
@@ -135,50 +136,5 @@
         background-color: red;
     }
 
-    .container{
-        display: flex;
-        justify-content: center;
-        margin:10px;
-    }
-
-    .inside-container{
-        border-radius: 10px;
-        justify-content: center;
-        color:#000036;
-        background-color: white;
-        margin:20px;
-        height:500px;
-        width:400px;
-    }
-
-    .form{
-        margin:15px;
-        padding:5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .form input{
-        border-radius: 10px;
-        padding:10px;
-        margin-top:10px;
-    }
-
-
-    .submit{
-        display: flex;
-        color:white;
-        background-color: #000036;
-        padding:10px;
-        border-radius: 10px;
-        width: 350px;
-        justify-content: center;
-        margin-left: 20px;
-    }
-
-    .submit:hover{
-        background-color: green;
-    }
 
 </style>
