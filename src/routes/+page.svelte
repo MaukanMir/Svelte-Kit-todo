@@ -31,7 +31,7 @@
 <body>
 <Nav/>
 
-<h2 class ="header">Goal Analysis</h2>
+<h1 class ="header">Goal Analysis</h1>
 
 <div class ="parent">
     {#each posts as task}
@@ -64,7 +64,7 @@
 
     .parent{
         display: flex;
-        flex-direction: row;
+        flex:wrap;
         align-items: center;
         justify-content: space-evenly;
     }
@@ -76,6 +76,7 @@
         background-color: white;
         border-radius:10px;
         color:#000036;
+        flex:2;
     }
 
     .inside-parent h2{
