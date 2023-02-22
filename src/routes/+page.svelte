@@ -79,7 +79,7 @@
     .inside-parent h2:hover{
         color:white;
         cursor: pointer;
-        background-color: black;
+        background-color: red;
     }
 
 </style>
