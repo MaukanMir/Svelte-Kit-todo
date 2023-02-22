@@ -67,13 +67,16 @@
         justify-content: space-evenly;
         border: 6px solid white;
         margin:10px;
+        background-color: white;
+        border-radius:10px;
+        color:#000036;
     }
 
     .inside-parent h2{
         margin: 20px 10px;
         padding: 10px;
         display: flex;
-        justify-content: center;
+        border-bottom: 6px solid #000036;
     }
 
     .inside-parent h2:hover{
