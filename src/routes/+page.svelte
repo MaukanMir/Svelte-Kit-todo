@@ -36,13 +36,13 @@
 <div class ="parent">
     {#each posts as task}
         <div class ="inside-parent"> 
-            <h2>Goal: {task.goal}</h2>
-            <h2>Start Date:{task.date}</h2>
-            <h2> Due Date: {task.setDate}</h2>
-            <h2>Hours Alloted: {task.studyTime}</h2>
-            <h2>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h2>
-            <h2>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h2>
-            <h2>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h2>
+            <h3>Goal: {task.goal}</h3>
+            <h3>Start Date:{task.date}</h3>
+            <h3> Due Date: {task.setDate}</h3>
+            <h3>Hours Alloted: {task.studyTime}</h3>
+            <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
+            <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
+            <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
         </div>
     {/each}
 </div>
@@ -64,13 +64,13 @@
 
     .parent{
         display: flex;
-        flex:wrap;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .inside-parent{
-        justify-content: space-evenly;
+        display: flex;
+        flex-wrap:wrap;
         border: 6px solid white;
         margin:10px;
         background-color: white;

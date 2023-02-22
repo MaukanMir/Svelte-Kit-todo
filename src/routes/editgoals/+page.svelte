@@ -38,7 +38,8 @@
 <body>
 <Nav/>
 
-<div>
+<div class ="center"> 
+<div class ="edit-goals">
     <h1> Click To Edit Goal: </h1>
     {#each posts as task}
 
@@ -47,6 +48,7 @@
         </a> 
     </h2>
     {/each}
+</div>
 </div>
 
 <div class ="center"> 
@@ -68,25 +70,36 @@
         height:100vh;
     }
 
-    h1{
-        margin-left: 10px;
-        color:white;
-    }
 
-h2 > a{
-    text-decoration: none;
-    color:white;
-    cursor: pointer;
-    margin-left: 30px;
+
+.edit-goals{
+    background-color: white;
+    color:#000036;
+    border-radius: 10px;
+    flex:2;
+    margin:20px;
+    padding:20px;
 }
 
-h2 > a:hover{
-    color:orangered
+.edit-goals > h2{
+    border-bottom: 4px solid #000036;
+    margin-bottom:30px;
+}
+
+.edit-goals a{
+    text-decoration: none;
+    color:#000036;
+}
+
+.edit-goals a:hover{
+    color:red;
 }
 
 .center{
     display: flex;
     justify-content: center;
+    margin: 40px;
+    align-items: center;
 }
 
 .display{
