@@ -81,6 +81,17 @@
         padding:20px;
     }
 
+    .inside-parent h3{
+        border-bottom: 3px solid #000036;
+    }
+
+    .inside-parent h3:hover{
+        border-bottom: 3px solid white;
+        color:white;
+        background-color: #000036;
+        border-radius: 10px;
+    }
+
 
 </style>
 
