@@ -31,9 +31,15 @@
         }
     });
 
+    // Check in button fix here
+
+    const onCheck = async(username,id) =>{
+
+    };
+
     const onSubmit = async (username, id)=>{
 
-        
+
     };
 
 </script>
@@ -57,7 +63,7 @@
             <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
             -->
             <div class ="button-format"> 
-            <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Check In</button>
+            <button class ="finish" on:click={()=> onCheck(task.username, task.id)}>Check In</button>
             <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Mark As Complete</button>
             </div>
         </div>
