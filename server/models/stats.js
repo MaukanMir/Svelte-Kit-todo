@@ -1,3 +1,5 @@
+//Create goal model schema here
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const StatsSchema = new Schema({
     
