@@ -31,7 +31,11 @@
         }
     });
 
+    const onSubmit = async (username, id)=>{
+        goto("");
 
+;
+    }
 
 </script>
 <body>
@@ -48,10 +52,12 @@
             <h3>Start Date:{task.date}</h3>
             <h3> Due Date: {task.setDate}</h3>
             <h3>Hours Alloted: {task.studyTime}</h3>
+            <!-- 
             <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
             <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
             <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
-            <button class ="finish">Mark As Complete</button>
+            -->
+            <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Mark As Complete</button>
         </div>
 
     {/each}
