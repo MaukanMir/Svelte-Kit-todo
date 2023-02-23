@@ -21,7 +21,7 @@
     let posts = [];
 
     onMount(async ()=>{
-        // API Call here
+        // API Call HERE
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
         // load in data to variable
@@ -46,6 +46,7 @@
             <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
             <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
             <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
+            <button class ="finish">Mark As Complete</button>
         </div>
 
     {/each}
@@ -69,7 +70,7 @@
     .parent{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 
     .inside-parent{
@@ -91,6 +92,16 @@
         background-color: #000036;
         border-radius: 10px;
     }
+
+    .finish{
+        color:white;
+        background-color: #000036;
+        border-radius: 10px;
+        padding:5px;
+        cursor: pointer;
+    }
+
+    
 
 
 </style>

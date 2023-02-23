@@ -10,7 +10,7 @@ const GoalsSchema = new Schema({
     how:{type:String},
     date:{type:String},
     setDate:{type:String},
-    studyTime:{type:Number}
+    studyTime:{type:Number},
 
 },
 {timestamps:true}
