@@ -45,14 +45,31 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
         console.log(json, result)
-
         userDataBase.set([username])
+    };
 
-    
-
+    // Create user stats here
+    async function createUserStats(){
+        const res = await fetch("http://localhost:5000/api/auth/stats/" + username,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                username,
+                goal:"",
+                goalsCompleted:[],
+                startDate:"",
+                endDate:"",
+                numberOfDays:""
+            })
+        });
+        const json = await res.json();
+        const result = JSON.stringify(json);
     }
-    // Call function here
+    // Call create user account here
     createUser();
+    // Call create user stats here;
+    createUserStats();
+    // Send to next page
     load()
 
 
