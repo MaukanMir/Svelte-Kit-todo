@@ -9,6 +9,7 @@
     import {userDataBase} from "../stores/userDataBase";
     import {get} from "svelte/store"
     // Svelte routing imports here
+    import { goto } from '$app/navigation'
 
     const user = get(userDataBase)[0]
     console.log(user)
@@ -20,6 +21,7 @@
    */
     let posts = [];
 
+    // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
         // API Call HERE
         if(user){
@@ -28,6 +30,9 @@
         posts = await res.json();
         }
     });
+
+
+
 </script>
 <body>
 <Nav/>
@@ -99,6 +104,10 @@
         border-radius: 10px;
         padding:5px;
         cursor: pointer;
+    }
+
+    .finish:hover{
+        background-color: green;
     }
 
     
