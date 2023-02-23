@@ -12,6 +12,7 @@ const editGoals = require("./routes/editgoals");
 const deleteGoals = require("./routes/deletegoals");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const statRoutes = require("./routes/addStats");
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -24,8 +25,9 @@ app.use("/api/creategoals", createGoalsRoute);
 app.use("/api/getgoals", getAllGoals);
 app.use("/api/editgoals",editGoals);
 app.use("/api/deletegoals", deleteGoals);
-app.use("/api/auth", authRoutes)
+app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/stats", statRoutes);
 
 
 // get rid of annyoing error
