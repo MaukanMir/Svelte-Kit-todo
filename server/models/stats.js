@@ -12,7 +12,7 @@ const StatsSchema = new Schema({
 {timestamps:true}
 );
 
-module.exports = mongoose.model("goals", StatsSchema)
+module.exports = mongoose.model("stats", StatsSchema)
 
 // User logs in
 // Vists goals check in page

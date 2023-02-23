@@ -20,7 +20,6 @@ router.post("/:username", async (req,res)=>{
 
 
 // Put request to update user stats
-
 router.put("/find/:username", async (req,res)=>{
 
     try{
