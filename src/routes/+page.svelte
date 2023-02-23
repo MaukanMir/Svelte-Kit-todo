@@ -32,10 +32,9 @@
     });
 
     const onSubmit = async (username, id)=>{
-        goto("");
 
-;
-    }
+        
+    };
 
 </script>
 <body>
@@ -57,7 +56,10 @@
             <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
             <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
             -->
+            <div class ="button-format"> 
+            <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Check In</button>
             <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Mark As Complete</button>
+            </div>
         </div>
 
     {/each}
@@ -110,10 +112,17 @@
         border-radius: 10px;
         padding:5px;
         cursor: pointer;
+        padding:5px;
+        margin:10px 0px;
     }
 
     .finish:hover{
         background-color: green;
+    }
+
+    .button-format{
+        display: flex;
+        flex-direction: column;
     }
 
     

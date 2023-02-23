@@ -2,6 +2,7 @@ const Schema = mongoose.Schema;
 const StatsSchema = new Schema({
     
     username:{type:String, required:true, unique:true},
+    goalId:{type:Number, required:true},
     goalsCompleted:{type:Number},
     duration:{type:Number},
     hoursStudied:{type:Number},
