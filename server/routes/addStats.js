@@ -2,7 +2,6 @@ const router = require("express").Router();
 const Stats = require("../models/stats");
 
 
-
 // Post request to create stats DB for user
 router.post("/:username", async (req,res)=>{
     
@@ -17,5 +16,26 @@ router.post("/:username", async (req,res)=>{
         console.log(err);
         res.status(500).json(err)
     }
+});
 
+
+// Put request to update user stats
+
+router.put("/find/:username", async (req,res)=>{
+
+    try{
+        const updatedStat = await Stats.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set:req.body,
+            },
+            {new:true}
+        );
+        res.status(200).json(updatedStat);
+    }
+    catch(err){
+        res.status(500).json(err)
+    }
 })
+
+module.exports = router;
