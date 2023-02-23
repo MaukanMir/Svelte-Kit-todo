@@ -2,11 +2,14 @@ const Schema = mongoose.Schema;
 const StatsSchema = new Schema({
     
     username:{type:String, required:true, unique:true},
-    goalId:{type:Number, required:true},
     goalsCompleted:[
         {
             goal:{type:String},
-            goalId:{type:Number}
+            goalId:{type:Number},
+            startDate:{type:String},
+            endDate:{type:String},
+            studyTime:{type:Number},
+            numberOfDays:{type:Number}
         }
     ],
     numberOfGoalsCompleted:{type:Number},

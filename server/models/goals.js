@@ -11,6 +11,7 @@ const GoalsSchema = new Schema({
     date:{type:String},
     setDate:{type:String},
     studyTime:{type:Number},
+    checkIn:{type:Number}
 
 },
 {timestamps:true}
