@@ -3,7 +3,13 @@ const StatsSchema = new Schema({
     
     username:{type:String, required:true, unique:true},
     goalId:{type:Number, required:true},
-    goalsCompleted:{type:Number},
+    goalsCompleted:[
+        {
+            goal:{type:String},
+            goalId:{type:Number}
+        }
+    ],
+    numberOfGoalsCompleted:{type:Number},
     duration:{type:Number},
     hoursStudied:{type:Number},
     consistency:{type:Number}
