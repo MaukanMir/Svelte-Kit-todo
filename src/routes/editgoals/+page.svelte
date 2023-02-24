@@ -11,6 +11,7 @@
 
     const user = get(userDataBase)[0];
 
+    console.log(user);
     /**
    * @type {any[]}
    */

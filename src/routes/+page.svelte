@@ -13,6 +13,7 @@
 
     const user = get(userDataBase)[0]
     console.log(user)
+    console.log("user is" + user)
     // Dates
     let currentTime = new Date(new Date().toISOString().slice(0,10)).getTime();
     let oneDay = (1000 * 3600 * 24);
@@ -25,14 +26,13 @@
     onMount(async ()=>{
         // API Call HERE
         if(user){
-            const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
+            const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
         // load in data to variable
         posts = await res.json();
         }
     });
 
     // Check in button fix here
-
     const onCheck = async(username,id) =>{
 
     };

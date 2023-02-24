@@ -2,10 +2,11 @@ const router = require("express").Router();
 const Goals = require("../models/goals");
 
 // GET all orders
-router.get("/find/:userid", async (req,res)=>{
+router.get("/find/:userId", async (req,res)=>{
     
     try{
-        const goals = await Goals.find();
+        const goals = await Goals.find({userId:req.params.userId});
+        console.log(goals)
         res.status(200).json(goals);
     }
     catch(err){
