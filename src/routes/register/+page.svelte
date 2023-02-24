@@ -45,7 +45,11 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
         console.log(json, result)
-        userDataBase.set([username])
+        if(res.status === 200){
+            userDataBase.set([username])
+            // Send user to the home page
+            load()
+        }
     };
 
     // Create user stats here
@@ -69,8 +73,6 @@ const onSubmit = async () =>{
     createUser();
     // Call create user stats here;
     createUserStats();
-    // Send to next page
-    load()
 
 
 };
