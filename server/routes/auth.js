@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
     if(OriginalPassword !== req.body.password){
         OriginalPassword !== req.body.password &&
         res.status(401).json("Wrong password!");
-        return;
+        return "Login failed"
     }
 
         const { password, ...others } = user._doc;

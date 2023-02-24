@@ -49,12 +49,13 @@ console.log(user)
                     password
                 })
             });
-            try{
+
 
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(result)
-            // save user info here
+            if(res.status === 200){
+                // save user info here
             userInfo =[
                 {
                     _id:json._id,
@@ -62,18 +63,22 @@ console.log(user)
                     email:json.email
                 }
             ]
-            toggle = true;
+            console.log(res.status)
+            toggle = false;
             userInfoDb.set(userInfo);
             // Set store global state to user
             userDataBase.set([username]);
             // Reroute user to home page
             console.log(json)
             load();
-            }catch(err){console.log(err)}
+            }else{
+                toggle = true;
+            }
+    
         }
         catch(err){
             console.log(err)
-            toggle = false;
+            toggle = true;
         }
     };
     // Call function here
