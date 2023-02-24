@@ -9,8 +9,16 @@
     //Svelte store components import here
     import {get} from "svelte/store";
     import {userDataBase} from "../../stores/userDataBase";
+    // svelte nav imports here
+    import {goto} from "$app/navigation"
 
     const user = get(userDataBase)[0];
+
+    async function load(){
+        if(!user){goto("/register")}
+    }
+
+    load()
 
     /**
    * @type {any[]}

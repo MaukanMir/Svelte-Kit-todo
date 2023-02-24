@@ -39,6 +39,10 @@ console.log(user)
     
         // Create user information here
         async function createUser(){
+
+            try{
+
+
             // Fetch user information from DB
             const res = await fetch("http://localhost:5000/api/auth/login",{
                 method:"POST",
@@ -59,19 +63,19 @@ console.log(user)
                     email:json.email
                 }
             ]
-
             userInfoDb.set(userInfo);
-            
+            // Set store global state to user
+            userDataBase.set([username]);
+            // Reroute user to register page
+            load();
+        }
+        catch(err){
+            console.log(err)
         }
         // Call function here
         createUser();
-        // Set store global state to user
-        userDataBase.set([username]);
-        // userInfoDb.set([...userInfo]);
-        console.log(get(userInfoDb))
-        load();
-    
     };
+};
     </script>
     
     <!--HTML COMPONENTS HERE-->

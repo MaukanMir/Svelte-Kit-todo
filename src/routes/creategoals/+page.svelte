@@ -8,6 +8,9 @@
     //Svelte store components import here
     import {get} from "svelte/store";
     import {userDataBase} from "../../stores/userDataBase";
+    //svelte import here
+    import {goto} from "$app/navigation";
+
 
     const user = get(userDataBase)[0];
     console.log(user)
@@ -15,6 +18,15 @@
     let goal = "";
     let how ="";
     let studyTime =0;
+
+    //Send user back to home page
+    async function load(){
+        
+
+        if(!user){ goto("/register");}
+    }
+
+    load();
 
     //toggle classes
     let toggle = false;

@@ -131,8 +131,5 @@
         flex-direction: column;
     }
 
-    
-
-
 </style>
 
