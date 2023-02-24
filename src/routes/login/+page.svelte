@@ -31,7 +31,7 @@ console.log(user)
 
     async function load(){
         if(username && password){
-            goto("/")
+            goto("/goalstats")
         }
     }
     // Submit form here
