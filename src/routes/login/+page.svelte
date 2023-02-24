@@ -16,6 +16,7 @@ let user = get(userDataBase);
    * @type {{ _id: any; username: any; email: any; }[]}
    */
 let userInfo;
+let toggle = false;
 console.log(user)
     
     // Login variables here
@@ -33,16 +34,12 @@ console.log(user)
             goto("/")
         }
     }
-    
     // Submit form here
     const onSubmit = async () =>{
     
         // Create user information here
         async function createUser(){
-
             try{
-
-
             // Fetch user information from DB
             const res = await fetch("http://localhost:5000/api/auth/login",{
                 method:"POST",
@@ -52,6 +49,8 @@ console.log(user)
                     password
                 })
             });
+            try{
+
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(result)
@@ -63,19 +62,25 @@ console.log(user)
                     email:json.email
                 }
             ]
+            toggle = true;
             userInfoDb.set(userInfo);
             // Set store global state to user
             userDataBase.set([username]);
-            // Reroute user to register page
+            // Reroute user to home page
+            console.log(json)
             load();
+            }catch(err){console.log(err)}
         }
         catch(err){
             console.log(err)
+            toggle = false;
         }
-        // Call function here
-        createUser();
     };
+    // Call function here
+    createUser();
 };
+
+
     </script>
     
     <!--HTML COMPONENTS HERE-->
@@ -107,6 +112,7 @@ console.log(user)
             bind:value={password}
             />
         </div>
+        <p class = {toggle ? "display":"hide"}>Invalid Credentials</p>
         <button class ="submit">
             Login
         </button>
@@ -119,12 +125,15 @@ console.log(user)
     </div>
     </body>
     <Footer/>
-    
-    
     <style>
+
+        .hide{
+            display: none;
+        }
 
         .display{
             color:red;
+            text-align: center;
         }
         body{
             background-color:gainsboro;
