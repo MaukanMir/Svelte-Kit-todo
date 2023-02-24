@@ -46,31 +46,16 @@
 <body>
 <Nav/>
 
-<h1 class ="header">Goal Analysis</h1>
+<div class ="container">
 
-
-<div class ="parent">
-    {#each posts as task}
-
-        <div class ="inside-parent"> 
-            <h3>Goal: {task.goal}</h3>
-            <h3>Start Date:{task.date}</h3>
-            <h3> Due Date: {task.setDate}</h3>
-            <h3>Hours Alloted: {task.studyTime}</h3>
-            <!-- 
-            <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
-            <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
-            <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
-            -->
-            <div class ="button-format"> 
-            <button class ="finish" on:click={()=> onCheck(task.username, task.id)}>Check In</button>
-            <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Mark As Complete</button>
-            </div>
-        </div>
-
-    {/each}
+    <div class ="grid-item">1</div>
+    <div class ="grid-item">2</div>
+    <div class ="grid-item">3</div>
+    <div class ="grid-item">4</div>
+    <div class ="grid-item">5</div>
+    <div class ="grid-item">6</div>
+    <div class ="grid-item">7</div>
 </div>
-
 
 <Footer/>
 
@@ -83,53 +68,12 @@
         color:white;
     }
 
-    .header{
-        text-align: center;
-    }
-    .parent{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+    .container{
+        display: grid;
+        column-gap: 10px;
     }
 
-    .inside-parent{
-        background-color: white;
-        border-radius:10px;
-        color:#000036;
-        flex: 0 1 calc(25% - 1em);
-        margin:10px;
-        padding:20px;
-    }
 
-    .inside-parent h3{
-        border-bottom: 3px solid #000036;
-    }
-
-    .inside-parent h3:hover{
-        border-bottom: 3px solid white;
-        color:white;
-        background-color: #000036;
-        border-radius: 10px;
-    }
-
-    .finish{
-        color:white;
-        background-color: #000036;
-        border-radius: 10px;
-        padding:5px;
-        cursor: pointer;
-        padding:5px;
-        margin:10px 0px;
-    }
-
-    .finish:hover{
-        background-color: green;
-    }
-
-    .button-format{
-        display: flex;
-        flex-direction: column;
-    }
 
 </style>
 
