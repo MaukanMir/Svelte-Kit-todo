@@ -3,14 +3,14 @@
     // import components here
     import Nav from "../lib/Nav.svelte";
     import Footer from "../lib/Footer.svelte"
-    // svelte components imported here
+    // import svelte components imported here
     import {onMount} from "svelte";
-    // Svelte store import here
+    // import Svelte store import here
     import {userDataBase} from "../stores/userDataBase";
     import {get} from "svelte/store"
-    // Svelte routing imports here
+    // import Svelte routing imports here
     import { goto } from '$app/navigation'
-
+    // import Svelte icons here
     import IoIosArrowRoundForward from 'svelte-icons/io/IoIosArrowRoundForward.svelte'
 
 
@@ -20,11 +20,23 @@
 
 <div class ="container">
 
+    <div class="section-divider-div">
+
+
     <section class ="header">
         <h1 class ="header-h1">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Molestias nesciunt ducimus sit..</h1>
             <p class ="p-tag">We broke the code to make your life easier</p>
     </section>
+
+    <section class ="section-graphic">
+        <div class="graphic">
+        </div>
+    </section>
+
+    </div>
+
+
 
     <div class="card-container">
         <div class="inner-l">
@@ -37,7 +49,7 @@
             <button class ="inner-button-l">
                 <div class ="arrow-icon"> 
                 <span>Login</span>
-                <IoIosArrowRoundForward/>
+                <a class ="login" href ="/login"><IoIosArrowRoundForward/> </a>
                 </div>
             </button>
             </div>
@@ -52,7 +64,7 @@
             <button class ="inner-button-r">
                 <div class ="arrow-icon"> 
                     <span>Register</span>
-                    <IoIosArrowRoundForward/>
+                    <a class ="reg" href="/register"><IoIosArrowRoundForward/></a>
                     </div>
             </button>
             </div>
@@ -115,15 +127,17 @@
     }
 
     .inner-l{
-        border: 2px solid blue;
+        border: 3px solid blue;
         padding:20px;
         height: 300px;
+        border-radius: 5px;
     }
 
     .inner-r{
-        border: 2px solid #F75D59;
+        border: 3px solid #F75D59;
         padding:20px;
         height:300px;
+        border-radius: 5px;
     }
 
 
@@ -134,7 +148,6 @@
         border:none;
         border-radius: 5px;
         margin-top: 20px;
-        cursor: pointer;
         width:200px;
     }
 
@@ -145,7 +158,6 @@
         border:none;
         border-radius: 5px;
         margin-top: 20px;
-        cursor: pointer;
         width:200px;
     }
 
@@ -169,14 +181,29 @@
     }
 
     .arrow-icon{
-        height:40px;
-        width:90px;
         display: inline-flex;
         align-items: center;
     }
 
     .arrow-icon span{
         font-size:16px;
+    }
+
+    .arrow-icon a{
+        height:30px;
+        cursor: pointer;
+        text-decoration: none;
+        color:white;
+    }
+
+    .login:hover{
+        color:blue
+    }
+
+    .reg:hover{
+        color:#F75D59;
+        text-decoration:none;
+
     }
 
 
