@@ -11,67 +11,18 @@
     // Svelte routing imports here
     import { goto } from '$app/navigation'
 
-    const user = get(userDataBase)[0]
-    console.log(user)
-    console.log("user is" + user)
-    // Dates
-    let currentTime = new Date(new Date().toISOString().slice(0,10)).getTime();
-    let oneDay = (1000 * 3600 * 24);
-    /**
-   * @type {any[]}
-   */
-    let posts = [];
-
-    // As soon as the page loads, goals will be viewed.
-    onMount(async ()=>{
-        // API Call HERE
-        if(user){
-            const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
-        // load in data to variable
-        posts = await res.json();
-        }
-    });
-
-    // Check in button fix here
-    const onCheck = async(username,id) =>{
-
-    };
-
-    const onSubmit = async (username, id)=>{
-
-
-    };
 
 </script>
 <body>
 <Nav/>
 
 <div class ="container">
-    <section class ="first">
-        <div class ="inner">
+    <section class ="header">
 
-            <h1>Go After Your Dreams</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolorum delectus eum ipsum at 
-                odio, numquam non autem tenetur consequatur?</p>
-        </div>
-    </section>
+        <h1 class ="header-h1">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Molestias nesciunt ducimus sit..</h1>
 
-    <div class ="separator"></div>
-
-    <section class ="second">
-        <div class ="inner">
-            <h1>Studies Show</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolorum delectus eum ipsum at 
-                odio, numquam non autem tenetur consequatur?</p>
-        </div>
-    </section>
-
-    <section class ="third">
-        <div class ="inner">
-            <h1>Heres how you do it</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolorum delectus eum ipsum at 
-                odio, numquam non autem tenetur consequatur?</p>
-        </div>
+            <p class ="p-tag">We broke the code to make your life easier</p>
     </section>
 
 </div>
@@ -83,13 +34,26 @@
 <style>
 
     body{
-        background-color: #000036;
+        background-color: #1e1e1e;
         color:white;
+        font-family: sans-serif;
     }
 
-    .container{
-        background-color: #1e1e1e;
+    .header{
+        margin:20px;
     }
+
+    .header-h1{
+        font-size: 2.5em;
+        width:400px;
+        margin-left: 90px;
+
+    }
+
+    .p-tag{
+        margin-left: 90px;
+    }
+
 
 
 

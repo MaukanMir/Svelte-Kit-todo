@@ -40,7 +40,7 @@
     }
 
     a:hover{
-        color: red;
+        color: lightblue;
     }
 
 </style>

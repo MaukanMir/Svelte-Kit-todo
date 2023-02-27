@@ -84,7 +84,7 @@ import Nav from "../../lib/Nav.svelte";
 <style>
 
 body{
-        background-color: #000036;
+        background-color: #1e1e1e;
         color:white;
     }
 
