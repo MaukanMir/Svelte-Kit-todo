@@ -42,7 +42,7 @@
 }
 
 .inner-footer li:hover{
-color: 	lightblue;
+color: 	#7F00FF;
 cursor:pointer;
 }
 </style>

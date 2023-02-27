@@ -34,7 +34,7 @@
                 sit dicta, sed modi nulla amet? Deleniti.</p>
 
             <div class="wrap-icon"> 
-            <button class ="inner-button-l">Our Story
+            <button class ="inner-button-l">Register
                 <div class ="arrow-icon"> 
                 <IoIosArrowRoundForward/>
                 </div>
@@ -48,7 +48,7 @@
                 similique dolorum commodi eligendi 
                 sit dicta, sed modi nulla amet? Deleniti.</p>
             <div class="wrap-icon"> 
-            <button class ="inner-button-r">About Us
+            <button class ="inner-button-r">Login
                 <div class ="arrow-icon"> 
                     <IoIosArrowRoundForward/>
                     </div>
