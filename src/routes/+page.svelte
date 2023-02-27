@@ -11,6 +11,8 @@
     // Svelte routing imports here
     import { goto } from '$app/navigation'
 
+    import IoIosArrowRoundForward from 'svelte-icons/io/IoIosArrowRoundForward.svelte'
+
 
 </script>
 <body>
@@ -31,7 +33,13 @@
                 similique dolorum commodi eligendi 
                 sit dicta, sed modi nulla amet? Deleniti.</p>
 
-            <button class ="inner-button-l">Our Story</button>
+            <div class="wrap-icon"> 
+            <button class ="inner-button-l">Our Story
+                <div class ="arrow-icon"> 
+                <IoIosArrowRoundForward/>
+                </div>
+            </button>
+            </div>
         </div>
 
         <div class="inner-r">
@@ -39,7 +47,13 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam 
                 similique dolorum commodi eligendi 
                 sit dicta, sed modi nulla amet? Deleniti.</p>
-            <button class ="inner-button-r">About Us</button>
+            <div class="wrap-icon"> 
+            <button class ="inner-button-r">About Us
+                <div class ="arrow-icon"> 
+                    <IoIosArrowRoundForward/>
+                    </div>
+            </button>
+            </div>
         </div>
 
         <div class ="text-divder">
@@ -110,6 +124,11 @@
         height:300px;
     }
 
+    .wrap-icon{
+        display: flex;
+        flex-direction:row ;
+    }
+
     .inner-button-l{
         padding: 10px;
         background-color: blue;
@@ -128,6 +147,7 @@
         border-radius: 5px;
         margin-top: 20px;
         cursor: pointer;
+        width:200px;
     }
 
     .text-divder p{
@@ -137,6 +157,13 @@
     .text-divder{
         align-items: center;
         margin-top: 120px;
+    }
+
+    .arrow-icon{
+        display: flex;
+        justify-content: row;
+        height:30px;
+        width:70px;
     }
 
 
