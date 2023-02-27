@@ -34,8 +34,9 @@
                 sit dicta, sed modi nulla amet? Deleniti.</p>
 
             <div class="wrap-icon"> 
-            <button class ="inner-button-l">Register
+            <button class ="inner-button-l">
                 <div class ="arrow-icon"> 
+                <span>Login</span>
                 <IoIosArrowRoundForward/>
                 </div>
             </button>
@@ -48,8 +49,9 @@
                 similique dolorum commodi eligendi 
                 sit dicta, sed modi nulla amet? Deleniti.</p>
             <div class="wrap-icon"> 
-            <button class ="inner-button-r">Login
+            <button class ="inner-button-r">
                 <div class ="arrow-icon"> 
+                    <span>Register</span>
                     <IoIosArrowRoundForward/>
                     </div>
             </button>
@@ -124,10 +126,6 @@
         height:300px;
     }
 
-    /* .wrap-icon{
-        display: flex;
-        flex-direction:row;
-    } */
 
     .inner-button-l{
         padding: 10px;
@@ -171,12 +169,17 @@
     }
 
     .arrow-icon{
-    
         height:40px;
-        width:70px;
-        margin-left: 50px;
-        margin-top: 5px;
+        width:90px;
+        display: inline-flex;
+        align-items: center;
     }
+
+    .arrow-icon span{
+        font-size:16px;
+    }
+
+
 
 
 
