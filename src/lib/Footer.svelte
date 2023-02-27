@@ -17,16 +17,14 @@
 .footer{
     display:flex;
     flex-direction: column;
-    background-color: #000036;
-    color:white;
-    border: 4px solid white;
+    background-color: #1e1e1e;
+    color:#fff;
     margin:20px;
 }
 .inner-footer{
     display:flex;
     flex-direction: row;
     list-style: none;
-    /* justify-content: center; */
     font-size: 20px;
     padding:10px;
     justify-content: space-around;
@@ -44,7 +42,7 @@
 }
 
 .inner-footer li:hover{
-color: 	red;
+color: 	lightblue;
 cursor:pointer;
 }
 </style>
