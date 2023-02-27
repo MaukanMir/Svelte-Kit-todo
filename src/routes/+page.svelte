@@ -21,8 +21,6 @@
 <div class ="container">
 
     <div class="section-divider-div">
-
-
     <section class ="header">
         <h1 class ="header-h1">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Molestias nesciunt ducimus sit..</h1>
@@ -31,11 +29,13 @@
 
     <section class ="section-graphic">
         <div class="graphic">
+            <div class="inner-graphic">
+                <h1>Starts Here</h1>
+            </div>
         </div>
     </section>
 
     </div>
-
 
 
     <div class="card-container">
@@ -96,6 +96,44 @@
         background-color: #1e1e1e;
         color:white;
         font-family: sans-serif;
+    }
+
+    .section-divider-div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .section-graphic{
+        position: relative;
+    }
+
+    .inner-graphic{
+        position: absolute;
+        height:450px;
+        width: 650px; 
+        margin: 0;
+        z-index: -1;
+        color:red; 
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding:20px;
+
+    }
+
+    .inner-graphic h1{
+    }
+
+    .graphic{
+        background-color: #fff;
+        height:550px;
+        width: 750px; 
+        border-radius: 10px;
+        opacity: 0.7; 
     }
 
     .header{
