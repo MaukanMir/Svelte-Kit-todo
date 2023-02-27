@@ -30,6 +30,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam 
                 similique dolorum commodi eligendi 
                 sit dicta, sed modi nulla amet? Deleniti.</p>
+
+            <button class ="inner-button-l">Our Story</button>
         </div>
 
         <div class="inner-r">
@@ -37,6 +39,18 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam 
                 similique dolorum commodi eligendi 
                 sit dicta, sed modi nulla amet? Deleniti.</p>
+            <button class ="inner-button-r">About Us</button>
+        </div>
+
+        <div class ="text-divder">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repellendus tempore
+            <br>
+            <br>
+            cum in, quidem libero facilis qui consequuntur magni voluptatibus. 
+            Quia ipsa deserunt 
+            accusamus magni? Harum dolor quis nam excepturi?</p>
+
         </div>
 
     </div>
@@ -87,11 +101,42 @@
     .inner-l{
         border: 2px solid blue;
         padding:20px;
+        height: 300px;
     }
 
     .inner-r{
-        border: 2px solid red;
+        border: 2px solid #F75D59;
         padding:20px;
+        height:300px;
+    }
+
+    .inner-button-l{
+        padding: 10px;
+        background-color: blue;
+        color:#fff;
+        border:none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .inner-button-r{
+        padding: 10px;
+        background-color: #F75D59;
+        color:#fff;
+        border:none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .text-divder p{
+        width:300px;
+    }
+
+    .text-divder{
+        align-items: center;
+        margin-top: 120px;
     }
 
 
