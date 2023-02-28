@@ -30,7 +30,7 @@
     <section class ="section-graphic">
         <div class="graphic">
             <div class="inner-graphic">
-                <h1>Starts Here</h1>
+                <h1>The Journey Begins Here</h1>
             </div>
         </div>
     </section>
@@ -114,7 +114,6 @@
         width: 650px; 
         margin: 0;
         z-index: -1;
-        color:red; 
         background-color: #1e1e1e;
         border-radius: 10px;
         top: 50%;
@@ -126,6 +125,17 @@
     }
 
     .inner-graphic h1{
+        position: absolute;
+        margin: 0;
+        z-index: -1;
+        color:#F75D59; 
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 3em;
     }
 
     .graphic{
