@@ -1,7 +1,12 @@
 <script>
+import FaFacebook from 'svelte-icons/fa/FaFacebook.svelte'
+import FaTwitterSquare from 'svelte-icons/fa/FaTwitterSquare.svelte'
+import FaInstagram from 'svelte-icons/fa/FaInstagram.svelte'
+import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte'
 
 </script>
 
+<body>
 <div class ="footer">
 
     <div class ="inner-footer">
@@ -13,7 +18,13 @@
     <p>All Rights Reserved</p>
 </div>
 
+</body>
+
 <style>
+
+body{
+    font-family: sans-serif;
+}
 .footer{
     display:flex;
     flex-direction: column;

@@ -23,7 +23,7 @@
     <div class="section-divider-div">
     <section class ="header">
         <h1 class ="header-h1">Accomplish your goals like never before. 
-            With Our software, you can stay on track.</h1>
+            With Our software, you can always stay on track.</h1>
             <h3 class ="p-tag">We broke the code to make your life easier</h3>
     </section>
 
@@ -40,10 +40,8 @@
 
     <div class="card-container">
         <div class="inner-l">
-            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, reiciendis.</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam 
-                similique dolorum commodi eligendi 
-                sit dicta, sed modi nulla amet? Deleniti.</p>
+            <h3>Login, create, edit, check-In and track the status of your goals</h3>
+            <p>Begin your day with checking in your progress, see how many hours, days and goals you have smashed.</p>
 
             <div class="wrap-icon"> 
             <button class ="inner-button-l">
@@ -56,10 +54,8 @@
         </div>
 
         <div class="inner-r">
-            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, reiciendis.</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam 
-                similique dolorum commodi eligendi 
-                sit dicta, sed modi nulla amet? Deleniti.</p>
+            <h3>Register today and get started on all your goals.</h3>
+            <p>Register now and begin mapping out your goals, want to become a designer? Content Creator? Neuroscientist?</p>
             <div class="wrap-icon"> 
             <button class ="inner-button-r">
                 <div class ="arrow-icon"> 
@@ -71,13 +67,14 @@
         </div>
 
         <div class ="text-divder">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repellendus tempore
+            <h3>Always Stay On Track & Never Miss A Beat.</h3>
+            <p>The seemingly impossible has now become possible with our software.
             <br>
             <br>
-            cum in, quidem libero facilis qui consequuntur magni voluptatibus. 
-            Quia ipsa deserunt 
-            accusamus magni? Harum dolor quis nam excepturi?</p>
+            No more disorganization, feeling like you have made no progress. 
+            With our system, you'll see the work you're putting in.
+            Once you track your progression for your long term aspirations, 
+            you'll become a Beliver.</p>
 
         </div>
 
@@ -128,7 +125,7 @@
         position: absolute;
         margin: 0;
         z-index: -1;
-        color:	#7F00FF; 
+        color:		#fff; 
         background-color: #1e1e1e;
         border-radius: 10px;
         top: 50%;

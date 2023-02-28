@@ -5,6 +5,7 @@
     
 </script>
 
+<body>
 <nav class ="test">
     {#each $userDataBase as user}
     <a href="/">Home</a>
@@ -20,8 +21,13 @@
     {/if}
     {/each}
 </nav>
+</body>
 
 <style>
+
+    body{
+        font-family: sans-serif;
+    }
     .test{
         display: flex;
         flex-direction: row;
