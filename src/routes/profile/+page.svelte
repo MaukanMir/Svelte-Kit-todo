@@ -80,7 +80,7 @@
 <style>
     body{
         height:100vh;
-        background-color: #000036;
+        background-color: #1e1e1e;
     }
 
     .welcome-header{
@@ -102,13 +102,13 @@
         cursor: pointer;
         background-color: white;
         border:none;
-        color:#000036;
+        color:blueviolet;
     }
 
     .profile{
         display: flex;
         flex-direction: column;
-        color:#000036;
+        color:blueviolet;
         background-color: white;
         border-radius: 10px;
         height: 600px;
@@ -118,7 +118,7 @@
 
     .profile h2, h3{
         margin:20px;
-        border-bottom: 3px solid #000036;
+        border-bottom: 3px solid blueviolet;
         padding:5px;
     }
 
@@ -130,6 +130,7 @@
         border-radius: 10px;
         width:200px;
         font-size: 16px;
+        border: white;
     }
 
     .signout:hover{

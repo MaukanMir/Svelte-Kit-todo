@@ -100,26 +100,21 @@ body{
     .inside-parent{
         background-color: white;
         border-radius:10px;
-        color:#000036;
+        color:blueviolet;
         flex: 0 1 calc(25% - 1em);
         margin:10px;
         padding:20px;
     }
 
     .inside-parent h3{
-        border-bottom: 3px solid #000036;
+        border-bottom: 3px solid blueviolet;
+        margin-bottom:10px;
     }
 
-    .inside-parent h3:hover{
-        border-bottom: 3px solid white;
-        color:white;
-        background-color: #000036;
-        border-radius: 10px;
-    }
 
     .finish{
         color:white;
-        background-color: #000036;
+        background-color: blueviolet;
         border-radius: 10px;
         padding:5px;
         cursor: pointer;

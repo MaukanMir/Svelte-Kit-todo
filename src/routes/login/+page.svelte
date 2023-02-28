@@ -131,6 +131,7 @@ console.log(user)
     </body>
     <Footer/>
     <style>
+    
 
         .hide{
             display: none;
@@ -141,8 +142,7 @@ console.log(user)
             text-align: center;
         }
         body{
-            background-color:gainsboro;
-            background-color: #000036;
+            background-color: #1e1e1e;
             height: 100vh;
         }
     
@@ -167,6 +167,7 @@ console.log(user)
         background-color: white;
         height: 400px;
         width: 400px;
+        color:blueviolet;
     }
     
     .inner-form {
@@ -184,12 +185,13 @@ console.log(user)
     .inner-form input{
         padding:10px;
         border-radius: 10px;
+        color:blueviolet;
     }
     
     .submit{
         border-radius: 10px;
         padding:10px;
-        background-color: #000036;
+        background-color: blueviolet;
         color:white;
         font-size: 16px;
     }

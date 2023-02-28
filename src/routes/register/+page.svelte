@@ -175,11 +175,13 @@ onDestroy(()=>{
 .inner-form label{
     margin-bottom:10px;
     font-size: 20px;
+    color:blueviolet;
 }
 
 .inner-form input{
     padding:10px;
     border-radius: 10px;
+    color:blueviolet;
 }
 
 .submit{
