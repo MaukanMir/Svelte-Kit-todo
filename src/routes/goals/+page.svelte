@@ -80,7 +80,8 @@
 
 <style>
     body{
-        background-color:#000036;
+        background: color #1e1e1e;
+        font-family: sans-serif;
     }
     .tasks h1{
         font-size: 32px;
@@ -90,10 +91,9 @@
     .tasks{
         display:flex;
         flex-direction: column;
-        /* border: 4px solid whitesmoke; */
         margin:20px;
         border-radius: 20px;
-        color:whitesmoke;
+        color:#fff;
     }
 
     .inside-tasks{
@@ -101,14 +101,14 @@
         margin:10px;
         padding:10px;
         border-radius: 10px;
-        color:whitesmoke;
+        color:#fff;
     }
 
     .delete{
-        color: white;
+        color: #fff;
         border:none;
         height: 30px;
-        background-color:#000036;
+        background-color:#1e1e1e;
     }
 
     .delete:hover{
