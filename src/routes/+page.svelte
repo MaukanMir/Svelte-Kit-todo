@@ -146,23 +146,23 @@
     }
 
     .header{
-        margin:20px;
+        margin-top: 90px;
     }
 
     .header-h1{
         font-size: 2.5em;
         width:400px;
-        margin-left: 90px;
+        margin-left: 0px;
 
     }
     .p-tag{
-        margin-left: 90px;
+        margin-left: 0px;
     }
 
     .card-container{
         display: flex;
         justify-content: space-evenly;
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
     .inner-l h3, .inner-r{
