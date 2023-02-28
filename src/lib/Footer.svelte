@@ -10,10 +10,18 @@ import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte'
 <div class ="footer">
 
     <div class ="inner-footer">
-        <li class ="icons">Facebook</li>
-        <li class ="icons">Instagram</li>
-        <li class ="icons">Twitter</li>
-        <li class ="icons">LinkedLn</li>
+        <li class ="icons">
+            <FaFacebook/>
+        </li>
+        <li class ="icons">
+            <FaInstagram/>
+        </li>
+        <li class ="icons">
+            <FaLinkedin/>
+        </li>
+        <li class ="icons">
+            <FaTwitterSquare/>
+        </li>
     </div>
     <p>All Rights Reserved</p>
 </div>
@@ -45,6 +53,8 @@ body{
 .icons{
     margin:20px;
     display: flex;
+    height:60px;
+    width:80px;
 }
 
 .footer p{
@@ -53,7 +63,7 @@ body{
 }
 
 .inner-footer li:hover{
-color: 	#7F00FF;
+    color:blueviolet;
 cursor:pointer;
 }
 </style>
