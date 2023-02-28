@@ -22,9 +22,9 @@
 
     <div class="section-divider-div">
     <section class ="header">
-        <h1 class ="header-h1">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Molestias nesciunt ducimus sit..</h1>
-            <p class ="p-tag">We broke the code to make your life easier</p>
+        <h1 class ="header-h1">Accomplish your goals like never before. 
+            With Our software, you can stay on track.</h1>
+            <h3 class ="p-tag">We broke the code to make your life easier</h3>
     </section>
 
     <section class ="section-graphic">
@@ -128,13 +128,12 @@
         position: absolute;
         margin: 0;
         z-index: -1;
-        color:#F75D59; 
+        color:	#7F00FF; 
         background-color: #1e1e1e;
         border-radius: 10px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin: 0;
         font-size: 3em;
     }
 
@@ -163,7 +162,7 @@
     .card-container{
         display: flex;
         justify-content: space-evenly;
-        margin-top: 90px;
+        margin-top: 30px;
     }
 
     .inner-l h3, .inner-r{
