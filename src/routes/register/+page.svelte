@@ -138,8 +138,7 @@ onDestroy(()=>{
 
 <style>
     body{
-        background-color:gainsboro;
-        background-color: #000036;
+        background-color: #1e1e1e;
         height: 100vh;
     }
 
@@ -187,7 +186,7 @@ onDestroy(()=>{
     border-radius: 10px;
     padding:10px;
     color:white;
-    background-color: #000036;
+    background-color: blueviolet;
 }
 
 
