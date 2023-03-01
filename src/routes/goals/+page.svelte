@@ -67,13 +67,11 @@
 <Nav/>
 
 <div class ="carousel">
-    <button class ="l-btn"> </button>
+    <button class ="l-btn"> <TiChevronLeft/> </button>
 
     <div class ="slide-show">
-
-    <button class ="r-btn"></button>
-
     </div>
+    <button class ="r-btn"> <TiChevronRight/></button>
 </div>
 
 <div class ="tasks">
@@ -95,6 +93,18 @@
     body{
         background: color #1e1e1e;
         font-family: sans-serif;
+    }
+
+
+
+
+    .r-btn, .l-btn{
+        height: 70px;
+        width:100px;
+        background-color: blueviolet;
+        color:white;
+        border-radius: 5px;
+        border:none
     }
     .tasks h1{
         font-size: 32px;
