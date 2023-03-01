@@ -88,6 +88,7 @@
         <h2>Hours practicing per a day: { posts.length >0 ? posts[carouselIndex].studyTime: "Loading"}</h2>
         <h2>Start Date: {posts.length >0 ? posts[carouselIndex].date: "Loading"} </h2>
         <h2>Due Date:{posts.length >0 ? posts[carouselIndex].setDate: "Loading"}</h2>
+        <button class ="delete-carousel" on:click={() => deleteTask( posts.length >0 ? posts[carouselIndex].id :"Loading")}> <FaTrashAlt/> </button>
 
     </div>
     <button class ="r-btn" on:click={()=> carousel(carouselIndex,"right")}> <TiChevronRight/></button>
@@ -116,6 +117,7 @@
 
     .carousel-header{
         text-align: center;
+        margin-top:100px;
     }
 
     .carousel{
@@ -126,19 +128,33 @@
     }
 
     .slide-show{
-        background-color: #1e1e1e;
-        height: 700px;
-        width: 700px;
+        background-color: #fff;
+        height: 600px;
+        width: 600px;
         border-radius: 10px;
-        color:#fff;
+        color:blueviolet;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
     }
 
     .slide-show h2{
         border-bottom: 3px solid blueviolet;
+        margin: 20px 20px;
+    }
+
+    .delete-carousel{
+        color:#1e1e1e;
+        background-color: #fff;
+        border:none;
+        height: 80px;
+        cursor: pointer;
+        /* margin-right: 500px; */
+    }
+
+    .delete-carousel:hover{
+        color:red;
     }
 
 
