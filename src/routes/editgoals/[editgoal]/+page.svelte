@@ -42,7 +42,7 @@
 
     onMount(async ()=>{
         // API Call to load in dataset
-        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
         // load in data to variable
         posts = await res.json();
         posts = posts.filter(item=> item.id === editGoalId)
@@ -214,7 +214,7 @@ console.log(posts)
     display:flex;
     flex-direction: column;
     margin:10px;
-    background-color: blueviolet;
+    /* background-color: #fff; */
     height:100vh;
 }
 
@@ -245,7 +245,7 @@ console.log(posts)
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: #000036;
+    background-color: #fff;
     color:white;
     border:none;
 }
