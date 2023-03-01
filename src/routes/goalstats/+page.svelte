@@ -86,6 +86,7 @@ import Nav from "../../lib/Nav.svelte";
 body{
         background-color: #1e1e1e;
         color:white;
+        font-family: sans-serif;
     }
 
     .header{

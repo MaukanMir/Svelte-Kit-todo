@@ -144,6 +144,7 @@ console.log(user)
         body{
             background-color: #1e1e1e;
             height: 100vh;
+            font-family: sans-serif;
         }
     
         h1{

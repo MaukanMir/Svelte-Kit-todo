@@ -70,6 +70,10 @@
 <body>
 <Nav/>
 
+<div class="header-class">
+    <h1>Create A Goal!</h1>
+</div>
+
 <!--Start of initial submit-->
 <div class ="grid"> 
 <form  class ="form" on:submit|preventDefault={addTask}>
@@ -119,7 +123,7 @@
         />
     </div>
     <div>
-    <button class ="btn">Add task</button>
+    <button class ="btn">Add Goal</button>
     <div/>
     </form>
 </div>
@@ -132,6 +136,13 @@
 
     body{
         background-color: #1e1e1e;
+        font-family: sans-serif;
+    }
+
+    .header-class h1{
+        color:#fff;
+        margin-left: 30px;
+        margin-top: 40px;
     }
     .form{
         
@@ -141,6 +152,7 @@
         padding: 10px;
         height:100vh;
         color:whitesmoke;
+        margin-top: 10px;
     }
 
     .inside-form input{
@@ -159,29 +171,32 @@
 
     .inside-form{
         display: flex;
-        border: 2px solid maroon;
+        border: 2px solid blueviolet;
         margin: 10px;
         border-radius: 10px;
+        margin-top: 20px;
     }
 
 .btn{
-    margin:10px;
-    background-color: maroon;
+    margin-top: 30px;
+    background-color: blueviolet;
     color:white;
     border-radius: 10px;
     cursor: pointer;
-    padding:5px;
+    padding:20px;
+    width:200px;
+    font-size: 1.2em;
+    border: none;
 
 }
 
 .btn:hover{
-color:black;
-background-color: white;
+color:#fff;
+background-color: green;
 }
 
 .grid{
     display:flex;
-    border: 4px solid white;
     margin-top:20px;
     justify-content: space-between;
 }

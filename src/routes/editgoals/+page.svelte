@@ -20,11 +20,11 @@
 
     onMount(async ()=>{
         if(user){
-        
         // API Call to load in dataset
-        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user[0]);
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
         // load in data to variable
         posts = await res.json();
+        console.log(posts)
         }
         else{
             toggle = !toggle;
@@ -33,7 +33,7 @@
     });
 
 
-
+console.log(posts)
 </script>
 
 <body>
@@ -66,7 +66,7 @@
 <style>
 
     body{
-        background-color: #000036;
+        background-color: #1e1e1e;
         margin:10px;
         height:100vh;
     }
@@ -74,8 +74,7 @@
 
 
 .edit-goals{
-    background-color: white;
-    color:#000036;
+    color:#fff;
     border-radius: 10px;
     flex:2;
     margin:20px;
@@ -83,17 +82,17 @@
 }
 
 .edit-goals > h2{
-    border-bottom: 4px solid #000036;
+    border-bottom: 4px solid blueviolet;
     margin-bottom:30px;
 }
 
 .edit-goals a{
     text-decoration: none;
-    color:#000036;
+    color: #fff;
 }
 
 .edit-goals a:hover{
-    color:red;
+    color:#fff;
 }
 
 .center{
@@ -105,7 +104,7 @@
 
 .display{
     background-color: white;
-    color:#000036;
+    color:blueviolet;
     height: 400px;
     width: 450px;
     border-radius: 10px;

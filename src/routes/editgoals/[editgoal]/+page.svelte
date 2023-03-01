@@ -88,6 +88,7 @@
         
 };
 
+console.log(posts)
 
 
 </script>
@@ -189,7 +190,7 @@
 
 <style>
     body{
-        background-color: #000036;
+        background-color: #1e1e1e;
     }
     .section-header{
         margin:40px;
@@ -213,7 +214,7 @@
     display:flex;
     flex-direction: column;
     margin:10px;
-    background-color: #000036;
+    background-color: blueviolet;
     height:100vh;
 }
 

@@ -81,6 +81,7 @@
     body{
         height:100vh;
         background-color: #1e1e1e;
+        font-family: sans-serif;
     }
 
     .welcome-header{

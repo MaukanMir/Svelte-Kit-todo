@@ -8,7 +8,7 @@
     import {get} from "svelte/store";
     // svelte components here
     import {onMount} from "svelte";
-    import {goto} from "$app/navigation";
+    // import {goto} from "$app/navigation";
 
     let user = get(userDataBase)[0];
     let userInfo = get(userInfoDb)[0]
@@ -111,7 +111,8 @@
 <style>
     body{
         height:100vh;
-        background-color: #000036;
+        background-color: #1e1e1e;
+        font-family: sans-serif;
     }
 
     .welcome-header{
@@ -129,7 +130,7 @@
     .inside-container{
         border-radius: 10px;
         justify-content: center;
-        color:#000036;
+        color:blueviolet;
         background-color: white;
         margin:20px;
         height:500px;
@@ -148,13 +149,14 @@
         border-radius: 10px;
         padding:10px;
         margin-top:10px;
+        color:blueviolet;
     }
 
 
     .submit{
         display: flex;
         color:white;
-        background-color: #000036;
+        background-color: blueviolet;
         padding:10px;
         border-radius: 10px;
         width: 350px;
