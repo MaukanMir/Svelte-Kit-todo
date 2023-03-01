@@ -67,9 +67,15 @@
 <Nav/>
 
 <div class ="carousel">
+
     <button class ="l-btn"> <TiChevronLeft/> </button>
 
     <div class ="slide-show">
+        <h2>Goal:</h2>
+        <h2>Hours practicing per a day:</h2>
+        <h2>Start Date: </h2>
+        <h2>Due Date:</h2>
+
     </div>
     <button class ="r-btn"> <TiChevronRight/></button>
 </div>
@@ -95,7 +101,19 @@
         font-family: sans-serif;
     }
 
+    .carousel{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .slide-show{
+        background-color: #fff;
+        height: 400px;
+        width: 400px;
+        border-radius: 10px;
+    }
 
 
     .r-btn, .l-btn{
@@ -104,7 +122,14 @@
         background-color: blueviolet;
         color:white;
         border-radius: 5px;
-        border:none
+        border:none;
+        margin: 0px 20px;
+        cursor: pointer;
+    }
+
+    .r-btn:hover, .l-btn:hover{
+        color:blueviolet;
+        background-color: #fff;
     }
     .tasks h1{
         font-size: 32px;
