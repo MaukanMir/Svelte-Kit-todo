@@ -180,8 +180,8 @@ console.log(posts)
         {/each}
     </form>
 </div>
-<button>
-    <a href ="/editgoals">Submit</a>
+<button class ="submit-btn">
+    Submit
 </button>
 
 <Footer/>
@@ -245,7 +245,7 @@ console.log(posts)
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: #fff;
+    background-color: #1e1e1e;
     color:white;
     border:none;
 }
@@ -258,7 +258,7 @@ console.log(posts)
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: #000036;
+    background-color: #1e1e1e;
     border:none;
 }
 
@@ -267,7 +267,7 @@ console.log(posts)
     height: 30px;
     margin: 0px 10px;
     cursor:pointer;
-    background-color: #000036;
+    background-color: #1e1e1e;
     border:none;
     justify-content: space-evenly;
 }
@@ -276,12 +276,23 @@ console.log(posts)
     height: 40px;
     margin: 0 10px;
     cursor:pointer;
-    background-color: #000036;
+    background-color: #1e1e1e;
     border:none;
     justify-content: center;
 }
 
 .check:hover{
     color:green;
+}
+
+.submit-btn{
+    background-color: #fff;
+    color:blueviolet;
+    padding: 10px;
+    border-radius: 10px;
+    border:none;
+    margin-top:20px;
+    cursor: pointer;
+
 }
 </style>
