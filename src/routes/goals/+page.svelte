@@ -63,7 +63,7 @@
 
     // Carousel back and fourth functionality
 
-    const caoursel = (index, direction)=> {
+    const carousel = (index, direction)=> {
 
         if(direction === "left"){
             carouselIndex = index === 0 ? 0: carouselIndex-1
@@ -79,18 +79,18 @@
 <body>
 <Nav/>
 
+<h1 class ="carousel-header">Tasks To Complete Today</h1>
 <div class ="carousel">
 
-    <button class ="l-btn"> <TiChevronLeft/> </button>
-
+    <button class ="l-btn" on:click={()=> carousel(carouselIndex,"left")}> <TiChevronLeft/> </button>
     <div class ="slide-show">
-        <h2>Goal:</h2>
-        <h2>Hours practicing per a day:</h2>
-        <h2>Start Date: </h2>
-        <h2>Due Date:</h2>
+        <h2>Goal: { posts.length >0 ? posts[carouselIndex].goal: "Loading"}</h2>
+        <h2>Hours practicing per a day: { posts.length >0 ? posts[carouselIndex].studyTime: "Loading"}</h2>
+        <h2>Start Date: {posts.length >0 ? posts[carouselIndex].date: "Loading"} </h2>
+        <h2>Due Date:{posts.length >0 ? posts[carouselIndex].setDate: "Loading"}</h2>
 
     </div>
-    <button class ="r-btn"> <TiChevronRight/></button>
+    <button class ="r-btn" on:click={()=> carousel(carouselIndex,"right")}> <TiChevronRight/></button>
 </div>
 
 <div class ="tasks">
@@ -114,6 +114,10 @@
         font-family: sans-serif;
     }
 
+    .carousel-header{
+        text-align: center;
+    }
+
     .carousel{
         display: flex;
         flex-direction: row;
@@ -122,10 +126,19 @@
     }
 
     .slide-show{
-        background-color: #fff;
-        height: 400px;
-        width: 400px;
+        background-color: #1e1e1e;
+        height: 700px;
+        width: 700px;
         border-radius: 10px;
+        color:#fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slide-show h2{
+        border-bottom: 3px solid blueviolet;
     }
 
 
