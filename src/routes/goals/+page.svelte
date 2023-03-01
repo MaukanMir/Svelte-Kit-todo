@@ -11,6 +11,9 @@
     import {userDataBase} from "../../stores/userDataBase";
     // svelte nav imports here
     import {goto} from "$app/navigation"
+    // Icon imports here
+    import TiChevronLeft from 'svelte-icons/ti/TiChevronLeft.svelte'
+    import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
 
     const user = get(userDataBase)[0];
 
@@ -63,6 +66,16 @@
 <body>
 <Nav/>
 
+<div class ="carousel">
+    <button class ="l-btn"> </button>
+
+    <div class ="slide-show">
+
+    <button class ="r-btn"></button>
+
+    </div>
+</div>
+
 <div class ="tasks">
     <h1>Tasks To Complete Today:</h1>
     {#each posts as task}
@@ -97,7 +110,7 @@
     }
 
     .inside-tasks{
-        border: 2px solid red;
+        border: 2px solid blueviolet;
         margin:10px;
         padding:10px;
         border-radius: 10px;
