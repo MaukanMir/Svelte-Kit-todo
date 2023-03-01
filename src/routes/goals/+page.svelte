@@ -16,6 +16,7 @@
     import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
 
     const user = get(userDataBase)[0];
+    let carouselIndex =0;
 
     async function load(){
         if(!user){goto("/register")}
@@ -58,8 +59,20 @@
             if(!response.ok){console.log("opps")}
             else{console.log("success");}
         })
-        
-    
+    };
+
+    // Carousel back and fourth functionality
+
+    const caoursel = (index, direction)=> {
+
+        if(direction === "left"){
+            carouselIndex = index === 0 ? 0: carouselIndex-1
+        }
+
+        else if(direction === "right"){
+            carouselIndex = index === posts.length -1 ? posts.length-1: carouselIndex+1
+        }
+
     };
 
 </script>
