@@ -118,6 +118,7 @@
     .carousel-header{
         text-align: center;
         margin-top:100px;
+        color:#fff;
     }
 
     .carousel{

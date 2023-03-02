@@ -295,4 +295,9 @@ console.log(posts)
     cursor: pointer;
 
 }
+
+.submit-btn:hover{
+    color: #fff;
+    background-color: blueviolet;
+}
 </style>
