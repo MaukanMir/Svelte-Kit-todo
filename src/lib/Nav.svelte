@@ -6,8 +6,28 @@
 </script>
 
 <body>
-<nav class ="test">
-    {#each $userDataBase as user}
+<nav>
+
+    <div class="nav">
+        <button> <a href="/">Home</a></button>
+
+        <div class="goals">
+            <button> <a href="/goals">Goals</a></button>
+            <ul>
+                <li><a href="/goals">Create Goals</a></li>
+                <li><a href="/editgoals">Edit Goals</a></li>
+                <li><a href="/goalstats">Stats</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- {#each $userDataBase as user}
     <a href="/">GoalsCrusher</a>
     <a href="/goals">Goals</a>
     <ul class ="dropdown">
@@ -22,7 +42,7 @@
     <li> <a href="/login">Login</a> </li>
     {/if}
     </ul>
-    {/each}
+    {/each} -->
 </nav>
 </body>
 
@@ -31,36 +51,6 @@
     body{
         font-family: sans-serif;
     }
-    .test{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #1e1e1e;;
-        padding: 20px;
-        height:100px;
-    }
 
-    .test a{
-        text-decoration: none;
-        font-size: 1.5rem;
-        color:white;
-    }
-
-    a:hover{
-        color: 	#7F00FF;
-    }
-
-    .dropdown{
-        display:none;
-        list-style: none;
-    }
-
-    .dropdown:hover{
-        display: flex;
-        flex-direction: column;
-        margin:10px;
-        background-color: #fff;
-    }
 
 </style>
