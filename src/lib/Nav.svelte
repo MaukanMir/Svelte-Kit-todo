@@ -8,17 +8,20 @@
 <body>
 <nav class ="test">
     {#each $userDataBase as user}
-    <a href="/">Home</a>
+    <a href="/">GoalsCrusher</a>
     <a href="/goals">Goals</a>
-    <a href="/editgoals">Edit Goals</a>
-    <a href="/creategoals">Create Goals</a>
+    <ul class ="dropdown">
+    <li> <a href="/editgoals">Edit Goals</a> </li>
+    <li> <a href="/creategoals">Create Goals</a> </li>
+    <li> <a href="/goalstats">Goal Stats</a> </li>
     {#if !user}
-    <a href="/register">Register</a>
+    <li> <a href="/register">Register</a> </li>
     {:else if user}
-    <a href="/profile">{user[0].toUpperCase() + user.substring(1)}</a>
+    <li> <a href="/profile">{user[0].toUpperCase() + user.substring(1)}</a> </li>
     {:else}
-    <a href="/login">Login</a>
+    <li> <a href="/login">Login</a> </li>
     {/if}
+    </ul>
     {/each}
 </nav>
 </body>
@@ -46,6 +49,18 @@
 
     a:hover{
         color: 	#7F00FF;
+    }
+
+    .dropdown{
+        display:none;
+        list-style: none;
+    }
+
+    .dropdown:hover{
+        display: flex;
+        flex-direction: column;
+        margin:10px;
+        background-color: #fff;
     }
 
 </style>
