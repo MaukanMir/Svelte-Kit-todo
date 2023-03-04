@@ -14,14 +14,15 @@
         <div class="goals">
             <button>Goals</button>
             <ul>
-                <li><a href="/goals">Create Goals</a></li>
-                <li><a href="/editgoals">Edit Goals</a></li>
-                <li><a href="/goalstats">Stats</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a class ="link" href="/goals">Goals</a></li>
+                <li><a class ="link" href="/creategoals">Create Goals</a></li>
+                <li><a class ="link" href="/editgoals">Edit Goals</a></li>
+                <li><a class ="link" href="/goalstats">Stats</a></li>
+                <li><a class ="link" href="/login">Login</a></li>
+                <li><a class ="link" href="/register">Register</a></li>
             </ul>
         </div>
-    </div>
+    </div> 
 
 
 
@@ -59,6 +60,7 @@
         justify-content: space-around;
         align-items: center;
         margin:auto;
+        margin-bottom: 200px;
     }
 
     .home, .goals button{
@@ -82,7 +84,7 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         position:absolute;
         left: -90px;
@@ -97,21 +99,32 @@
     .goals ul a{
         text-decoration: none;
         color:#fff;
-        opacity: 1;
+        opacity: 0;
         font-size: 1.5em;
+        border-radius: 10px;
+        height:00px;
+        width:200px;
     }
 
     .goals button:focus + ul{
         opacity: 1;
         pointer-events: all;
         transform: translateY(0px);
-        z-index: -1;
+        /* z-index: -1; */
     }
 
-    /* .goals a:hover{
-        color:blueviolet;
-        cursor: pointer;
-    } */
+    .goals ul:hover{
+        opacity: 1;
+        background-color: #fff;
+    }
+    .link:hover{
+        color:#1e1e1e;
+        opacity: 1;
+        border-bottom: #1e1e1e ;
+    }
+
+
+
 
 
 
