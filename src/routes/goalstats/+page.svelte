@@ -46,12 +46,11 @@ import Nav from "../../lib/Nav.svelte";
 
         //Save client info here
         const clientInfo = posts[index];
-
-        clientInfo.checkIn = clientInfo.checkIn +1;
-        console.log(clientInfo)
+        // Update checkIn
+        clientInfo.checkIn +=1;
         // Update user information from db
-        const res = await fetch("http://localhost:5000/api/user/" + clientInfo._id,{
-                method:"POST",
+        const res = await fetch("http://localhost:5000/api/editgoals/" + clientInfo._id,{
+                method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
                     userId:clientInfo.userId,
