@@ -82,7 +82,7 @@
 
 
 
-<h1 class ="carousel-header">Tasks To Complete Today</h1>
+<h1 class ="carousel-header">{ posts.length ===0 ? "": "Tasks To Complete Today"}</h1>
 
 <div class ="carousel">
     {#if posts.length !==0}
@@ -98,7 +98,10 @@
     </div>
     <button class ="r-btn" on:click={()=> carousel(carouselIndex,"right")}> <TiChevronRight/></button>
     {:else}
+    <div class ="posts-delete"> 
     <h1>You Currently do not have any posts</h1>
+    <a href="/creategoals">Click Here to get <strong> Started! </strong> </a>
+    </div>
     {/if}
 </div>
 
@@ -117,8 +120,10 @@
     </div>
     {/each}
 </div> -->
-<Footer/>
 </body>
+<Footer/>
+
+
 
 <style>
     body{
@@ -216,5 +221,22 @@
 
     .delete:hover{
         color:red;
+    }
+
+    .posts-delete{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .posts-delete a{
+        text-decoration: none;
+        color:#fff;
+        font-size: 1.5em;
+    }
+
+    .posts-delete strong{
+        color:blueviolet;
     }
 </style>
