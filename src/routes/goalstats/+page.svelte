@@ -11,6 +11,7 @@ import Nav from "../../lib/Nav.svelte";
     // Svelte routing imports here
     import { goto } from '$app/navigation'
   import { dataset_dev } from "svelte/internal";
+  import FaTrashAlt from "svelte-icons/fa/FaTrashAlt.svelte";
     
     const user = get(userDataBase)[0]
     console.log(user)
@@ -36,7 +37,9 @@ import Nav from "../../lib/Nav.svelte";
         //Save client info here
         const clientInfo = posts[index];
 
-        // Fetch user information from DB
+        clientInfo.checkIn = clientInfo.checkIn +1;
+        console.log(clientInfo)
+        // Update user information from db
         const res = await fetch("http://localhost:5000/api/user/" + clientInfo._id,{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
@@ -47,7 +50,7 @@ import Nav from "../../lib/Nav.svelte";
                     how:clientInfo.how,
                     date:clientInfo.date,
                     studyTime:clientInfo.studyTime,
-                    checkIn:clientInfo.checkIn
+                    checkIn:clientInfo.checkIn,
 
                 })
             });
@@ -79,6 +82,7 @@ import Nav from "../../lib/Nav.svelte";
                 <h3>Start Date:{task.date}</h3>
                 <h3> Due Date: {task.setDate}</h3>
                 <h3>Hours Alloted: {task.studyTime}</h3>
+                <h4>Study Streak: {task.checkIn}</h4>
                 <!-- 
                 <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
                 <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>

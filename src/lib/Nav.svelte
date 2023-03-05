@@ -26,7 +26,7 @@
                 <li><a class ="link" href="/goals">Goals</a></li>
                 <li><a class ="link" href="/creategoals">Create Goal</a></li>
                 <li><a class ="link" href="/editgoals">Edit Goals</a></li>
-                <li><a class ="link" href="/goalstats">Stats</a></li>
+                <li><a class ="link" href="/goalstats">Check In</a></li>
             </ul>
         </div>
 

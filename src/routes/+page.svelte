@@ -49,7 +49,7 @@
             <button class ="inner-button-l">
                 <div class ="arrow-icon"> 
                 <span>Login</span>
-                <a class ="login" href ="/login"><IoIosArrowRoundForward/> </a>
+                <a class ="login" href ={ user ? "/profile":"/login"}><IoIosArrowRoundForward/> </a>
                 </div>
             </button>
             </div>
@@ -62,7 +62,7 @@
             <button class ="inner-button-r">
                 <div class ="arrow-icon"> 
                     <span>Register</span>
-                    <a class ="reg" href="/register"><IoIosArrowRoundForward/></a>
+                    <a class ="reg" href={ user ? "/profile" :"/register"}><IoIosArrowRoundForward/></a>
                     </div>
             </button>
             </div>

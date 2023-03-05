@@ -44,7 +44,8 @@
                     how,
                     date:startDate,
                     setDate:changeDate,
-                    studyTime
+                    studyTime,
+                    checkIn:0
                 })
             })
             const json = await res.json();
