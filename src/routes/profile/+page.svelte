@@ -67,8 +67,8 @@
         <h3>Username: {userInfo.username}</h3>
         <h3>Email: {userInfo.email}</h3>
         <h3>Goals Completed: 0</h3>
-        <h3>Edit Profile:</h3>
         <h3>Study Streak: </h3>
+        <h3>Edit Profile Here:</h3>
         <button class="edit-icon" on:click={()=> loadPage()}> <FaUserEdit/> </button>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
     </div>
