@@ -79,8 +79,13 @@
 <body>
 <Nav/>
 
+
+
+
 <h1 class ="carousel-header">Tasks To Complete Today</h1>
+
 <div class ="carousel">
+    {#if posts.length !==0}
 
     <button class ="l-btn" on:click={()=> carousel(carouselIndex,"left")}> <TiChevronLeft/> </button>
     <div class ="slide-show">
@@ -92,9 +97,15 @@
 
     </div>
     <button class ="r-btn" on:click={()=> carousel(carouselIndex,"right")}> <TiChevronRight/></button>
+    {:else}
+    <h1>You Currently do not have any posts</h1>
+    {/if}
 </div>
 
-<div class ="tasks">
+
+
+
+<!-- <div class ="tasks">
     <h1>Tasks To Complete Today:</h1>
     {#each posts as task}
     <div class ="inside-tasks"> 
@@ -105,7 +116,7 @@
     <button class ="delete" on:click={() => deleteTask(task.id)}> <FaTrashAlt/> </button>
     </div>
     {/each}
-</div>
+</div> -->
 <Footer/>
 </body>
 
@@ -113,6 +124,7 @@
     body{
         background: color #1e1e1e;
         font-family: sans-serif;
+        height:100vh;
     }
 
     .carousel-header{
