@@ -31,6 +31,16 @@ import Nav from "../../lib/Nav.svelte";
         }
     });
 
+    // reload component
+
+    async function update(){
+        if(user){
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
+        // load in data to variable
+        posts = await res.json();
+        }
+    };
+
     // Check in button fix here
     const onCheck = async(username,id, index) =>{
 
@@ -56,6 +66,7 @@ import Nav from "../../lib/Nav.svelte";
             });
             const json = await res.json();
             const result = JSON.stringify(json);
+            update();
 
     };
 
