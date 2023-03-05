@@ -15,9 +15,8 @@ const StatsSchema = new Schema({
         }
     ],
     numberOfGoalsCompleted:{type:Number},
-    duration:{type:Number},
     hoursStudied:{type:Number},
-    consistency:{type:Number}
+    studyStreak:{type:Number}
 
 },
 {timestamps:true}
