@@ -68,7 +68,7 @@ import Nav from "../../lib/Nav.svelte";
 <body>
     <Nav/>
     
-    <h1 class ="header">Goal Analysis</h1>
+    <h1 class ="header">{posts.length === 0 ?"" : "Goal Analysis"} </h1>
     
     
     <div class ="parent">
@@ -91,12 +91,18 @@ import Nav from "../../lib/Nav.svelte";
             </div>
     
         {/each}
+        {#if posts.length ===0}
+
+        <div class ="posts-delete"> 
+            <h1>You Currently do not have any Goals</h1>
+            <a href="/creategoals">Click Here to get <strong> Started! </strong> </a>
+        </div>
+        {/if}
     </div>
-    
-    
-    <Footer/>
+
     
     </body>
+    <Footer/>
 
 
 
@@ -106,6 +112,7 @@ body{
         background-color: #1e1e1e;
         color:white;
         font-family: sans-serif;
+        height: 100vh;
     }
 
     .header{
@@ -149,5 +156,24 @@ body{
     .button-format{
         display: flex;
         flex-direction: column;
+    }
+
+    .posts-delete{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    .posts-delete a{
+        text-decoration: none;
+        color:#fff;
+        font-size: 1.5em;
+        margin-top: 50px;
+    }
+
+    .posts-delete strong{
+        color:blueviolet;
     }
 </style>

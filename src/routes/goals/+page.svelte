@@ -228,12 +228,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 60px;
     }
 
     .posts-delete a{
         text-decoration: none;
         color:#fff;
         font-size: 1.5em;
+        margin-top: 50px;
     }
 
     .posts-delete strong{
