@@ -1,6 +1,15 @@
 <script>
     // Svelte store import here
     import {userDataBase} from "../stores/userDataBase"
+    // import Svelte navigation
+    import {goto} from "$app/navigation";
+
+    // onClick
+
+    const userFlow = (id) =>{
+
+        goto(id);
+    };
 
     
 </script>
@@ -25,11 +34,13 @@
         {#each $userDataBase as user}
 
         <div class="goals">
-            <button>{user ? user[0].toUpperCase() + user.substring(1): "Login"}</button>
-            <ul>
-                <div class="check"> </div>
-                <li><a class ="link" href="/login">Profile</a></li>
-            </ul> 
+            {#if !user}
+            <button on:click = {() => userFlow("/register")}>Register</button>
+            {:else if user}
+            <button on:click = {() => userFlow("/profile")}> {user[0].toUpperCase() + user.substring(1)} </button>
+            {:else}
+            <button on:click = {() => userFlow("/login")}>Login</button>
+            {/if}
         </div>
 
         {/each}
@@ -37,25 +48,6 @@
 
     </div> 
 
-
-
-
-    <!-- {#each $userDataBase as user}
-    <a href="/">GoalsCrusher</a>
-    <a href="/goals">Goals</a>
-    <ul class ="dropdown">
-    <li> <a href="/editgoals">Edit Goals</a> </li>
-    <li> <a href="/creategoals">Create Goals</a> </li>
-    <li> <a href="/goalstats">Goal Stats</a> </li>
-    {#if !user}
-    <li> <a href="/register">Register</a> </li>
-    {:else if user}
-    <li> <a href="/profile">{user[0].toUpperCase() + user.substring(1)}</a> </li>
-    {:else}
-    <li> <a href="/login">Login</a> </li>
-    {/if}
-    </ul>
-    {/each} -->
 </nav>
 </body>
 
