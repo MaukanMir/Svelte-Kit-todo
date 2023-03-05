@@ -13,6 +13,8 @@
     // import Svelte icons here
     import IoIosArrowRoundForward from 'svelte-icons/io/IoIosArrowRoundForward.svelte'
 
+    // Create user
+    const user = get(userDataBase)[0];
 
 </script>
 <body>
