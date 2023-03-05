@@ -21,6 +21,10 @@ import Nav from "../../lib/Nav.svelte";
    */
     let posts = [];
 
+    // Toggle back and fourth
+
+    let toggleStreak = false;
+
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
         // API Call HERE
@@ -32,7 +36,6 @@ import Nav from "../../lib/Nav.svelte";
     });
 
     // reload component
-
     async function update(){
         if(user){
         const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
@@ -66,8 +69,11 @@ import Nav from "../../lib/Nav.svelte";
             const json = await res.json();
             const result = JSON.stringify(json);
             update();
+            toggleStreak = true;
 
     };
+
+    
 
     const onSubmit = async (username, id, index)=>{
 
@@ -92,14 +98,14 @@ import Nav from "../../lib/Nav.svelte";
                 <h3>Start Date:{task.date}</h3>
                 <h3> Due Date: {task.setDate}</h3>
                 <h3>Hours Alloted: {task.studyTime}</h3>
-                <h4>Study Streak: {task.checkIn}</h4>
+                <h3>Study Streak: {task.checkIn}</h3>
                 <!-- 
                 <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
                 <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
                 <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
                 -->
                 <div class ="button-format"> 
-                <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
+                <button class ={ !toggleStreak ? "finish":"disabled-finish"} on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> onSubmit(task.username, task.id, index)}>Mark As Complete</button>
                 </div>
             </div>
@@ -161,6 +167,19 @@ body{
         cursor: pointer;
         padding:5px;
         margin:10px 0px;
+    }
+
+    .disabled-finish{
+        color:white;
+        background-color: red;
+        border-radius: 10px;
+        padding:5px;
+        cursor: not-allowed;
+        pointer-events: none;
+        padding:5px;
+        margin:10px 0px;
+        border:none;
+        
     }
 
     .finish:hover{
