@@ -10,13 +10,11 @@ import Nav from "../../lib/Nav.svelte";
     import {get} from "svelte/store"
     // Svelte routing imports here
     import { goto } from '$app/navigation'
+  import { dataset_dev } from "svelte/internal";
     
     const user = get(userDataBase)[0]
     console.log(user)
     console.log("user is" + user)
-    // Dates
-    let currentTime = new Date(new Date().toISOString().slice(0,10)).getTime();
-    let oneDay = (1000 * 3600 * 24);
     /**
    * @type {any[]}
    */
@@ -33,11 +31,32 @@ import Nav from "../../lib/Nav.svelte";
     });
 
     // Check in button fix here
-    const onCheck = async(username,id) =>{
+    const onCheck = async(username,id, index) =>{
+
+        //Save client info here
+        const clientInfo = posts[index];
+
+        // Fetch user information from DB
+        const res = await fetch("http://localhost:5000/api/user/" + clientInfo._id,{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    userId:clientInfo.userId,
+                    id:clientInfo.id,
+                    goal:clientInfo.goal,
+                    how:clientInfo.how,
+                    date:clientInfo.date,
+                    studyTime:clientInfo.studyTime,
+                    checkIn:clientInfo.checkIn
+
+                })
+            });
+            const json = await res.json();
+            const result = JSON.stringify(json);
 
     };
 
-    const onSubmit = async (username, id)=>{
+    const onSubmit = async (username, id, index)=>{
 
 
     };
@@ -53,7 +72,7 @@ import Nav from "../../lib/Nav.svelte";
     
     
     <div class ="parent">
-        {#each posts as task}
+        {#each posts as task, index}
     
             <div class ="inside-parent"> 
                 <h3>Goal: {task.goal}</h3>
@@ -66,8 +85,8 @@ import Nav from "../../lib/Nav.svelte";
                 <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
                 -->
                 <div class ="button-format"> 
-                <button class ="finish" on:click={()=> onCheck(task.username, task.id)}>Check In</button>
-                <button class ="finish" on:click={()=> onSubmit(task.username, task.id)}>Mark As Complete</button>
+                <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
+                <button class ="finish" on:click={()=> onSubmit(task.username, task.id, index)}>Mark As Complete</button>
                 </div>
             </div>
     

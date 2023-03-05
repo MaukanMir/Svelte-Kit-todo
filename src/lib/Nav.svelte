@@ -4,8 +4,7 @@
     // import Svelte navigation
     import {goto} from "$app/navigation";
 
-    // onClick
-
+    // Send user to registration or login page
     const userFlow = (id) =>{
 
         goto(id);
