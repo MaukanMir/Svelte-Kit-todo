@@ -78,8 +78,6 @@
         border:none;
     }
 
-
-
     .goals ul{
         list-style: none;
         display: flex;
@@ -88,21 +86,25 @@
         align-items: center;
         position:absolute;
         left: -90px;
-        width: 200px;
-        height:200px;
+        width: 175px;
+        height:175px;
+        padding:20px;
+        margin:20px;
+        color:blueviolet;
     }
 
     .goals{
         position: relative;
+        color:blueviolet;
     }
 
     .goals ul a{
         text-decoration: none;
-        color:#fff;
+        color:blueviolet;
         opacity: 0;
         font-size: 1.5em;
         border-radius: 10px;
-        height:00px;
+        height:200px;
         width:200px;
     }
 
@@ -110,18 +112,23 @@
         opacity: 1;
         pointer-events: all;
         transform: translateY(0px);
-        /* z-index: -1; */
+        border-bottom: 3px solid #1e1e1e ;
     }
 
+
     .goals ul:hover{
-        opacity: 1;
         background-color: #fff;
+        color:blueviolet;
+        opacity:1;
+
     }
-    .link:hover{
-        color:#1e1e1e;
+    /* .link:hover{
+        color:blueviolet;
         opacity: 1;
-        border-bottom: #1e1e1e ;
-    }
+        z-index: -1;
+    }  */
+
+
 
 
 
