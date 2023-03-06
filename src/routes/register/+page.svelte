@@ -47,6 +47,7 @@ const onSubmit = async () =>{
         const result = JSON.stringify(json);
         console.log(json, result)
         if(res.status === 200){
+            console.log("here")
             userDataBase.set([username])
         }
     };
@@ -58,11 +59,18 @@ const onSubmit = async () =>{
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
                 username,
-                goal:"",
-                goalsCompleted:[],
-                startDate:"",
-                endDate:"",
-                numberOfDays:""
+                goalCompleted:[
+                    {
+                    goal:"",
+                    startDate:"",
+                    endDate:"",
+                    studyTime:0,
+                    numberOfDays:0
+                    }
+                ],
+                numberOfGoalsCompleted:0,
+                hoursStudied:0,
+                studyStreak:0
             })
         });
         const json = await res.json();

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const StatsSchema = new Schema({
     
     username:{type:String, required:true, unique:true},
-    goalsCompleted:[
+    goalCompleted:[
         {
             goal:{type:String},
             goalId:{type:Number},
