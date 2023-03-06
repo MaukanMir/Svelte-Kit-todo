@@ -1,12 +1,12 @@
 
 const router = require("express").Router();
-const Stats = require("../models/studyStreak");
+const Streak = require("../models/studyStreak");
 
 
 // Post request to create stats DB for user
 router.post("/find/:username", async (req,res)=>{
     
-    const newStat = new Stats(req.body);
+    const newStat = new Streak(req.body);
     console.log(newStat);
 
     try{
@@ -25,7 +25,7 @@ router.post("/find/:username", async (req,res)=>{
 router.put("/update/:username", async (req,res)=>{
 
     try{
-        const updatedStat = await Stats.findByIdAndUpdate(
+        const updatedStat = await Streak.findByIdAndUpdate(
             req.params.id,
             {
                 $set:req.body,
@@ -37,4 +37,6 @@ router.put("/update/:username", async (req,res)=>{
     catch(err){
         res.status(500).json(err)
     }
-})
+});
+
+module.exports = router;
