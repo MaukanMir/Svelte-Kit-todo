@@ -26,6 +26,14 @@ async function load(){
     }
 }
 
+//Set user here
+function setUsername (auth){
+if(auth ===200){
+    userDataBase.set([username])
+    load()
+}
+}
+
 console.log(new Date());
 
 // Submit form here
@@ -46,10 +54,11 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
         console.log(json, result)
-        if(res.status === 200){
-            console.log("here")
-            userDataBase.set([username])
-        }
+
+        setUsername(res.status)
+        // if(res.status === 200){
+        //     userDataBase.set([username])
+        // }
     };
 
     // Create user stats here
@@ -90,9 +99,8 @@ const onSubmit = async () =>{
 
         const json = await res.json();
         const result = JSON.stringify(json);
+        setUsername(res.status)
 
-        // Send user to the home page
-        load()
     }
     // Call create user account here
     createUser();
