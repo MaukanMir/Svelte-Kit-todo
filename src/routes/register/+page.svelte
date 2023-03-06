@@ -53,7 +53,6 @@ const onSubmit = async () =>{
         console.log(json, result)
 
         if(res.status === 200){
-            console.log(json._id)
 
             userDataBase.set([username])
             userInfoDb.set([{
@@ -63,6 +62,8 @@ const onSubmit = async () =>{
                 email:email,
 
             }])
+
+            load()
         }
     };
 
