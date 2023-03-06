@@ -53,7 +53,7 @@ const onSubmit = async () =>{
 
     // Create user stats here
     async function createUserStats(){
-        const res = await fetch("http://localhost:5000/api/auth/stats/" + username,{
+        const res = await fetch("http://localhost:5000/api/stats/" + username,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
@@ -78,7 +78,10 @@ const onSubmit = async () =>{
                 username,
                 interval: new Date()
             })
-        })
+        });
+
+        const json = await res.json();
+        const result = JSON.stringify(json);
 
         // Send user to the home page
         load()
@@ -88,6 +91,7 @@ const onSubmit = async () =>{
     // Call create user stats here;
     createUserStats();
     // Call createUser Interval Here
+    createUserInterval()
 
 
 };

@@ -20,8 +20,6 @@ router.post("/create/:username", async (req,res)=>{
 });
 
 //PUT request for editing
-
-// Put request to update user stats
 router.put("/update/:username", async (req,res)=>{
 
     try{
