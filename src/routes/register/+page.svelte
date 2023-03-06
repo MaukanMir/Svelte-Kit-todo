@@ -107,10 +107,10 @@ const onSubmit = async () =>{
     }
     // Call create user account here
     createUser();
-    // // Call create user stats here;
-    // createUserStats();
-    // // Call createUser Interval Here
-    // createUserInterval()
+    // Call create user stats here;
+    createUserStats();
+    // Call createUser Interval Here
+    createUserInterval()
 
 
 };
