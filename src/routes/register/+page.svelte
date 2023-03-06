@@ -10,9 +10,6 @@ import {onDestroy} from "svelte"
 import { goto } from '$app/navigation'
 import {get} from "svelte/store";
 
-// Set userDataBase Here
-let user = get(userDataBase);
-console.log(user)
 // Login variables here
 let email = "";
 let username ="";
@@ -30,7 +27,6 @@ async function load(){
 //Set user here
 async function setUsername (auth){
 if(auth ===200){
-    userDataBase.set([username])
     load()
 }
 }
@@ -56,9 +52,18 @@ const onSubmit = async () =>{
         const result = JSON.stringify(json);
         console.log(json, result)
 
-        // if(res.status === 200){
-        //     userDataBase.set([username])
-        // }
+        if(res.status === 200){
+            console.log(json._id)
+
+            userDataBase.set([username])
+            userInfoDb.set([{
+                
+                _id:json._id,
+                username:username,
+                email:email,
+
+            }])
+        }
     };
 
     // Create user stats here
@@ -83,7 +88,6 @@ const onSubmit = async () =>{
             })
         });
         const json = await res.json();
-        const result = JSON.stringify(json);
     }
 
     // Create user daily interval
@@ -98,16 +102,15 @@ const onSubmit = async () =>{
         });
 
         const json = await res.json();
-        const result = JSON.stringify(json);
         setUsername(res.status)
 
     }
     // Call create user account here
     createUser();
-    // Call create user stats here;
-    createUserStats();
-    // Call createUser Interval Here
-    createUserInterval()
+    // // Call create user stats here;
+    // createUserStats();
+    // // Call createUser Interval Here
+    // createUserInterval()
 
 
 };
