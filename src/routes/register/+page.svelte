@@ -4,6 +4,7 @@ import Nav from "../../lib/Nav.svelte";
 import Footer from "../../lib/Footer.svelte";
 // Svelte store import here
 import { userDataBase } from "../../stores/userDataBase";
+import {userInfoDb} from "../../stores/userInfoDb";
 //Svelte key componets here
 import {onDestroy} from "svelte"
 import { goto } from '$app/navigation'
@@ -27,7 +28,7 @@ async function load(){
 }
 
 //Set user here
-function setUsername (auth){
+async function setUsername (auth){
 if(auth ===200){
     userDataBase.set([username])
     load()
@@ -55,7 +56,6 @@ const onSubmit = async () =>{
         const result = JSON.stringify(json);
         console.log(json, result)
 
-        setUsername(res.status)
         // if(res.status === 200){
         //     userDataBase.set([username])
         // }
