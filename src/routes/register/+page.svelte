@@ -26,6 +26,7 @@ async function load(){
     }
 }
 
+console.log(new Date());
 
 // Submit form here
 const onSubmit = async () =>{
@@ -47,8 +48,6 @@ const onSubmit = async () =>{
         console.log(json, result)
         if(res.status === 200){
             userDataBase.set([username])
-            // Send user to the home page
-            load()
         }
     };
 
@@ -69,10 +68,26 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
     }
+
+    // Create user daily interval
+    async function createUserInterval(){
+        const res = await fetch("http://localhost:5000/api/streak/create/" + username,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                username,
+                interval: new Date()
+            })
+        })
+
+        // Send user to the home page
+        load()
+    }
     // Call create user account here
     createUser();
     // Call create user stats here;
     createUserStats();
+    // Call createUser Interval Here
 
 
 };

@@ -4,7 +4,7 @@ const Streak = require("../models/studyStreak");
 
 
 // Post request to create stats DB for user
-router.post("/find/:username", async (req,res)=>{
+router.post("/create/:username", async (req,res)=>{
     
     const newStreak = new Streak(req.body);
     console.log(newStreak);
