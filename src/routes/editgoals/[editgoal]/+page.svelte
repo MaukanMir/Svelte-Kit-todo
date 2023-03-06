@@ -100,13 +100,15 @@ console.log(posts)
 
 </div>
 
-<Footer/>
+
 </body>
+<Footer/>
 
 
 <style>
     body{
         background-color: #1e1e1e;
+        height:100vh;
     }
     
 </style>
