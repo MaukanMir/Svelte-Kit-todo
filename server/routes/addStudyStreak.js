@@ -6,12 +6,12 @@ const Streak = require("../models/studyStreak");
 // Post request to create stats DB for user
 router.post("/find/:username", async (req,res)=>{
     
-    const newStat = new Streak(req.body);
-    console.log(newStat);
+    const newStreak = new Streak(req.body);
+    console.log(newStreak);
 
     try{
-        const savedStat = await newStat.save();
-        res.status(200).json(savedStat);
+        const savedStreak = await newStreak.save();
+        res.status(200).json(savedStreak);
 
     }catch(err){
         console.log(err);
