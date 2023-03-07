@@ -67,10 +67,12 @@
         <h3>Username: {userInfo.username}</h3>
         <h3>Email: {userInfo.email}</h3>
         <h3>Goals Completed: 0</h3>
-        <h3>Study Streak: </h3>
-        <h3>Edit Profile Here:</h3>
+        <h3> Max Study Streak: </h3>
+        <h3>Edit Profile Below:</h3>
+        <div class="edit-container"> 
         <button class="edit-icon" on:click={()=> loadPage()}> <FaUserEdit/> </button>
         <button class ="signout" on:click={() => signOut()}>Log Off</button>
+        </div>
     </div>
 </div>
 
@@ -113,7 +115,7 @@
         color:blueviolet;
         background-color: white;
         border-radius: 10px;
-        height: 600px;
+        height: 650px;
         width:500px;
 
     }
@@ -137,6 +139,13 @@
 
     .signout:hover{
         background-color: red;
+    }
+
+    .edit-container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
 
