@@ -21,6 +21,8 @@ import Nav from "../../lib/Nav.svelte";
    */
     let posts = [];
 
+    let interval = "";
+
     // Toggle back and fourth
 
     let toggleStreak = false;
@@ -30,8 +32,10 @@ import Nav from "../../lib/Nav.svelte";
         // API Call HERE
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
+            const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user)
         // load in data to variable
         posts = await res.json();
+        interval = await interval_res.json();
         }
     });
 
@@ -75,7 +79,8 @@ import Nav from "../../lib/Nav.svelte";
 
     
 
-    const onSubmit = async (username, id, index)=>{
+    const markAsComplete = async (username, id, index)=>{
+
 
 
     };
@@ -106,7 +111,7 @@ import Nav from "../../lib/Nav.svelte";
                 -->
                 <div class ="button-format"> 
                 <button class ={ !toggleStreak ? "finish":"disabled-finish"} on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
-                <button class ="finish" on:click={()=> onSubmit(task.username, task.id, index)}>Mark As Complete</button>
+                <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
                 </div>
             </div>
     
