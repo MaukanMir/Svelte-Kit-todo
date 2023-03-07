@@ -59,7 +59,7 @@
     <Nav/>
 
     <div class ="welcome">
-        <h1 class ="welcome-header">Welcome Back, {user}!</h1>
+        <h1 class ="welcome-header">Welcome Back, {user[0].toUpperCase() + user.substring(1)}!</h1>
     </div>
     <div class ="center"> 
     <div class ="profile">
