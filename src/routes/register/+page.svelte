@@ -16,7 +16,7 @@ let username ="";
 let password ="";
 // create error state
 
-let error = "";
+let error = false;
 
 async function load(){
     if(username && email && password){
@@ -25,11 +25,11 @@ async function load(){
 }
 
 //Set user here
-// async function setUsername (auth){
-// if(auth ===200){
-//     load()
-// }
-// }
+async function setUsername (auth){
+if(auth ===200){
+    load()
+}
+}
 
 console.log(new Date());
 
@@ -51,7 +51,6 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
         console.log(json, result)
-        console.log(res.status)
         if(res.status === 201){
 
             userDataBase.set([username])
@@ -62,13 +61,15 @@ const onSubmit = async () =>{
                 email:email,
 
             }])
-
-            load()
+            error = false;
+        }else{
+            error = true;
         }
     };
 
     // Create user stats here
     async function createUserStats(){
+        if(error){return}
         const res = await fetch("http://localhost:5000/api/stats/" + username,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -93,6 +94,7 @@ const onSubmit = async () =>{
 
     // Create user daily interval
     async function createUserInterval(){
+        if(error){return}
         const res = await fetch("http://localhost:5000/api/streak/create/" + username,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -108,10 +110,10 @@ const onSubmit = async () =>{
     }
     // Call create user account here
     createUser();
-    // // Call create user stats here;
-    // createUserStats();
-    // // Call createUser Interval Here
-    // createUserInterval()
+    // Call create user stats here;
+    createUserStats();
+    // Call createUser Interval Here
+    createUserInterval()
 
 
 };
