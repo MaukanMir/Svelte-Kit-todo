@@ -163,6 +163,7 @@ onDestroy(()=>{
         bind:value={password}
         />
     </div>
+    <p class = {error ? "display":"notDisplay"}> Invalid Credentials</p>
     <button class ="submit">
         Sign Up
     </button>
@@ -243,6 +244,15 @@ onDestroy(()=>{
 .form-sub-title{
     text-align: center;
     margin-top:50px;
+}
+
+.display{
+    color:red;
+    text-align: center;
+}
+
+.notDisplay{
+    display: None;
 }
 
 </style>
