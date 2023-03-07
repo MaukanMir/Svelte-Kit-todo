@@ -36,6 +36,7 @@ import Nav from "../../lib/Nav.svelte";
         // load in data to variable
         posts = await res.json();
         interval = await interval_res.json();
+        console.log(interval)
         }
     });
 

@@ -38,16 +38,15 @@ router.put("/update/:username", async (req,res)=>{
 });
 
 // get request for study streak
-
 router.get("/find/:username", async (req,res)=>{
 
     try {
-        const streak = await Streak.find({username: req.params.userId});
+        const streak = await Streak.find({username: req.params.username});
         const { password, ...others } = user._doc;
         res.status(200).json(streak);
-      } catch (err) {
+    } catch (err) {
         res.status(500).json(err);
-      }
+    }
 
 })
 
