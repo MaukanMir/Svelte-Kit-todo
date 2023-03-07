@@ -25,11 +25,11 @@ async function load(){
 }
 
 //Set user here
-async function setUsername (auth){
-if(auth ===200){
-    load()
-}
-}
+// async function setUsername (auth){
+// if(auth ===200){
+//     load()
+// }
+// }
 
 console.log(new Date());
 
@@ -51,8 +51,8 @@ const onSubmit = async () =>{
         const json = await res.json();
         const result = JSON.stringify(json);
         console.log(json, result)
-
-        if(res.status === 200){
+        console.log(res.status)
+        if(res.status === 201){
 
             userDataBase.set([username])
             userInfoDb.set([{
@@ -108,10 +108,10 @@ const onSubmit = async () =>{
     }
     // Call create user account here
     createUser();
-    // Call create user stats here;
-    createUserStats();
-    // Call createUser Interval Here
-    createUserInterval()
+    // // Call create user stats here;
+    // createUserStats();
+    // // Call createUser Interval Here
+    // createUserInterval()
 
 
 };
