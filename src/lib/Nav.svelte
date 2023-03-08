@@ -82,6 +82,14 @@
         border:none;
     }
 
+    button:hover{
+        color:blueviolet;
+    }
+
+    .home:hover{
+        color:blueviolet;
+    }
+
     .goals ul{
         list-style: none;
         display: flex;
