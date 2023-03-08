@@ -102,10 +102,11 @@ console.log(posts)
 <div class="center-div">
 
 <div class="container-form">
+    {#each posts as post}
     <form class ="form">
 
         <div class="inner-form"> 
-        <label for="edit-goal">Edit Goal</label>
+        <label for="edit_goal">Edit Goal: {post.goal}</label>
         <input
         type="text"
         required
@@ -114,7 +115,7 @@ console.log(posts)
     </div>
 
     <div class="inner-form"> 
-        <label for="edit-how">Edit How:</label>
+        <label for="edit_how">Edit How: {post.how}</label>
         <input
         type="text"
         required
@@ -122,7 +123,7 @@ console.log(posts)
         />
     </div>
     <div class="inner-form"> 
-        <label for="edit-how">Edit Hours Per Day:</label>
+        <label for="edit_study_time">Edit Hours Per Day: {post.studyTime}</label>
         <input
         type="Number"
         required
@@ -130,7 +131,7 @@ console.log(posts)
         />
     </div>
     <div class="inner-form"> 
-        <label for="edit-how">Edit Due Date:</label>
+        <label for="edit_due_date">Edit Due Date: {post.setDate}</label>
         <input
         type="date"
         required
@@ -141,6 +142,7 @@ console.log(posts)
         <button class ="submit-form">Submit</button>
     </div>  
     </form>
+    {/each}
 </div>
 </div>
 
