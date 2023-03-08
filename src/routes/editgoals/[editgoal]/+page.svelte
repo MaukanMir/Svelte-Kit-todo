@@ -129,6 +129,14 @@ console.log(posts)
         placeholder="0"
         />
     </div>
+    <div class="inner-form"> 
+        <label for="edit-how">Edit Due Date:</label>
+        <input
+        type="date"
+        required
+        placeholder="0"
+        />
+    </div>
     <div class="button-container">
         <button class ="submit-form">Submit</button>
     </div>  
@@ -188,7 +196,7 @@ console.log(posts)
 
     .inner-form label{
         margin-bottom: 10px ;
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
     .inner-form input{
@@ -206,8 +214,12 @@ console.log(posts)
         background-color: blueviolet;
         border-radius: 10px;
         border:none;
-        height: 30px;
+        height: 40px;
         width:400px;
+    }
+
+    .submit-form:hover{
+        background-color:green;
     }
     
 </style>
