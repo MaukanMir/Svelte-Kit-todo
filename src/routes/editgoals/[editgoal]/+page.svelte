@@ -99,7 +99,7 @@ console.log(posts)
 
 <div class="container-form">
     {#each posts as post}
-    <form class ="form">
+    <form class ="form" on:submit|preventDefault={editTask}>
 
         <div class="inner-form"> 
         <label for="edit_goal">Edit Goal: {post.goal}</label>
