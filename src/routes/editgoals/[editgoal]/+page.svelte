@@ -19,6 +19,7 @@
     //Svelte store components import here
     import {get} from "svelte/store";
     import {userDataBase} from "../../../stores/userDataBase";
+    import {goto} from "$app/navigation";
 
     const user = get(userDataBase)[0];
 
@@ -35,6 +36,10 @@
    * @type {any[]}
    */
     let posts = [];
+
+    async function load(){
+        goto("/editgoals")
+    }
 
     onMount(async ()=>{
         // API Call to load in dataset
@@ -58,7 +63,7 @@
                     goal:editGoal.length >0 ? editGoal:singlePost[0].goal,
                     how:editHow.length > 0 ? editHow: singlePost[0].how,
                     date:singlePost[0].date,
-                    setDate:editDate.length >0 ? editDate : singlePost[0].setDate,
+                    setDate:edit_due_date.length >0 ? edit_due_date : singlePost[0].setDate,
                     studyTime:singlePost[0].studyTime
                 })
             });
