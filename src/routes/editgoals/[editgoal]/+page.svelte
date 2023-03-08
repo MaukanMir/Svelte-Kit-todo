@@ -4,11 +4,7 @@
 
     // component here
     import Nav from "../../../lib/Nav.svelte";
-    import MdModeEdit from 'svelte-icons/md/MdModeEdit.svelte'
-    import FaCheck from 'svelte-icons/fa/FaCheck.svelte'
     import Footer from "../../../lib/Footer.svelte"
-
-
 
     // Data import here
     export let data;
@@ -17,7 +13,7 @@
     // Edit goal variables
     let editGoal = "";
     let editHow ="";
-    let editDate ="";
+    let edit_due_date ="";
     let editStudyTime =0;
 
     //Svelte store components import here
@@ -48,12 +44,7 @@
         posts = posts.filter(item=> item.id === editGoalId)
     })
 
-    const editTask = async (/** @type {number} */ id, /** @type {string} */ check) =>{
-            console.log(check, toggleGoal)
-            if(check ==="goal"){toggleGoal = !toggleGoal}
-            else if(check ==="how"){toggleHow = !toggleHow}
-            else if(check === "date"){toggleDate = !toggleDate}
-            else if(check == "StudyTime"){toggleStudyTime = !toggleStudyTime}
+    const editTask = async (/** @type {number} */ id) =>{
 
             
         async function doPost (){
