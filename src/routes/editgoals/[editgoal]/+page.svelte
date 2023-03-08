@@ -77,7 +77,7 @@
                     editGoal.length >0 ? editGoal:item.goal,
                     editHow.length > 0 ? editHow: item.how,
                     item.date,
-                    editDate.length >0 ? editDate : item.setDate,
+                    edit_due_date.length >0 ? edit_due_date : item.setDate,
                     item.studyTime
         })
         }
@@ -107,6 +107,7 @@ console.log(posts)
         type="text"
         required
         placeholder="Edit Goal"
+        bind:value={editGoal}
         />
     </div>
 
@@ -116,6 +117,7 @@ console.log(posts)
         type="text"
         required
         placeholder="Edit How"
+        bind:value={editHow}
         />
     </div>
     <div class="inner-form"> 
@@ -124,6 +126,7 @@ console.log(posts)
         type="Number"
         required
         placeholder="0"
+        bind:value={editStudyTime}
         />
     </div>
     <div class="inner-form"> 
@@ -132,6 +135,7 @@ console.log(posts)
         type="date"
         required
         placeholder="0"
+        bind:value={edit_due_date}
         />
     </div>
     <div class="button-container">
@@ -168,6 +172,7 @@ console.log(posts)
         justify-content: center;
         align-items: center;
         font-size:1.3em;
+        color:#fff;
     }
 
     .container-form{
