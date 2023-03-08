@@ -147,8 +147,9 @@ console.log(posts)
 </div>
 
 
-</body>
 <Footer/>
+</body>
+
 
 
 <style>
@@ -162,6 +163,7 @@ console.log(posts)
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
     }
 
     .header{
@@ -177,23 +179,26 @@ console.log(posts)
         flex-direction: column;
         justify-content: center;
         align-items:center;
-        background-color: #fff;
-        height:500px;
-        width:500px;
+        background-color: #1e1e1e;
+        height:700px;
+        width:700px;
         border-radius: 10px;
     }
 
     .form{
         display: flex;
         flex-direction: column;
-        background-color: #fff;
+        background-color: #1e1e1e;
         border-radius: 10px;
-        color:blueviolet;
+        color:#fff;
+        border: 3px solid blueviolet;
+        padding: 70px;
     }
     .inner-form{
         display:flex;
         flex-direction: column;
         margin-bottom: 20px;
+        border-radius: 5px;
     }
 
     .inner-form label{
@@ -204,6 +209,8 @@ console.log(posts)
     .inner-form input{
         border-radius: 10px;
         padding:10px;
+        color:blueviolet;
+        font-size: 1em;
     }
 
     .button-container{
@@ -217,7 +224,8 @@ console.log(posts)
         border-radius: 10px;
         border:none;
         height: 40px;
-        width:400px;
+        width:500px;
+        margin-top: 15px;
     }
 
     .submit-form:hover{
