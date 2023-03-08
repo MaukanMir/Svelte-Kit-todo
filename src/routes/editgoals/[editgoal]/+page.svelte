@@ -191,6 +191,11 @@ console.log(posts)
         font-size: 1.3em;
     }
 
+    .inner-form input{
+        border-radius: 10px;
+        padding:10px;
+    }
+
     .button-container{
         display: flex;
         flex-direction: column;
