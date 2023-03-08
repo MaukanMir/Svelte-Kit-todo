@@ -97,7 +97,38 @@ console.log(posts)
 <Nav/>
 
 <div class ="header">
+<h1>Edit Goals</h1>
+</div>
 
+<div class="container-form">
+    <form class ="form">
+
+        <div class="inner-form"> 
+        <label for="edit-goal">Edit Goal</label>
+        <input
+        type="text"
+        required
+        placeholder="Edit Goal"
+        />
+    </div>
+    <div class="inner-form"> 
+        <label for="edit-how">Edit How:</label>
+        <input
+        type="text"
+        required
+        placeholder="Edit How"
+        />
+    </div>
+    <div class="inner-form"> 
+        <label for="edit-how">Edit Hours Per Day:</label>
+        <input
+        type="Number"
+        required
+        placeholder="0"
+        />
+    </div>
+
+    </form>
 </div>
 
 
@@ -109,6 +140,32 @@ console.log(posts)
     body{
         background-color: #1e1e1e;
         height:100vh;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size:1.3em;
+    }
+
+    .container-form{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .form{
+        display: flex;
+        background-color: #fff;
+        border-radius: 10px;
+        color:blueviolet;
+    }
+    .inner-form{
+        display: flex;
+        flex-direction: column;
     }
     
 </style>

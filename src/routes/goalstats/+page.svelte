@@ -10,11 +10,10 @@ import Nav from "../../lib/Nav.svelte";
     import {get} from "svelte/store"
     // Svelte routing imports here
     import { goto } from '$app/navigation'
-  import { dataset_dev } from "svelte/internal";
-  import FaTrashAlt from "svelte-icons/fa/FaTrashAlt.svelte";
+    import { dataset_dev } from "svelte/internal";
+    import FaTrashAlt from "svelte-icons/fa/FaTrashAlt.svelte";
     
     const user = get(userDataBase)[0]
-    console.log(user)
     console.log("user is" + user)
     /**
    * @type {any[]}
@@ -22,6 +21,7 @@ import Nav from "../../lib/Nav.svelte";
     let posts = [];
 
     let interval = "";
+    let window = false;
 
     // Toggle back and fourth
 
