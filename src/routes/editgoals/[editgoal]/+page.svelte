@@ -99,6 +99,7 @@ console.log(posts)
 <div class ="header">
 <h1>Edit Goals</h1>
 </div>
+<div class="center-div">
 
 <div class="container-form">
     <form class ="form">
@@ -111,6 +112,7 @@ console.log(posts)
         placeholder="Edit Goal"
         />
     </div>
+
     <div class="inner-form"> 
         <label for="edit-how">Edit How:</label>
         <input
@@ -127,8 +129,11 @@ console.log(posts)
         placeholder="0"
         />
     </div>
-
+    <div class="button-container">
+        <button class ="submit-form">Submit</button>
+    </div>  
     </form>
+</div>
 </div>
 
 
@@ -140,6 +145,13 @@ console.log(posts)
     body{
         background-color: #1e1e1e;
         height:100vh;
+    }
+
+    .center-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .header{
@@ -155,17 +167,42 @@ console.log(posts)
         flex-direction: column;
         justify-content: center;
         align-items:center;
+        background-color: #fff;
+        height:500px;
+        width:500px;
+        border-radius: 10px;
     }
 
     .form{
         display: flex;
+        flex-direction: column;
         background-color: #fff;
         border-radius: 10px;
         color:blueviolet;
     }
     .inner-form{
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .inner-form label{
+        margin-bottom: 10px ;
+        font-size: 1.3em;
+    }
+
+    .button-container{
         display: flex;
         flex-direction: column;
+    }
+
+    .submit-form{
+        color:#fff;
+        background-color: blueviolet;
+        border-radius: 10px;
+        border:none;
+        height: 30px;
+        width:400px;
     }
     
 </style>
