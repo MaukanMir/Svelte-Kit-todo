@@ -109,6 +109,10 @@
         color:blueviolet;
     }
 
+    .edit-icon:hover{
+        color:green;
+    }
+
     .profile{
         display: flex;
         flex-direction: column;
