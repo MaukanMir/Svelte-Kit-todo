@@ -22,6 +22,7 @@
 
     // import svelte variables here
     import { onMount } from "svelte";
+  import { prevent_default } from "svelte/internal";
 
     /**
    * @type {any[]}
@@ -44,11 +45,12 @@
         }
     })
 
-    const editTask = async (/** @type {number} */ id) =>{
-            
-        async function doPost (){
-            const singlePost = posts.filter(item=> item.id === id);
-            console.log(singlePost[0]._id)
+    const editGoalDB = async (id)=>{
+
+        const singlePost = posts.filter(item => item.id ===id);
+        console.log(singlePost[0]._id)
+
+        async function editPost(){
             const res = await fetch("http://localhost:5000/api/editgoals/" + singlePost[0]._id,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
@@ -65,14 +67,19 @@
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(json,result)
+
+            if(json.status === 200){
+                // Reroute user here
+                load()
+            }else{
+                console.log("error")
+            }
         };
 
-        // API Call here
-        doPost();
-        // Reroute user here
-        load()
+        editPost()
 
-};
+    };
+
 
 console.log(posts)
 
@@ -129,7 +136,7 @@ console.log(posts)
         />
     </div>
     <div class="button-container">
-        <button class ="submit-form" on:click ={() => editTask(post.id)}>Submit</button>
+        <button class ="submit-form" on:click ={()=> editGoalDB(post.id)} >Submit</button>
     </div>  
     </form>
     {/each}
