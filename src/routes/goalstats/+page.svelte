@@ -111,7 +111,7 @@ import Nav from "../../lib/Nav.svelte";
                 <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
                 -->
                 <div class ="button-format"> 
-                <button class ={ !toggleStreak ? "finish":"disabled-finish"} on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
+                <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
                 </div>
             </div>
