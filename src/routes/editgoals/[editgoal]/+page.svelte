@@ -30,7 +30,7 @@
     let posts = [];
 
     async function load(){
-        goto("/")
+        goto("/editgoals")
     }
 
     onMount(async ()=>{
@@ -60,15 +60,14 @@
                     how:editHow.length > 0 ? editHow: singlePost[0].how,
                     date:singlePost[0].date,
                     setDate:edit_due_date.length >0 ? edit_due_date : singlePost[0].setDate,
-                    studyTime:singlePost[0].studyTime
+                    studyTime:singlePost[0].studyTime,
+                    checkIn:singlePost[0].checkIn,
+                    completed:singlePost[0].completed
                 })
 
             });
             const json = await res.json();
-            const result = JSON.stringify(json);
-            console.log(json,result)
-
-            if(json.status === 200){
+            if(res.status === 200){
                 // Reroute user here
                 load()
             }else{
