@@ -72,9 +72,7 @@ import Nav from "../../lib/Nav.svelte";
                 })
             });
             const json = await res.json();
-            const result = JSON.stringify(json);
             update();
-            toggleStreak = true;
 
     };
 
