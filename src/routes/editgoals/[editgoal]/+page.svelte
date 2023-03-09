@@ -22,7 +22,8 @@
 
     // import svelte variables here
     import { onMount } from "svelte";
-  import { prevent_default } from "svelte/internal";
+    // Error
+    let error = false;
 
     /**
    * @type {any[]}
@@ -71,7 +72,7 @@
                 // Reroute user here
                 load()
             }else{
-                console.log("error")
+                error = true;
             }
         };
 
