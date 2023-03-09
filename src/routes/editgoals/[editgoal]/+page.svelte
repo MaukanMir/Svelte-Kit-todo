@@ -60,7 +60,11 @@
                     setDate:edit_due_date.length >0 ? edit_due_date : singlePost[0].setDate,
                     studyTime:singlePost[0].studyTime
                 })
+
             });
+            const json = await res.json();
+            const result = JSON.stringify(json);
+            console.log(json,result)
         };
 
         // API Call here
