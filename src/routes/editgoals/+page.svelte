@@ -25,6 +25,7 @@
         // load in data to variable
         posts = await res.json();
         console.log(posts)
+        if(posts.length ===0){toggle = !toggle}
         }
         else{
             toggle = !toggle;
