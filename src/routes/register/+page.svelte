@@ -100,7 +100,8 @@ const onSubmit = async () =>{
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
                 username,
-                interval: new Date()
+                interval: new Date(),
+                streak:0
             })
         });
 
