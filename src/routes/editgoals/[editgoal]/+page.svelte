@@ -1,7 +1,4 @@
-
-
 <script>
-
     // component here
     import Nav from "../../../lib/Nav.svelte";
     import Footer from "../../../lib/Footer.svelte"
@@ -23,12 +20,6 @@
 
     const user = get(userDataBase)[0];
 
-    // Switch between goal functions
-    let toggleGoal = false;
-    let toggleHow = false;
-    let toggleDate = false;
-    let toggleStudyTime = false;
-
     // import svelte variables here
     import { onMount } from "svelte";
 
@@ -38,7 +29,7 @@
     let posts = [];
 
     async function load(){
-        goto("/editgoals")
+        goto("/")
     }
 
     onMount(async ()=>{
@@ -50,7 +41,6 @@
     })
 
     const editTask = async (/** @type {number} */ id) =>{
-
             
         async function doPost (){
             const singlePost = posts.filter(item=> item.id === id);
@@ -69,19 +59,11 @@
             });
         };
 
+        // API Call here
         doPost();
-        if(posts[0].length >0){
+        // Reroute user here
+        load()
 
-            posts = posts.map(item=> {
-                    posts[0].length >0 ? id:item.id,
-                    editGoal.length >0 ? editGoal:item.goal,
-                    editHow.length > 0 ? editHow: item.how,
-                    item.date,
-                    edit_due_date.length >0 ? edit_due_date : item.setDate,
-                    item.studyTime
-        })
-        }
-        
 };
 
 console.log(posts)
@@ -99,7 +81,7 @@ console.log(posts)
 
 <div class="container-form">
     {#each posts as post}
-    <form class ="form" on:submit|preventDefault={editTask}>
+    <form class ="form">
 
         <div class="inner-form"> 
         <label for="edit_goal">Edit Goal: {post.goal}</label>
@@ -139,7 +121,7 @@ console.log(posts)
         />
     </div>
     <div class="button-container">
-        <button class ="submit-form">Submit</button>
+        <button class ="submit-form" on:click ={() => editTask(post.id)}>Submit</button>
     </div>  
     </form>
     {/each}

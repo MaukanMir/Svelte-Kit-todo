@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const StudySchema = new Schema({
     
     username:{type:String, required:true, unique:true},
-    interval:{type:String,required:true}
+    interval:{type:String,required:true},
+    streak:{type:Number,required:true}
 },
 {timestamps:true}
 );
