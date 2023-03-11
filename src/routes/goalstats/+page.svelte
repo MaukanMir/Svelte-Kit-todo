@@ -20,7 +20,7 @@ import Nav from "../../lib/Nav.svelte";
    */
     let posts = [];
 
-    let interval = "";
+    let interval = [];
     let window = false;
 
     // Toggle back and fourth
@@ -36,7 +36,8 @@ import Nav from "../../lib/Nav.svelte";
         // load in data to variable
         posts = await res.json();
         interval = await interval_res.json();
-        console.log(interval)
+        }else{
+            goto("/register")
         }
     });
 
@@ -76,7 +77,6 @@ import Nav from "../../lib/Nav.svelte";
 
     };
 
-    
 
     const markAsComplete = async (username, id, index)=>{
 
@@ -91,7 +91,7 @@ import Nav from "../../lib/Nav.svelte";
 <body>
     <Nav/>
     
-    <h1 class ="header">{posts.length === 0 ?"" : "Goal Progress"} </h1>
+    <h1 class ="header">{user ? "Daily Streak": ""}: </h1>
     
     
     <div class ="parent">
@@ -103,11 +103,6 @@ import Nav from "../../lib/Nav.svelte";
                 <h3> Due Date: {task.setDate}</h3>
                 <h3>Hours Alloted: {task.studyTime}</h3>
                 <h3>Study Streak: {task.checkIn}</h3>
-                <!-- 
-                <h3>Total Hours Logged: { Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay) * task.studyTime }</h3>
-                <h3>Days Remaining: {Math.round(Math.abs(new Date(task.date).getTime() - currentTime) / oneDay)}</h3>
-                <h3>Percentage Completed: {  Math.round(Math.abs(new Date(task.date).getTime() - currentTime)/ oneDay ) / Math.round(Math.abs(new Date(task.setDate).getTime() - currentTime) / oneDay)}%</h3>
-                -->
                 <div class ="button-format"> 
                 <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
