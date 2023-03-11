@@ -10,8 +10,8 @@ import Nav from "../../lib/Nav.svelte";
     import {get} from "svelte/store"
     // Svelte routing imports here
     import { goto } from '$app/navigation'
-    import { dataset_dev } from "svelte/internal";
-    import FaTrashAlt from "svelte-icons/fa/FaTrashAlt.svelte";
+    // import svg here
+    import flame_icon from "./flame-icon.svg"
     
     const user = get(userDataBase)[0]
     console.log("user is" + user)
@@ -96,9 +96,9 @@ import Nav from "../../lib/Nav.svelte";
     <Nav/>
     {#each interval as stats}
     <div class="check-in">
-
     <h1 class ="header">{user && interval.length >0 ? "Daily Streak: " + stats.streak: ""} </h1>
-        <button class ="check-in-button"> Extend the Streak!</button>
+        <img alt="fire" class="logo-icon" src={flame_icon}/>
+        <h2 class ="check-in-button"> Click To Extend the Streak!</h2>
     </div>
     {/each}
     
@@ -149,19 +149,20 @@ body{
         align-items: center;
     }
 
-    .check-in-button{
-        height:70px;
-        width:170px;
+    .logo-icon{
+        height:150px;
+        width:200px;
         margin-bottom: 70px;
-        background-color:blueviolet;
-        color:white;
-        border:none;
-        border-radius: 10px;
-        font-size: 1.2em;
+        margin-top:30px;
         cursor: pointer;
     }
 
-    
+    .check-in-button{
+        color:#fff;
+        cursor: pointer;
+    }
+
+
     .parent{
         display: flex;
         flex-wrap: wrap;
