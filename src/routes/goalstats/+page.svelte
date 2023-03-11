@@ -91,7 +91,7 @@ import Nav from "../../lib/Nav.svelte";
 <body>
     <Nav/>
     
-    <h1 class ="header">{posts.length === 0 ?"" : "Goal Analysis"} </h1>
+    <h1 class ="header">{posts.length === 0 ?"" : "Goal Progress"} </h1>
     
     
     <div class ="parent">
