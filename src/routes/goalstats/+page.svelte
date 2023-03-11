@@ -95,7 +95,9 @@ import Nav from "../../lib/Nav.svelte";
 <body>
     <Nav/>
     {#each interval as stats}
-    <h1 class ="header">{user && interval.length >0 ? "Daily Streak:" + stats.streak: ""} </h1>
+    <div class="check-in"> 
+    <h1 class ="header">{user && interval.length >0 ? "Daily Streak: " + stats.streak: ""} </h1>
+    </div>
     {/each}
     
     <div class ="parent">
