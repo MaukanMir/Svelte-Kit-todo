@@ -36,6 +36,7 @@ import Nav from "../../lib/Nav.svelte";
         // load in data to variable
         posts = await res.json();
         interval = await interval_res.json();
+        console.log(interval[0].streak)
         }else{
             goto("/register")
         }
@@ -93,9 +94,9 @@ import Nav from "../../lib/Nav.svelte";
 
 <body>
     <Nav/>
-    
-    <h1 class ="header">{user && interval.length >0 ? "Daily Streak:": ""} </h1>
-    
+    {#each interval as stats}
+    <h1 class ="header">{user && interval.length >0 ? "Daily Streak:" + stats.streak: ""} </h1>
+    {/each}
     
     <div class ="parent">
         {#each posts as task, index}
