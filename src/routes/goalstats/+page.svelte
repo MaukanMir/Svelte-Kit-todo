@@ -32,7 +32,7 @@ import Nav from "../../lib/Nav.svelte";
         // API Call HERE
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
-            const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user)
+            const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user);
         // load in data to variable
         posts = await res.json();
         interval = await interval_res.json();
@@ -84,6 +84,9 @@ import Nav from "../../lib/Nav.svelte";
 
     };
 
+    const calcInterval = async()=>{
+        console.log(interval)
+    }
 </script>
 
 <!--HTML Components-->
@@ -91,7 +94,7 @@ import Nav from "../../lib/Nav.svelte";
 <body>
     <Nav/>
     
-    <h1 class ="header">{user ? "Daily Streak": ""}: </h1>
+    <h1 class ="header">{user && interval.length >0 ? "Daily Streak:": ""} </h1>
     
     
     <div class ="parent">
