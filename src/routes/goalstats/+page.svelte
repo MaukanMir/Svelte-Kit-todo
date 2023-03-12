@@ -90,9 +90,7 @@ import Nav from "../../lib/Nav.svelte";
 
         const checkInterval = async()=>{
             const currTime = new Date();
-            const pastTime = interval.length >0 ? interval[0].interval:0;
-            console.log( new Date(currTime))
-            console.log(new Date(pastTime))
+            const pastTime = interval.length >0 ? new Date(interval[0].interval):0;
         }
 
         checkInterval()
