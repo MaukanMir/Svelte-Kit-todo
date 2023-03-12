@@ -87,7 +87,9 @@ import Nav from "../../lib/Nav.svelte";
 
     const calcInterval = async()=>{
 
-        console.log(interval.length >0 ? interval.interval:"nope")
+        const checkInterval = async()=>{
+
+        }
 
     };
 </script>
