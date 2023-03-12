@@ -97,7 +97,15 @@ import Nav from "../../lib/Nav.svelte";
         }
 
         const updateStreak = async()=>{
-            const res = await fetch("")
+            const res = await fetch("http://localhost:5000/api/streak/update/" + user,{
+                method:"PUT",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    username:user,
+                    interval:new Date(),
+                    streak:interval[0].streak +1
+                })
+            })
         }
         const timeWindow = checkInterval();
 
