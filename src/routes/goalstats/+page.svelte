@@ -91,8 +91,8 @@ import Nav from "../../lib/Nav.svelte";
         const checkInterval = async()=>{
             const currTime = new Date();
             const pastTime = interval.length >0 ? interval[0].interval:0;
-            console.log(currTime)
-            console.log(pastTime)
+            console.log( new Date(currTime))
+            console.log(new Date(pastTime))
         }
 
         checkInterval()
@@ -111,6 +111,7 @@ import Nav from "../../lib/Nav.svelte";
         <img alt="fire" class="logo-icon" src={flame_icon}/>
     </button>
         <h2 class ="daily-streak"> {"Daily Streak: " + stats.streak}</h2>
+        <h2 class = { window ? "display":"notDisplay"}>Check in again in 8 hours</h2>
     </div>
     {/each}
     
@@ -180,6 +181,15 @@ body{
         margin-bottom: 80px;
     }
 
+    .notDisplay{
+        display: none;
+    }
+
+    .display{
+        color:red;
+        margin-top:20px;
+    }
+
 
     .parent{
         display: flex;
@@ -212,18 +222,6 @@ body{
         margin:10px 0px;
     }
 
-    .disabled-finish{
-        color:white;
-        background-color: red;
-        border-radius: 10px;
-        padding:5px;
-        cursor: not-allowed;
-        pointer-events: none;
-        padding:5px;
-        margin:10px 0px;
-        border:none;
-        
-    }
 
     .finish:hover{
         background-color: green;
