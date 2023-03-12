@@ -93,10 +93,16 @@ import Nav from "../../lib/Nav.svelte";
             const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
             let diff = (currTime.getTime() - pastTime.getTime())/1000;
             diff /= (60 *60);
-
             return diff;
         }
+
+        const updateStreak = async()=>{
+            const res = await fetch("")
+        }
         const timeWindow = checkInterval();
+
+        if(timeWindow <= 8){
+        }
 
     };
 </script>
