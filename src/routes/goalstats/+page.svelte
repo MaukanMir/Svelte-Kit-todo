@@ -93,24 +93,26 @@ import Nav from "../../lib/Nav.svelte";
             const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
             let diff = (currTime.getTime() - pastTime.getTime())/1000;
             diff /= (60 *60);
-            return diff;
+
+            return diff <= 8 ? true: false;
+
         }
 
-        const updateStreak = async()=>{
+        const updateStreak = async(check)=>{
+
             const res = await fetch("http://localhost:5000/api/streak/update/" + user,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
                     username:user,
                     interval:new Date(),
-                    streak:interval[0].streak +1
+                    streak:interval[0].streak+1
                 })
             })
         }
-        const timeWindow = checkInterval();
+        
+        const check = checkInterval();
 
-        if(timeWindow <= 8){
-        }
 
     };
 </script>
