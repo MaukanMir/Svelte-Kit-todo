@@ -86,7 +86,9 @@ import Nav from "../../lib/Nav.svelte";
     };
 
     const calcInterval = async()=>{
-        console.log(interval)
+
+        console.log(interval.length >0 ? interval.interval:"nope")
+
     };
 </script>
 
@@ -96,9 +98,11 @@ import Nav from "../../lib/Nav.svelte";
     <Nav/>
     {#each interval as stats}
     <div class="check-in">
-    <h1 class ="header">{user && interval.length >0 ? "Daily Streak: " + stats.streak: ""} </h1>
+    <h1 class ="header">Click to Extend the Streak!</h1>
+    <button class ="img-button">
         <img alt="fire" class="logo-icon" src={flame_icon}/>
-        <h2 class ="check-in-button"> Click To Extend the Streak!</h2>
+    </button>
+        <h2 class ="daily-streak"> {"Daily Streak: " + stats.streak}</h2>
     </div>
     {/each}
     
@@ -142,6 +146,7 @@ body{
         height: 100vh;
     }
 
+
     .check-in{
         display:flex;
         flex-direction: column;
@@ -152,14 +157,19 @@ body{
     .logo-icon{
         height:150px;
         width:200px;
-        margin-bottom: 70px;
         margin-top:30px;
         cursor: pointer;
     }
 
-    .check-in-button{
+    .img-button{
+        background-color: #1e1e1e;
+        border:none;
+        cursor:pointer;
+    }
+
+    .daily-streak{
         color:#fff;
-        cursor: pointer;
+        margin-bottom: 80px;
     }
 
 
