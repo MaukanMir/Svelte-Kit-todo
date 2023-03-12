@@ -87,9 +87,15 @@ import Nav from "../../lib/Nav.svelte";
 
     const calcInterval = async()=>{
 
-        const checkInterval = async()=>{
 
+        const checkInterval = async()=>{
+            const currTime = new Date();
+            const pastTime = interval.length >0 ? interval[0].interval:0;
+            console.log(currTime)
+            console.log(pastTime)
         }
+
+        checkInterval()
 
     };
 </script>
@@ -101,7 +107,7 @@ import Nav from "../../lib/Nav.svelte";
     {#each interval as stats}
     <div class="check-in">
     <h1 class ="header">Click to Extend the Streak!</h1>
-    <button class ="img-button">
+    <button on:click ={()=> calcInterval()} class ="img-button">
         <img alt="fire" class="logo-icon" src={flame_icon}/>
     </button>
         <h2 class ="daily-streak"> {"Daily Streak: " + stats.streak}</h2>
