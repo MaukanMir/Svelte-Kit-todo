@@ -106,13 +106,13 @@ import Nav from "../../lib/Nav.svelte";
                 body:JSON.stringify({
                     username:user,
                     interval:new Date(),
-                    streak:interval[0].streak+1
+                    streak: check === true ? interval[0].streak+1:0,
                 })
             })
         }
-        
-        const check = checkInterval();
 
+        const check = checkInterval();
+        updateStreak(check);
 
     };
 </script>
