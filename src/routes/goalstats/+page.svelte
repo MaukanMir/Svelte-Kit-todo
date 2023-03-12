@@ -88,12 +88,15 @@ import Nav from "../../lib/Nav.svelte";
     const calcInterval = async()=>{
 
 
-        const checkInterval = async()=>{
+        const checkInterval = ()=>{
             const currTime = new Date();
-            const pastTime = interval.length >0 ? new Date(interval[0].interval):0;
-        }
+            const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
+            let diff = (currTime.getTime() - pastTime.getTime())/1000;
+            diff /= (60 *60);
 
-        checkInterval()
+            return diff;
+        }
+        const timeWindow = checkInterval();
 
     };
 </script>
