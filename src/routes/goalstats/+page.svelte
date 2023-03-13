@@ -20,8 +20,9 @@ import Nav from "../../lib/Nav.svelte";
    */
     let posts = [];
 
-
     let interval = []; 
+
+    let window = false;
 
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
@@ -161,16 +162,13 @@ import Nav from "../../lib/Nav.svelte";
     
     </body>
     <Footer/>
-
-
-
 <style>
 
 body{
         background-color: #1e1e1e;
         color:white;
         font-family: sans-serif;
-        height: 100vh;
+        height: 120vh;
     }
 
 
@@ -206,6 +204,7 @@ body{
     .display{
         color:red;
         margin-top:20px;
+        margin-bottom: 30px;
     }
 
 
