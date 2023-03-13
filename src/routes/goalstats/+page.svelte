@@ -100,7 +100,7 @@ import Nav from "../../lib/Nav.svelte";
 
         const updateStreak = async(check)=>{
 
-            const res = await fetch("http://localhost:5000/api/streak/update/" + user,{
+            const res = await fetch("http://localhost:5000/api/streak/update/" + interval[0]._id,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
@@ -109,6 +109,8 @@ import Nav from "../../lib/Nav.svelte";
                     streak: check === true ? interval[0].streak+1:0,
                 })
             })
+
+            console.log(res.status)
         }
         // Check time period
         const check = checkInterval();

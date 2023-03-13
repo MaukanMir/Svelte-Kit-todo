@@ -20,7 +20,8 @@ router.post("/create/:username", async (req,res)=>{
 });
 
 //PUT request for editing
-router.put("/update/:username", async (req,res)=>{
+router.put("/update/:id", async (req,res)=>{
+
 
     try{
         const updatedStat = await Streak.findByIdAndUpdate(
