@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Goals = require("../models/goals");
 
-// GET all orders
+// GET all goals
 router.get("/find/:userId", async (req,res)=>{
     
     try{

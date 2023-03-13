@@ -23,7 +23,8 @@ import Nav from "../../lib/Nav.svelte";
     /**
    * @type {any[]}
    */
-    let interval = [];
+
+    let interval = []; 
 
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
