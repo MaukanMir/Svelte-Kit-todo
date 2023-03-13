@@ -110,8 +110,9 @@ import Nav from "../../lib/Nav.svelte";
                 })
             })
         }
-
+        // Check time period
         const check = checkInterval();
+        // Make api call here
         updateStreak(check);
 
     };
