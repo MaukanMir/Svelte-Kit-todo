@@ -20,9 +20,6 @@ import Nav from "../../lib/Nav.svelte";
    */
     let posts = [];
 
-    /**
-   * @type {any[]}
-   */
 
     let interval = []; 
 
@@ -31,10 +28,12 @@ import Nav from "../../lib/Nav.svelte";
         // API Call HERE
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
-            const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user);
+            const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
         // load in data to variable
         posts = await res.json();
-        interval = await interval_res.json();
+        if (interval_res.status ==200){
+            interval = await interval_res.json()
+        }
         }else{
             goto("/register")
         }
