@@ -31,7 +31,7 @@ import Nav from "../../lib/Nav.svelte";
             const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
         // load in data to variable
         posts = await res.json();
-        if (interval_res.status ==200){
+        if (interval_res.status === 200){
             interval = await interval_res.json()
         }
         }else{
