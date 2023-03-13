@@ -20,12 +20,10 @@ import Nav from "../../lib/Nav.svelte";
    */
     let posts = [];
 
+    /**
+   * @type {any[]}
+   */
     let interval = [];
-    let window = false;
-
-    // Toggle back and fourth
-
-    let toggleStreak = false;
 
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
@@ -36,7 +34,6 @@ import Nav from "../../lib/Nav.svelte";
         // load in data to variable
         posts = await res.json();
         interval = await interval_res.json();
-        console.log(interval[0].streak)
         }else{
             goto("/register")
         }
@@ -100,7 +97,7 @@ import Nav from "../../lib/Nav.svelte";
 
         const updateStreak = async(check)=>{
 
-            const res = await fetch("http://localhost:5000/api/streak/update/" + interval[0]._id,{
+            const res = await fetch("http://localhost:5000/api/streak/update/" + user,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
@@ -111,6 +108,7 @@ import Nav from "../../lib/Nav.svelte";
             })
 
             console.log(res.status)
+
         }
         // Check time period
         const check = checkInterval();
