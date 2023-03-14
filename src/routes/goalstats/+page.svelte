@@ -115,6 +115,7 @@ import Nav from "../../lib/Nav.svelte";
         const check = checkInterval();
         // Make api call here
         updateStreak(check);
+        window = !window;
 
     };
 </script>
@@ -126,11 +127,14 @@ import Nav from "../../lib/Nav.svelte";
     {#each interval as stats}
     <div class="check-in">
     <h1 class ="header">Click to Extend the Streak!</h1>
+    {#if window}
+    <h2 class = { window ? "display":"notDisplay"}>Check in again in 8 hours</h2>
+    {:else}
     <button on:click ={()=> calcInterval()} class ="img-button">
         <img alt="fire" class="logo-icon" src={flame_icon}/>
     </button>
         <h2 class ="daily-streak"> {"Daily Streak: " + stats.streak}</h2>
-        <h2 class = { window ? "display":"notDisplay"}>Check in again in 8 hours</h2>
+    {/if}
     </div>
     {/each}
     
