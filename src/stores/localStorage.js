@@ -1,11 +1,22 @@
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
 import { browser } from "$app/environment";
 
 
-export const token_name = writable({
-    token:"",
-    is_user_active:false,
-    is_admin:false,
-});
+const localState = localStorage.getItem('state')
+const initialState = {
+    user: []
+}
 
-token_name.subscribe((user)=> browser && localStorage.setItem("token", user.token))
+if (!localState) {
+    // Set localStorage "state" to the "initialState"
+}
+
+const appState = localState ? JSON.parse(localState) : initialState
+
+export const state = writable(appState)
+export const update = callback => {
+    const updatedState = callback(get(state))
+
+    state.update(() => updatedState)
+    localStorage.setItem('state', JSON.stringify(updatedState))
+}
