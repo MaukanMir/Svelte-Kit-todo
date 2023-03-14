@@ -34,6 +34,7 @@ router.put("/update/:id", async (req,res)=>{
         res.status(200).json(updatedStat);
     }
     catch(err){
+        console.log(err)
         res.status(500).json(err)
     }
 });

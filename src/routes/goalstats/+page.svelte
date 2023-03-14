@@ -98,7 +98,7 @@ import Nav from "../../lib/Nav.svelte";
 
         const updateStreak = async(check)=>{
 
-            const res = await fetch("http://localhost:5000/api/streak/update/" + user,{
+            const res = await fetch("http://localhost:5000/api/streak/update/" + interval[0]._id,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
