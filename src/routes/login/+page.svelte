@@ -28,10 +28,9 @@ console.log(user)
 
     //user authenticate 
     function login(metaData){
-        const authenticated = true;
-
+        // Update user information here
         userSession.update(value =>{
-            return {...value, authenticated, metaData};
+            return {...value, user:metaData};
         })
     }
     
@@ -78,11 +77,12 @@ console.log(user)
             const metaData ={
                 user:json.username,
                 _id:json._id,
-                email:json.email
+                email:json.email,
+                authenticated:true
             };
-            login(json.username, metaData);
 
-
+            // Login information here
+            login(metaData);
 
                 // save user info here
             // userInfo =[

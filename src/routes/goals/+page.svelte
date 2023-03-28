@@ -9,6 +9,7 @@
     //Svelte store components import here
     import {get} from "svelte/store";
     import {userDataBase} from "../../stores/userDataBase";
+    import {userSession} from "../../stores/userSession";
     // svelte nav imports here
     import {goto} from "$app/navigation"
     // Icon imports here
