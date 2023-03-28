@@ -1,22 +1,20 @@
-import { writable, get } from "svelte/store";
-import { browser } from "$app/environment";
+import { writable } from 'svelte/store';
 
+function createSessionStorageStore(key, initialValue) {
+  const storedValue = sessionStorage.getItem(key);
+  const initial = storedValue !== null ? JSON.parse(storedValue) : initialValue;
+  const store = writable(initial);
 
-const localState = localStorage.getItem('state')
-const initialState = {
-    user: []
+  store.subscribe(value => {
+    sessionStorage.setItem(key, JSON.stringify(value));
+  });
+
+  return store;
 }
 
-if (!localState) {
-    // Set localStorage "state" to the "initialState"
-}
-
-const appState = localState ? JSON.parse(localState) : initialState
-
-export const state = writable(appState)
-export const update = callback => {
-    const updatedState = callback(get(state))
-
-    state.update(() => updatedState)
-    localStorage.setItem('state', JSON.stringify(updatedState))
-}
+export const userSession = createSessionStorageStore('userSession', {
+authenticated: false,
+user: null,
+_id:null,
+email:null,
+});
