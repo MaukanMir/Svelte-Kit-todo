@@ -27,12 +27,11 @@ let authenticated = false;
 console.log(user)
 
     //user authenticate 
-    function login(username, metaData){
+    function login(metaData){
         const authenticated = true;
-        const user = {username}
 
         userSession.update(value =>{
-            return {...value, authenticated, user};
+            return {...value, authenticated, metaData};
         })
     }
     
@@ -75,13 +74,13 @@ console.log(user)
             console.log(res.status)
             toggle = false;
             console.log(json)
-            // Grab yser data here
+            // Grab user data here
             const metaData ={
                 user:json.username,
                 _id:json._id,
                 email:json.email
             };
-            login(json.username, )
+            login(json.username, metaData);
 
 
 
