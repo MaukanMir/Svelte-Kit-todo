@@ -10,7 +10,6 @@
     import {onDestroy} from "svelte"
     import { goto } from '$app/navigation'
     import {get} from "svelte/store";
-  import { json } from "@sveltejs/kit";
 
 // Set userDataBase Here
 let user = get(userDataBase);
