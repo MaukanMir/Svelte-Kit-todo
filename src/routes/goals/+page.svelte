@@ -16,9 +16,9 @@
     import TiChevronLeft from 'svelte-icons/ti/TiChevronLeft.svelte'
     import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
 
-    // const user = get(userDataBase)[0];
+    const user = get(userDataBase)[0];
 
-    let user = null;
+let username = null;
     userSession.subscribe(storeValue =>{
         if(storeValue.user){
             username = storeValue.user;
