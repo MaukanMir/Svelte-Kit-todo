@@ -5,7 +5,6 @@
     // Svelte store import here
     import { userDataBase } from "../../stores/userDataBase";
     import {userInfoDb} from "../../stores/userInfoDb"
-    import {state, update} from "../../stores/localStorage"
     //Svelte key componets here
     import {onDestroy} from "svelte"
     import { goto } from '$app/navigation'
@@ -71,17 +70,6 @@ console.log(user)
             userDataBase.set([username]);
             // Reroute user to home page
             console.log(json)
-            const addUser = () => {
-            update(state => {
-            state.users.unshift({
-                id: json._id,
-                username: username,
-                email:json.email
-            })
-            return state
-        })
-        addUser();
-    };
             load();
             }else{
                 toggle = true;
