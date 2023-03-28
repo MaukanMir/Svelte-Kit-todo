@@ -27,7 +27,7 @@ let authenticated = false;
 console.log(user)
 
     //user authenticate 
-    function login(username, password){
+    function login(username, metaData){
         const authenticated = true;
         const user = {username}
 
@@ -70,21 +70,35 @@ console.log(user)
             const result = JSON.stringify(json);
             console.log(result)
             if(res.status === 200){
-                // save user info here
-            userInfo =[
-                {
-                    _id:json._id,
-                    username:json.username,
-                    email:json.email
-                }
-            ]
+
+            //Printing information here
             console.log(res.status)
             toggle = false;
-            userInfoDb.set(userInfo);
-            // Set store global state to user
-            userDataBase.set([username]);
-            // Reroute user to home page
             console.log(json)
+            // Grab yser data here
+            const metaData ={
+                user:json.username,
+                _id:json._id,
+                email:json.email
+            };
+            login(json.username, )
+
+
+
+                // save user info here
+            // userInfo =[
+            //     {
+            //         _id:json._id,
+            //         username:json.username,
+            //         email:json.email
+            //     }
+            // ]
+
+    
+            // userInfoDb.set(userInfo);
+            // // Set store global state to user
+            // userDataBase.set([username]);
+            // // Reroute user to home page
             load();
 
             // User login with local store here store here
