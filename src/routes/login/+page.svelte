@@ -21,10 +21,22 @@ let user = get(userDataBase);
    */
 let userInfo;
 let toggle = false;
+// user login information
+let authenticated = false;
+
 console.log(user)
+
+    //user authenticate 
+    function login(username, password){
+        const authenticated = true;
+        const user = {username}
+
+        userSession.update(value =>{
+            return {...value, authenticated, user};
+        })
+    }
     
     // Login variables here
-
     let username ="";
     let password ="";
 
@@ -32,7 +44,6 @@ console.log(user)
     let error =""
 
     // Reroute user here
-
     async function load(){
         if(username && password){
             goto("/goalstats")
@@ -76,7 +87,7 @@ console.log(user)
             console.log(json)
             load();
 
-            // User login with store here
+            // User login with local store here store here
             
             }else{
                 toggle = true;
