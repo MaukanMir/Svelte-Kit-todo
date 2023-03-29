@@ -3,17 +3,22 @@
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
     // import svelte store componets here
-    import {userDataBase} from "../../stores/userDataBase";
-    import {userInfoDb} from "../../stores/userInfoDb";
+    import {userSession} from "../../stores/userSession";
     import {get} from "svelte/store";
     // svelte components here
     import {onMount} from "svelte";
     // import {goto} from "$app/navigation";
 
-    let user = get(userDataBase)[0];
-    let userInfo = get(userInfoDb)[0]
-    console.log(get(userDataBase));
-    console.log(get(userInfoDb));
+
+    let userInfo = null
+    let user = null;
+
+    userSession.subscribe(storeValue => {
+    if (storeValue.user) {
+      user = storeValue.user.user;
+    userInfo = storeValue.user;
+    }
+  });
 
     //edit profile
 
