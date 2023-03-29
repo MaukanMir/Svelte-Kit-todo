@@ -8,12 +8,13 @@ import Nav from "../../lib/Nav.svelte";
     // Svelte store import here
     import {userDataBase} from "../../stores/userDataBase";
     import {get} from "svelte/store"
+    import {userSession} from "../../stores/userSession"
     // Svelte routing imports here
     import { goto } from '$app/navigation'
     // import svg here
     import flame_icon from "./flame-icon.svg"
     
-    const user = get(userDataBase)[0]
+    let user = null
     console.log("user is" + user)
     /**
    * @type {any[]}
@@ -26,6 +27,13 @@ import Nav from "../../lib/Nav.svelte";
 
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
+
+        userSession.subscribe(storeValue => {
+        if (storeValue.user) {
+        user = storeValue.user.user;
+    }
+});
+
         // API Call HERE
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
