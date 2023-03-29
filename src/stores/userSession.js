@@ -1,20 +1,14 @@
 import { writable } from 'svelte/store';
+const cache = require('memory-cache');
 
 function createSessionStorageStore(key, initialValue) {
-  let storedValue, initial, store;
+  const storedValue = cache.get(key);
+  const initial = storedValue !== null ? JSON.parse(storedValue) : initialValue;
+  const store = writable(initial);
 
-  if (typeof sessionStorage !== 'undefined') {
-    storedValue = sessionStorage.getItem(key);
-    initial = storedValue !== null ? JSON.parse(storedValue) : initialValue;
-    store = writable(initial);
-
-    store.subscribe(value => {
-      sessionStorage.setItem(key, JSON.stringify(value));
-    });
-  } else {
-    // Fall back to using an in-memory object if sessionStorage is not available
-    store = writable(initialValue);
-  }
+  store.subscribe(value => {
+    cache.put(key, JSON.stringify(value));
+  });
 
   return store;
 }
