@@ -16,11 +16,6 @@ import {get} from "svelte/store";
 
 userSession.subscribe(storeValue => {
   if (storeValue.user) {
-    // username = storeValue.user.user;
-    // userId = storeValue.user._id;
-    // userEmail = storeValue.user.email;
-    console.log(storeValue.user)
-    console.log(storeValue.user.email)
   }else{
     "no user"
   }
