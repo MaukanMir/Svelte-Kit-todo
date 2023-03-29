@@ -44,7 +44,7 @@
     onMount(async ()=>{
         userSession.subscribe(storeValue =>{
         if(storeValue.user){
-            username = storeValue.user;
+            user = storeValue.user.user;
         }
 
         console.log(username)
