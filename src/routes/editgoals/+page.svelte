@@ -8,8 +8,15 @@
     //Svelte store components import here
     import {get} from "svelte/store";
     import {userDataBase} from "../../stores/userDataBase";
+    import {userSession} from "../../stores/userSession"
 
-    const user = get(userDataBase)[0];
+    let user = get(userDataBase)[0];
+
+    userSession.subscribe(storeValue => {
+  if (storeValue.user) {
+    user = storeValue.user.user;
+  }
+});
 
     console.log(user);
     /**
