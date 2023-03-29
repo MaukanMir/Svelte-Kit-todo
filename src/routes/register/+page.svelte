@@ -12,7 +12,7 @@ import { goto } from '$app/navigation'
 import {get} from "svelte/store";
 
 
-console.log(userSession)
+// console.log(userSession)
 
 userSession.subscribe(storeValue => {
   if (storeValue.user) {
@@ -20,6 +20,7 @@ userSession.subscribe(storeValue => {
     // userId = storeValue.user._id;
     // userEmail = storeValue.user.email;
     console.log(storeValue.user)
+    console.log(storeValue.user.email)
   }else{
     "no user"
   }

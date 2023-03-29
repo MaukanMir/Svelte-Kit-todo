@@ -21,10 +21,9 @@
     let user = null;
     userSession.subscribe(storeValue =>{
         if(storeValue.user){
-            username = storeValue.user;
+            user = storeValue.user.user;
         }
-
-        console.log(username)
+        console.log(user)
     })
 
     let carouselIndex =0;
