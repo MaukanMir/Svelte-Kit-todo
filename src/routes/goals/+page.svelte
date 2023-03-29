@@ -19,12 +19,6 @@
     // const user = get(userDataBase)[0];
 
     let user = null;
-    userSession.subscribe(storeValue =>{
-        if(storeValue.user){
-            user = storeValue.user.user;
-        }
-        console.log(user)
-    })
 
     let carouselIndex =0;
 
@@ -46,7 +40,6 @@
         if(storeValue.user){
             user = storeValue.user.user;
         }
-
         console.log(username)
     })
         if(user){

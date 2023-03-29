@@ -6,8 +6,6 @@ import Nav from "../../lib/Nav.svelte";
     // svelte components imported here
     import {onMount} from "svelte";
     // Svelte store import here
-    import {userDataBase} from "../../stores/userDataBase";
-    import {get} from "svelte/store"
     import {userSession} from "../../stores/userSession"
     // Svelte routing imports here
     import { goto } from '$app/navigation'
