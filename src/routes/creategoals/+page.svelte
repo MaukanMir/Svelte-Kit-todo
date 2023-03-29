@@ -12,8 +12,14 @@
     //svelte import here
     import {goto} from "$app/navigation";
 
+    let user = null;
 
-    const user = get(userDataBase)[0];
+    userSession.subscribe(storeValue => {
+    if (storeValue.user) {
+      user = storeValue.user.user;
+    }
+});
+
     console.log(user)
     // stores objects here
     let goal = "";
@@ -22,7 +28,6 @@
 
     //Send user back to home page
     async function load(){
-        
 
         if(!user){ goto("/register");}
     }
