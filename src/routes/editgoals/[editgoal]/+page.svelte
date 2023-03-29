@@ -16,7 +16,16 @@
     //Svelte store components import here
     import {get} from "svelte/store";
     import {userDataBase} from "../../../stores/userDataBase";
+    import {userSession} from "../../../stores/userSession"
     import {goto} from "$app/navigation";
+
+    let user = null;
+
+    userSession.subscribe(storeValue => {
+  if (storeValue.user) {
+    user = storeValue.user.user;
+  }
+});
 
     const user = get(userDataBase)[0];
 
