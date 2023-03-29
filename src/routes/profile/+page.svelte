@@ -19,7 +19,7 @@
     onMount(async ()=>{
 
         userSession.subscribe(storeValue => {
-  if (storeValue.user) {
+  if(storeValue.user) {
     user = storeValue.user.user;
     userInfo = storeValue.user;
   }

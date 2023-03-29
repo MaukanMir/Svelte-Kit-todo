@@ -1,13 +1,20 @@
 import { writable } from 'svelte/store';
 
 function createSessionStorageStore(key, initialValue) {
-  const storedValue = sessionStorage.getItem(key);
-  const initial = storedValue !== null ? JSON.parse(storedValue) : initialValue;
-  const store = writable(initial);
+  let storedValue, initial, store;
 
-  store.subscribe(value => {
-    sessionStorage.setItem(key, JSON.stringify(value));
-  });
+  if (typeof sessionStorage !== 'undefined') {
+    storedValue = sessionStorage.getItem(key);
+    initial = storedValue !== null ? JSON.parse(storedValue) : initialValue;
+    store = writable(initial);
+
+    store.subscribe(value => {
+      sessionStorage.setItem(key, JSON.stringify(value));
+    });
+  } else {
+    // Fall back to using an in-memory object if sessionStorage is not available
+    store = writable(initialValue);
+  }
 
   return store;
 }
