@@ -4,10 +4,12 @@
     import Footer from "../../lib/Footer.svelte";
     // import svelte store componets here
     import {userSession} from "../../stores/userSession";
-    import {get} from "svelte/store";
     // svelte components here
-    import {onMount} from "svelte";
-    // import {goto} from "$app/navigation";
+    import {goto} from "$app/navigation";
+
+    async function load(){
+        goto("/goals")
+    }
 
 
     let userInfo = null
@@ -56,6 +58,7 @@
             userSession.update(storeValue => {
         return { ...storeValue, user: userUpdateInfo };
 });
+    load()
         }
 
     };
