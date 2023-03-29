@@ -16,7 +16,7 @@
     userSession.subscribe(storeValue => {
     if (storeValue.user) {
       user = storeValue.user.user;
-    userInfo = storeValue.user;
+     userInfo = storeValue.user;
     }
   });
 
@@ -53,8 +53,9 @@
                 }
             ]
             // Set svelte stores with updated user information
-            userInfoDb.set(userUpdateInfo);
-            userDataBase.set([userUpdateInfo[0].username])
+            userSession.update(storeValue => {
+        return { ...storeValue, user: userUpdateInfo };
+});
         }
 
     };
