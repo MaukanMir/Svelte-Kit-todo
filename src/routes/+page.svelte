@@ -7,6 +7,7 @@
     import {onMount} from "svelte";
     // import Svelte store import here
     import {userDataBase} from "../stores/userDataBase";
+    import {userSession} from "../stores/userSession"
     import {get} from "svelte/store"
     // import Svelte routing imports here
     import { goto } from '$app/navigation'
@@ -14,7 +15,13 @@
     import IoIosArrowRoundForward from 'svelte-icons/io/IoIosArrowRoundForward.svelte'
 
     // Create user
-    const user = get(userDataBase)[0];
+    let user = null;
+    userSession.subscribe(storeValue => {
+
+  if (storeValue.user) {
+    user = storeValue.user.user;
+  }
+});
 
 </script>
 <body>
