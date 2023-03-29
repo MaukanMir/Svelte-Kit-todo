@@ -5,10 +5,26 @@ import Footer from "../../lib/Footer.svelte";
 // Svelte store import here
 import { userDataBase } from "../../stores/userDataBase";
 import {userInfoDb} from "../../stores/userInfoDb";
+import {userSession} from "../../stores/userSession";
 //Svelte key componets here
 import {onDestroy} from "svelte"
 import { goto } from '$app/navigation'
 import {get} from "svelte/store";
+
+
+console.log(userSession)
+
+userSession.subscribe(storeValue => {
+  if (storeValue.user) {
+    // username = storeValue.user.user;
+    // userId = storeValue.user._id;
+    // userEmail = storeValue.user.email;
+    console.log(storeValue.user)
+  }else{
+    "no user"
+  }
+
+})
 
 // Login variables here
 let email = "";

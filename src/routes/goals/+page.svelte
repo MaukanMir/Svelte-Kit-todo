@@ -16,9 +16,9 @@
     import TiChevronLeft from 'svelte-icons/ti/TiChevronLeft.svelte'
     import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
 
-    const user = get(userDataBase)[0];
+    // const user = get(userDataBase)[0];
 
-let username = null;
+    let user = null;
     userSession.subscribe(storeValue =>{
         if(storeValue.user){
             username = storeValue.user;
@@ -43,6 +43,13 @@ let username = null;
 
     
     onMount(async ()=>{
+        userSession.subscribe(storeValue =>{
+        if(storeValue.user){
+            username = storeValue.user;
+        }
+
+        console.log(username)
+    })
         if(user){
         
         // API Call to load in dataset
