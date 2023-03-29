@@ -19,9 +19,7 @@
 });
 
     console.log(user);
-    /**
-   * @type {any[]}
-   */
+
     let posts = [];
     let toggle = false;
 

@@ -3,21 +3,28 @@
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
     // import svelte store componets here
-    import {userDataBase} from "../../stores/userDataBase";
-    import {userInfoDb} from "../../stores/userInfoDb";
+    import {userSession} from "../../stores/userSession"
     import {get} from "svelte/store";
     // svelte components here
     import {onMount} from "svelte";
     import {goto} from "$app/navigation";
     import FaUserEdit from 'svelte-icons/fa/FaUserEdit.svelte'
 
-    let user = get(userDataBase)[0];
-    let userInfo = get(userInfoDb)[0]
-    console.log(get(userDataBase))
-    console.log(get(userInfoDb))
+    let user = null;
+    let userInfo = null;
+
+
 
     //Get all user information here
     onMount(async ()=>{
+
+        userSession.subscribe(storeValue => {
+  if (storeValue.user) {
+    user = storeValue.user.user;
+    userInfo = storeValue.user;
+  }
+});
+
         if(user){
             const res = await fetch("http://localhost:5000/api/user/find/" + userInfo._id);
             userInfo = await res.json();
@@ -43,8 +50,8 @@
                 }
             ]
         // Set svelte stores to null
-        userInfoDb.set(signOutUser);
-        userDataBase.set([""]);
+        // userInfoDb.set(signOutUser);
+        // userDataBase.set([""]);
         // redirect user to login page
         load()
     };
