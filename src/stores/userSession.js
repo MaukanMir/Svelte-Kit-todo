@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-const cache = require('memory-cache');
+import cache from 'memory-cache';
 
 function createSessionStorageStore(key, initialValue) {
   const storedValue = cache.get(key);
@@ -14,8 +14,8 @@ function createSessionStorageStore(key, initialValue) {
 }
 
 export const userSession = createSessionStorageStore('userSession', {
-authenticated: false,
-user: null,
-_id:null,
-email:null,
+  authenticated: false,
+  user: null,
+  _id: null,
+  email: null,
 });
