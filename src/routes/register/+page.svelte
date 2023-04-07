@@ -17,7 +17,7 @@ import {get} from "svelte/store";
 userSession.subscribe(storeValue => {
   if (storeValue.user) {
   }else{
-    "no user"
+    console.log("no user")
   }
 
 })

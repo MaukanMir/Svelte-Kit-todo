@@ -12,19 +12,9 @@
     import {get} from "svelte/store";
 
     //Set user Database here
-
-
-// Set userDataBase Here
-let user = get(userDataBase);
-/**
-   * @type {{ _id: any; username: any; email: any; }[]}
-   */
-let userInfo;
 let toggle = false;
 // user login information
 let authenticated = false;
-
-console.log(user)
 
     //user authenticate 
     function login(metaData){

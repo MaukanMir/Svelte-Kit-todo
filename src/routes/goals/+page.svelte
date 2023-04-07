@@ -34,7 +34,6 @@
     let posts = [];
     let toggle = false;
 
-    
     onMount(async ()=>{
         userSession.subscribe(storeValue =>{
         if(storeValue.user){
@@ -42,7 +41,6 @@
         }
     })
         if(user){
-        
         // API Call to load in dataset
         const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
         // load in data to variable
@@ -51,7 +49,6 @@
         else{
             toggle = !toggle;
         }
-
     });
 
     // Delete task functionality 

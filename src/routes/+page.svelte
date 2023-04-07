@@ -21,6 +21,7 @@
   if (storeValue.user) {
     user = storeValue.user.user;
   }
+
 });
 
 </script>
