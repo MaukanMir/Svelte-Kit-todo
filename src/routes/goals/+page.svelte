@@ -39,8 +39,8 @@
         userSession.subscribe(storeValue =>{
         if(storeValue.user){
             user = storeValue.user.user;
+            console.log(user)
         }
-        console.log(username)
     })
         if(user){
         

@@ -81,6 +81,8 @@ console.log(user)
                 authenticated:true
             };
 
+            console.log(metaData);
+
             // Login information here
             login(metaData);
 
