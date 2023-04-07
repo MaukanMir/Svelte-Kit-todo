@@ -3,13 +3,9 @@
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
     // Svelte store import here
-    import { userDataBase } from "../../stores/userDataBase";
-    import {userInfoDb} from "../../stores/userInfoDb"
     import {userSession} from "../../stores/userSession";
     //Svelte key componets here
-    import {onDestroy} from "svelte"
     import { goto } from '$app/navigation'
-    import {get} from "svelte/store";
 
     //Set user Database here
 let toggle = false;
@@ -18,9 +14,13 @@ let authenticated = false;
 
     //user authenticate 
     function login(metaData){
+
         // Update user information here
         userSession.update(value =>{
             return {...value, user:metaData};
+        })
+        userSession.subscribe(value=>{
+            console.log(value);
         })
     }
     
@@ -62,7 +62,6 @@ let authenticated = false;
             //Printing information here
             console.log(res.status)
             toggle = false;
-            console.log(json)
             // Grab user data here
             const metaData ={
                 user:json.username,
@@ -71,25 +70,8 @@ let authenticated = false;
                 authenticated:true
             };
 
-            console.log(metaData);
-
             // Login information here
             login(metaData);
-
-                // save user info here
-            // userInfo =[
-            //     {
-            //         _id:json._id,
-            //         username:json.username,
-            //         email:json.email
-            //     }
-            // ]
-
-    
-            // userInfoDb.set(userInfo);
-            // // Set store global state to user
-            // userDataBase.set([username]);
-            // // Reroute user to home page
             load();
 
             // User login with local store here store here
