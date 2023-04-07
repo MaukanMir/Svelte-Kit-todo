@@ -16,9 +16,7 @@ let authenticated = false;
     function login(metaData){
 
         // Update user information here
-        userSession.update(value =>{
-            return {...value, user:metaData};
-        })
+        userSession.set(metaData)
         userSession.subscribe(value=>{
             console.log(value);
         })
