@@ -1,10 +1,9 @@
 <script>
+// @ts-nocheck
 // Svelte Component imports here
 import Nav from "../../lib/Nav.svelte";
 import Footer from "../../lib/Footer.svelte";
 // Svelte store import here
-import { userDataBase } from "../../stores/userDataBase";
-import {userInfoDb} from "../../stores/userInfoDb";
 import {userSession} from "../../stores/userSession";
 //Svelte key componets here
 import {onDestroy} from "svelte"
