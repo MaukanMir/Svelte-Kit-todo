@@ -21,26 +21,22 @@
 
     let carouselIndex =0;
 
-    userSession.subscribe(storeValue =>{
-        if(storeValue.user){
-            user = storeValue.user;
-            console.log(user)
-        }
-    })
+    // userSession.subscribe(storeValue =>{
+    //     if(storeValue.user){
+    //         user = storeValue.user;
+    //     }
+    // })
 
-    async function load(){
-        if(!user){goto("/register")}
-    }
 
-    load()
-
-    /**
-   * @type {any[]}
-   */
     let posts = [];
     let toggle = false;
 
     onMount(async ()=>{
+        userSession.subscribe(storeValue =>{
+        if(storeValue.user){
+            user = storeValue.user;
+        }
+    })
         if(user){
         // API Call to load in dataset
         const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
@@ -51,6 +47,12 @@
             toggle = !toggle;
         }
     });
+
+    async function load(){
+        if(!user){goto("/register")}
+    }
+
+    load()
 
     // Delete task functionality 
     async function deleteTask(/** @type {number} */ id){
