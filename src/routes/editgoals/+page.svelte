@@ -1,10 +1,8 @@
 <script>
 // @ts-nocheck
-
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
-    
     // import svelte variables here
     import { onMount } from "svelte";
     //Svelte store components import here
@@ -12,17 +10,14 @@
     import {userDataBase} from "../../stores/userDataBase";
     import {userSession} from "../../stores/userSession"
 
-    let user = get(userDataBase)[0];
+    let user;
 
     userSession.subscribe(storeValue => {
-  if (storeValue.user) {
-    user = storeValue.user.user;
-  }
+if (storeValue.user) {
+    user = storeValue.user;
+}
 });
 
-    console.log(user);
-
-    
     let posts = [];
     let toggle = false;
 
@@ -40,10 +35,6 @@
         }
 
     });
-
-
-// @ts-ignore
-console.log(posts)
 </script>
 
 <body>
