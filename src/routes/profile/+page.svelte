@@ -4,7 +4,6 @@
     import Footer from "../../lib/Footer.svelte";
     // import svelte store componets here
     import {userSession} from "../../stores/userSession"
-    import {get} from "svelte/store";
     // svelte components here
     import {onMount} from "svelte";
     import {goto} from "$app/navigation";
@@ -13,16 +12,13 @@
     let user;
     let userInfo;
 
-
-
     //Get all user information here
     onMount(async ()=>{
-
         userSession.subscribe(storeValue => {
-  if(storeValue.user) {
+    if(storeValue.user) {
     user = storeValue.user;
     userInfo = storeValue._id;
-  }
+    }
 });
 
         if(user){
@@ -39,9 +35,7 @@
         goto("/editprofile");
     }
 
-
     const signOut = ()=>{
-
         const signOutUser =[
                 {
                     _id:"",
@@ -49,16 +43,9 @@
                     email:""
                 }
             ]
-        // Set svelte stores to null
-        // userInfoDb.set(signOutUser);
-        // userDataBase.set([""]);
-        // redirect user to login page
         userSession.set(signOut);
         load()
     };
-
-
-
 </script>
 
 <!--HTML Components Begin Here-->
