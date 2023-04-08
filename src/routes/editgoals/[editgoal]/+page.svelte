@@ -131,8 +131,6 @@
     {/each}
 </div>
 </div>
-
-
 <Footer/>
 </body>
 

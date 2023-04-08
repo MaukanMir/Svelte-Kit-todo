@@ -57,8 +57,6 @@
         margin:0px;
         padding:0px;
         background-color: #1e1e1e;
-        box-sizing: 0;
-        margin: 0;
     }
 
     .nav{
@@ -68,6 +66,7 @@
         align-items: center;
         margin:auto;
         margin-bottom: 150px;
+        background-color: #1e1e1e;
     }
 
     .home, .goals button{
