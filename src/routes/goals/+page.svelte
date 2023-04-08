@@ -184,7 +184,7 @@
         color:blueviolet;
         background-color: #fff;
     }
-    .tasks h1{
+    /* .tasks h1{
         font-size: 32px;
         margin:10px;
     }
@@ -214,7 +214,7 @@
 
     .delete:hover{
         color:red;
-    }
+    } */
 
     .posts-delete{
         display: flex;
