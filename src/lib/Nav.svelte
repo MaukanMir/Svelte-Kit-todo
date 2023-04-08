@@ -1,12 +1,17 @@
 <script>
     // Svelte store import here
     import {userDataBase} from "../stores/userDataBase"
+    import {userSession} from "../stores/userSession"
     // import Svelte navigation
     import {goto} from "$app/navigation";
 
+    let user;
     // Send user to registration or login page
-    const userFlow = (id) =>{
+    userSession.subscribe(storeValue=> {
+        user = storeValue.user;
+    })
 
+    const userFlow = (id) =>{
         goto(id);
     };
 
@@ -29,9 +34,6 @@
                 <li><a class ="link" href="/goalstats">Check In</a></li>
             </ul>
         </div>
-
-        {#each $userDataBase as user}
-
         <div class="goals">
             {#if !user}
             <button on:click = {() => userFlow("/register")}>Register</button>
@@ -41,10 +43,6 @@
             <button on:click = {() => userFlow("/login")}>Login</button>
             {/if}
         </div>
-
-        {/each}
-
-
     </div> 
 
 </nav>
