@@ -11,6 +11,7 @@
 
     let user;
     let userInfo;
+    let email;
 
     //Get all user information here
     onMount(async ()=>{
@@ -59,7 +60,7 @@
     <div class ="center"> 
     <div class ="profile">
         <h2>Current User Settings:</h2>
-        <h3>Username: {userInfo.username}</h3>
+        <h3>Username: {user}</h3>
         <h3>Email: {userInfo.email}</h3>
         <h3>Goals Completed: 0</h3>
         <h3> Max Study Streak: </h3>
