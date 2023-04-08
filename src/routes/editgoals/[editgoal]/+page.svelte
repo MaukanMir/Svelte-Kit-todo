@@ -16,22 +16,25 @@
     //Svelte store components import here
     import {userSession} from "../../../stores/userSession"
     import {goto} from "$app/navigation";
-    let user = null;
-
-    userSession.subscribe(storeValue => {
-if (storeValue.user) {
-    user = storeValue.user.user;
-}
-});
     // import svelte variables here
     import { onMount } from "svelte";
+    let user;
+
     // Error
     let error = false;
     let posts = [];
     async function load(){
         goto("/editgoals")
     }
+
+
+
     onMount(async ()=>{
+        userSession.subscribe(storeValue => {
+        if (storeValue.user) {
+        user = storeValue.user;
+};
+    });
         if(user){
             // API Call to load in dataset
         const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
@@ -69,7 +72,7 @@ if (storeValue.user) {
                 error = true;
             }
         };
-        editPost()
+        editPost();
     };
 
 </script>
