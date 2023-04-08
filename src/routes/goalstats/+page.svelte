@@ -128,10 +128,10 @@ import Nav from "../../lib/Nav.svelte";
     <Nav/>
     {#each interval as stats}
     <div class="check-in">
-    <h1 class ="header">Click to Extend the Streak!</h1>
     {#if window}
-    <h2 class = { window ? "display":"notDisplay"}>Check in again in 8 hours</h2>
+    <h2 class = "notDisplay">Check in again in 8 hours</h2>
     {:else}
+    <h1 class ="header">Click to Extend the Streak!</h1>
     <button on:click ={()=> calcInterval()} class ="img-button">
         <img alt="fire" class="logo-icon" src={flame_icon}/>
     </button>
