@@ -14,7 +14,6 @@
     // Icon imports here
     import TiChevronLeft from 'svelte-icons/ti/TiChevronLeft.svelte'
     import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
-
     let user;
     let carouselIndex =0;
     userSession.subscribe(storeValue =>{
@@ -22,8 +21,6 @@
             user = storeValue.user;
         }
     })
-
-
     let posts = [];
     let toggle = false;
 
@@ -44,7 +41,6 @@
     }
 
     load()
-
     // Delete task functionality 
     async function deleteTask(/** @type {number} */ id){
         // Find deleted post
@@ -72,8 +68,8 @@
     };
 
 </script>
-<body>
 <Nav/>
+<body>
 
 <h1 class ="carousel-header">{ posts.length ===0 ? "": "Tasks To Complete Today"}</h1>
 
@@ -117,7 +113,6 @@
 <Footer/>
 
 
-
 <style>
     body{
         background: color #1e1e1e;
@@ -147,7 +142,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
     }
 
     .slide-show h2{

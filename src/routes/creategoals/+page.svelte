@@ -1,6 +1,5 @@
 <script>
 // @ts-nocheck
-
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
@@ -32,9 +31,7 @@
 
         if(!user){ goto("/register");}
     }
-
     load();
-
     //toggle classes
     let toggle = false;
 
@@ -71,8 +68,6 @@
 
         toggle = !toggle;
     };
-
-
 </script>
 
 <body>
