@@ -231,7 +231,6 @@
         font-size: 1.5em;
         margin-top: 50px;
     }
-
     .posts-delete strong{
         color:blueviolet;
     }
