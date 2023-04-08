@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     // Component imports here
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte";
@@ -20,6 +22,7 @@
 
     console.log(user);
 
+    
     let posts = [];
     let toggle = false;
 
@@ -39,6 +42,7 @@
     });
 
 
+// @ts-ignore
 console.log(posts)
 </script>
 

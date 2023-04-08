@@ -19,21 +19,18 @@
     let user = null;
 
     userSession.subscribe(storeValue => {
-  if (storeValue.user) {
+if (storeValue.user) {
     user = storeValue.user.user;
-  }
+}
 });
-
     // import svelte variables here
     import { onMount } from "svelte";
     // Error
     let error = false;
     let posts = [];
-
     async function load(){
         goto("/editgoals")
     }
-
     onMount(async ()=>{
         if(user){
             // API Call to load in dataset
@@ -45,9 +42,7 @@
             goto("/login")
         }
     })
-
     const editGoalDB = async (id)=>{
-
         const singlePost = posts.filter(item => item.id ===id);
         console.log(singlePost[0]._id)
 
@@ -65,7 +60,6 @@
                     checkIn:singlePost[0].checkIn,
                     completed:singlePost[0].completed
                 })
-
             });
             const json = await res.json();
             if(res.status === 200){
