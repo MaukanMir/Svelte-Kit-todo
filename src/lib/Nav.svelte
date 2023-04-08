@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     // Svelte store import here
     import {userDataBase} from "../stores/userDataBase"
     import {userSession} from "../stores/userSession"
