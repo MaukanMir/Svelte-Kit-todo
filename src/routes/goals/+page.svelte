@@ -9,8 +9,6 @@
     // import svelte variables here
     import { onMount } from "svelte";
     //Svelte store components import here
-    import {get} from "svelte/store";
-    import {userDataBase} from "../../stores/userDataBase";
     import {userSession} from "../../stores/userSession";
     // svelte nav imports here
     import {goto} from "$app/navigation"
@@ -18,7 +16,6 @@
     import TiChevronLeft from 'svelte-icons/ti/TiChevronLeft.svelte'
     import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
 
-    // const user = get(userDataBase)[0];
     let user;
     let carouselIndex =0;
     userSession.subscribe(storeValue =>{
@@ -78,9 +75,6 @@
 </script>
 <body>
 <Nav/>
-
-
-
 
 <h1 class ="carousel-header">{ posts.length ===0 ? "": "Tasks To Complete Today"}</h1>
 
