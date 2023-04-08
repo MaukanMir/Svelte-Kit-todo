@@ -27,8 +27,6 @@
         goto("/editgoals")
     }
 
-
-
     onMount(async ()=>{
         userSession.subscribe(storeValue => {
         if (storeValue.user) {
