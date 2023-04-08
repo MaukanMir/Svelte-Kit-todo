@@ -15,7 +15,7 @@
 
     userSession.subscribe(storeValue => {
     if (storeValue.user) {
-      user = storeValue.user.user;
+      user = storeValue.user;
     }
 });
 
