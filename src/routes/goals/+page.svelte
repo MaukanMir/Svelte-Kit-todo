@@ -20,25 +20,18 @@
 
     // const user = get(userDataBase)[0];
     let user;
-
     let carouselIndex =0;
-
-    // userSession.subscribe(storeValue =>{
-    //     if(storeValue.user){
-    //         user = storeValue.user;
-    //     }
-    // })
+    userSession.subscribe(storeValue =>{
+        if(storeValue.user){
+            user = storeValue.user;
+        }
+    })
 
 
     let posts = [];
     let toggle = false;
 
     onMount(async ()=>{
-        userSession.subscribe(storeValue =>{
-        if(storeValue.user){
-            user = storeValue.user;
-        }
-    })
         if(user){
         // API Call to load in dataset
         const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
@@ -73,17 +66,13 @@
     };
 
     // Carousel back and fourth functionality
-
     const carousel = (index, direction)=> {
-
         if(direction === "left"){
             carouselIndex = index === 0 ? 0: carouselIndex-1
         }
-
         else if(direction === "right"){
             carouselIndex = index === posts.length -1 ? posts.length-1: carouselIndex+1
         }
-
     };
 
 </script>
