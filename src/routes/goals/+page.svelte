@@ -162,7 +162,6 @@
         border:none;
         height: 80px;
         cursor: pointer;
-        /* margin-right: 500px; */
     }
 
     .delete-carousel:hover{
