@@ -19,11 +19,12 @@
     if(storeValue.user) {
     user = storeValue.user;
     userInfo = storeValue._id;
+    email = storeValue.email;
     }
 });
 
         if(user){
-            const res = await fetch("http://localhost:5000/api/user/find/" + userInfo._id);
+            const res = await fetch("http://localhost:5000/api/user/find/" + userInfo);
             userInfo = await res.json();
         }
     })
@@ -61,7 +62,7 @@
     <div class ="profile">
         <h2>Current User Settings:</h2>
         <h3>Username: {user}</h3>
-        <h3>Email: {userInfo.email}</h3>
+        <h3>Email: {email}</h3>
         <h3>Goals Completed: 0</h3>
         <h3> Max Study Streak: </h3>
         <h3>Edit Profile Below:</h3>
