@@ -16,11 +16,11 @@
 
     // console.log(get(userSession))
     // Create user
-    let user = null;
+    let user;
     userSession.subscribe(storeValue => {
 
   if (storeValue.user) {
-    user = storeValue.user.user;
+    user = storeValue.user
   }
 
 });
