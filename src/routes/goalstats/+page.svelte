@@ -15,13 +15,8 @@ import Nav from "../../lib/Nav.svelte";
     
     let user;
 
-    /**
-   * @type {any[]}
-   */
     let posts = [];
-
     let interval = []; 
-
     let window = false;
 
     // As soon as the page loads, goals will be viewed.
