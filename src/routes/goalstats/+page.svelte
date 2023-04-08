@@ -18,6 +18,7 @@ import Nav from "../../lib/Nav.svelte";
     let posts = [];
     let interval = []; 
     let window = false;
+    let dailySteak;
 
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
@@ -25,6 +26,7 @@ import Nav from "../../lib/Nav.svelte";
         userSession.subscribe(storeValue =>{
         if(storeValue.user){
             user = storeValue.user;
+            dailySteak = storeValue.dailySteak;
         }
     })
         // API Call HERE
