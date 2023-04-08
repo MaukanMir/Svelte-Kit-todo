@@ -20,6 +20,16 @@ import Nav from "../../lib/Nav.svelte";
     let window = false;
     let dailySteak;
 
+    const checkInterval = ()=>{
+        if(interval){
+            const currTime = new Date();
+            const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
+            let diff = (currTime.getTime() - pastTime.getTime()) / 3600000;
+            return diff >= 8;
+        }
+        return false;
+        }
+
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
 
@@ -37,6 +47,7 @@ import Nav from "../../lib/Nav.svelte";
         posts = await res.json();
         if (interval_res.status === 200){
             interval = await interval_res.json()
+        window = checkInterval();
         }
         }else{
             goto("/register")
@@ -88,15 +99,6 @@ import Nav from "../../lib/Nav.svelte";
 
     const calcInterval = async()=>{
 
-
-        const checkInterval = ()=>{
-            const currTime = new Date();
-            const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
-            let diff = (currTime.getTime() - pastTime.getTime()) / 3600000;
-            return diff >= 8;
-
-        }
-
         const updateStreak = async(check)=>{
 
             const res = await fetch("http://localhost:5000/api/streak/update/" + interval[0]._id,{
@@ -105,7 +107,7 @@ import Nav from "../../lib/Nav.svelte";
                 body:JSON.stringify({
                     username:user,
                     interval:new Date(),
-                    streak: check === true ? interval[0].streak+1:0,
+                    streak: check === true ? interval[0].streak+1:interval[0].streak,
                 })
             })
 
@@ -114,10 +116,8 @@ import Nav from "../../lib/Nav.svelte";
         }
         // Check time period
         const check = checkInterval();
-        console.log(check)
         // Make api call here
         updateStreak(check);
-        window = !window;
 
     };
 </script>
@@ -130,7 +130,7 @@ import Nav from "../../lib/Nav.svelte";
     <div class="check-in">
     <h1 class ="header">Click to Extend the Streak!</h1>
     {#if window}
-    <h2 class = { window ? "display":"notDisplay"}>Check in again in 8 hours</h2>
+    <h2 class = { window ? "notDisplay":"display"}>Check in again in 8 hours</h2>
     {:else}
     <button on:click ={()=> calcInterval()} class ="img-button">
         <img alt="fire" class="logo-icon" src={flame_icon}/>
