@@ -9,18 +9,7 @@ import {userSession} from "../../stores/userSession";
 //Svelte key componets here
 import {onDestroy} from "svelte"
 import { goto } from '$app/navigation'
-import {get} from "svelte/store";
 
-
-// console.log(userSession)
-
-userSession.subscribe(storeValue => {
-  if (storeValue.user) {
-  }else{
-    console.log("no user")
-  }
-
-})
 
 // Login variables here
 let email = "";
@@ -29,6 +18,7 @@ let password ="";
 // create error state
 
 let error = false;
+
 
 async function load(){
     if(username && email && password){
@@ -65,14 +55,12 @@ const onSubmit = async () =>{
         console.log(json, result)
         if(res.status === 201){
 
-            userDataBase.set([username])
-            userInfoDb.set([{
-                
+            let metaData = {
                 _id:json._id,
                 username:username,
-                email:email,
-
-            }])
+                email:email
+            }
+            userSession.set(metaData);
             error = false;
         }else{
             error = true;
