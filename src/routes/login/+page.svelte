@@ -10,8 +10,8 @@
 
     //Set user Database here
 let toggle = false;
-// user login information
-let authenticated = false;
+
+
     //user authenticate 
     function login(metaData){
 

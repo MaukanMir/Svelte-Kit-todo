@@ -12,8 +12,15 @@ import Nav from "../../lib/Nav.svelte";
     // import svg here
     import flame_icon from "./flame-icon.svg"
     
-    let user = null
-    console.log("user is" + user)
+    let user;
+
+    userSession.subscribe(storeValue =>{
+        if(storeValue.user){
+            user = storeValue.user;
+            console.log(storeValue._id)
+        }
+    })
+
     /**
    * @type {any[]}
    */
@@ -26,11 +33,11 @@ import Nav from "../../lib/Nav.svelte";
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
 
-        userSession.subscribe(storeValue => {
-        if (storeValue.user) {
-        user = storeValue.user.user;
-    }
-});
+//         userSession.subscribe(storeValue => {
+//         if (storeValue.user) {
+//         user = storeValue.user.user;
+//     }
+// });
 
         // API Call HERE
         if(user){
