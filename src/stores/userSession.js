@@ -29,4 +29,5 @@ export const userSession = createSessionStorageStore('userSession', {
   user: null,
   _id: null,
   email: null,
+  dailyStreak:0
 });

@@ -8,7 +8,6 @@
     import {userSession} from "../../stores/userSession";
     //Svelte key componets here
     import { goto } from '$app/navigation'
-    import { get } from "svelte/store";
 
     //Set user Database here
 let toggle = false;
@@ -64,6 +63,7 @@ let toggle = false;
                 user:json.username,
                 _id:json._id,
                 email:json.email,
+                dailySteak:0,
                 authenticated:true
             };
 
