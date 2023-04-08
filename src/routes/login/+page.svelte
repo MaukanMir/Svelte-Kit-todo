@@ -6,20 +6,17 @@
     import {userSession} from "../../stores/userSession";
     //Svelte key componets here
     import { goto } from '$app/navigation'
+    import { get } from "svelte/store";
 
     //Set user Database here
 let toggle = false;
 // user login information
 let authenticated = false;
-
     //user authenticate 
     function login(metaData){
 
         // Update user information here
         userSession.set(metaData)
-        userSession.subscribe(value=>{
-            console.log(value);
-        })
     }
     
     // Login variables here

@@ -17,7 +17,6 @@
     import TiChevronRight from 'svelte-icons/ti/TiChevronRight.svelte'
 
     // const user = get(userDataBase)[0];
-
     let user;
 
     let carouselIndex =0;
@@ -37,7 +36,7 @@
     onMount(async ()=>{
         userSession.subscribe(storeValue =>{
         if(storeValue.user){
-            user = storeValue.user.user;
+            user = storeValue.user;
             console.log(user)
         }
     })

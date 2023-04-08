@@ -14,6 +14,7 @@
     // import Svelte icons here
     import IoIosArrowRoundForward from 'svelte-icons/io/IoIosArrowRoundForward.svelte'
 
+    // console.log(get(userSession))
     // Create user
     let user = null;
     userSession.subscribe(storeValue => {
