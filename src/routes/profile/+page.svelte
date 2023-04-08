@@ -10,8 +10,8 @@
     import {goto} from "$app/navigation";
     import FaUserEdit from 'svelte-icons/fa/FaUserEdit.svelte'
 
-    let user = null;
-    let userInfo = null;
+    let user;
+    let userInfo;
 
 
 
@@ -45,7 +45,7 @@
         const signOutUser =[
                 {
                     _id:"",
-                    username:"",
+                    user:"",
                     email:""
                 }
             ]
@@ -53,6 +53,7 @@
         // userInfoDb.set(signOutUser);
         // userDataBase.set([""]);
         // redirect user to login page
+        userSession.set(signOut);
         load()
     };
 
