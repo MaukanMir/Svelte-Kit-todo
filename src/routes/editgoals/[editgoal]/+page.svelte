@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     // component here
     import Nav from "../../../lib/Nav.svelte";
     import Footer from "../../../lib/Footer.svelte"
@@ -27,16 +29,10 @@
   }
 });
 
-    const user = get(userDataBase)[0];
-
     // import svelte variables here
     import { onMount } from "svelte";
     // Error
     let error = false;
-
-    /**
-   * @type {any[]}
-   */
     let posts = [];
 
     async function load(){
