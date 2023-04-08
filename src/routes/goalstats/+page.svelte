@@ -107,7 +107,7 @@ import Nav from "../../lib/Nav.svelte";
                 body:JSON.stringify({
                     username:user,
                     interval:new Date(),
-                    streak: check === true ? interval[0].streak+1:interval[0].streak,
+                    streak: check === true ? interval[0].streak+1:0,
                 })
             })
 
@@ -130,7 +130,7 @@ import Nav from "../../lib/Nav.svelte";
     <div class="check-in">
     <h1 class ="header">Click to Extend the Streak!</h1>
     {#if window}
-    <h2 class = { window ? "notDisplay":"display"}>Check in again in 8 hours</h2>
+    <h2 class = { window ? "display":"notDisplay"}>Check in again in 8 hours</h2>
     {:else}
     <button on:click ={()=> calcInterval()} class ="img-button">
         <img alt="fire" class="logo-icon" src={flame_icon}/>
@@ -142,7 +142,6 @@ import Nav from "../../lib/Nav.svelte";
     
     <div class ="parent">
         {#each posts as task, index}
-    
             <div class ="inside-parent"> 
                 <h3>Goal: {task.goal}</h3>
                 <h3>Start Date:{task.date}</h3>
