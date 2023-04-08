@@ -1,10 +1,7 @@
 <script>
-// @ts-nocheck
-
     // component here
     import Nav from "../../../lib/Nav.svelte";
     import Footer from "../../../lib/Footer.svelte"
-
     // Data import here
     export let data;
     // Edit Goal Id Here and convert to float
@@ -14,13 +11,9 @@
     let editHow ="";
     let edit_due_date ="";
     let editStudyTime =0;
-
     //Svelte store components import here
-    import {get} from "svelte/store";
-    import {userDataBase} from "../../../stores/userDataBase";
     import {userSession} from "../../../stores/userSession"
     import {goto} from "$app/navigation";
-
     let user = null;
 
     userSession.subscribe(storeValue => {
@@ -80,14 +73,8 @@
                 error = true;
             }
         };
-
         editPost()
-
     };
-
-
-console.log(posts)
-
 
 </script>
 <body>
