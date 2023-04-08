@@ -70,8 +70,10 @@
     };
 </script>
 
+
 <body>
 <Nav/>
+
 
 <div class="header-class">
     <h1>Create A Goal!</h1>
@@ -136,7 +138,6 @@
 </body>
 
 <style>
-
     body{
         background-color: #1e1e1e;
         font-family: sans-serif;
@@ -211,5 +212,4 @@ background-color: green;
 .notDisplay{
     display:none
 }
-
 </style>

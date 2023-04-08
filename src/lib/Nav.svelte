@@ -56,6 +56,9 @@
         font-family: sans-serif;
         margin:0px;
         padding:0px;
+        background-color: #1e1e1e;
+        box-sizing: 0;
+        margin: 0;
     }
 
     .nav{

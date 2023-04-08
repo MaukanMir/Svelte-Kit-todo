@@ -115,9 +115,9 @@
 
 <style>
     body{
-        background: color #1e1e1e;
+        background-color: #1e1e1e;
         font-family: sans-serif;
-        height:100vh;
+        height: 100vh;
     }
 
     .carousel-header{
