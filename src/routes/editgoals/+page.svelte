@@ -64,8 +64,9 @@ if (storeValue.user) {
 
     body{
         background-color: #1e1e1e;
-        margin:10px;
         height:100vh;
+        margin: 0;
+        padding: 0;
     }
 
 

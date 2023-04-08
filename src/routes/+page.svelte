@@ -104,6 +104,8 @@
         background-color: #1e1e1e;
         color:white;
         font-family: sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     .section-divider-div{

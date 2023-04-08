@@ -32,6 +32,9 @@ import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte'
 
 body{
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
 }
 .footer{
     display:flex;

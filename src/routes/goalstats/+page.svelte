@@ -168,8 +168,6 @@ import Nav from "../../lib/Nav.svelte";
         </div>
         {/if}
     </div>
-
-    
     </body>
     <Footer/>
 <style>
@@ -179,6 +177,8 @@ body{
         color:white;
         font-family: sans-serif;
         height: 120vh;
+        margin: 0;
+        padding: 0;
     }
 
 

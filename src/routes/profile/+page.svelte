@@ -83,6 +83,8 @@
         height:100vh;
         background-color: #1e1e1e;
         font-family: sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     .welcome-header{

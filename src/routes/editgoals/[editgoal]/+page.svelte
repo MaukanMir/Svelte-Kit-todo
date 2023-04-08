@@ -140,6 +140,8 @@
     body{
         background-color: #1e1e1e;
         height:100vh;
+        margin: 0;
+        padding: 0;
     }
 
     .center-div{

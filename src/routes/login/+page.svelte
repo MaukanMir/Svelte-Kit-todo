@@ -129,8 +129,8 @@ let toggle = false;
         </form>
     {/if}
     </div>
-    </body>
     <Footer/>
+    </body>
     <style>
     
 
@@ -146,6 +146,8 @@ let toggle = false;
             background-color: #1e1e1e;
             height: 100vh;
             font-family: sans-serif;
+            margin: 0;
+            padding: 0;
         }
     
         h1{

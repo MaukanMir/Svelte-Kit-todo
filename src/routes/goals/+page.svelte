@@ -118,6 +118,8 @@
         background-color: #1e1e1e;
         font-family: sans-serif;
         height: 100vh;
+        margin: 0;
+        padding: 0;
     }
 
     .carousel-header{
