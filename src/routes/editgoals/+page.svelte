@@ -6,10 +6,7 @@
     // import svelte variables here
     import { onMount } from "svelte";
     //Svelte store components import here
-    import {get} from "svelte/store";
-    import {userDataBase} from "../../stores/userDataBase";
     import {userSession} from "../../stores/userSession"
-
     let user;
 
     userSession.subscribe(storeValue => {
