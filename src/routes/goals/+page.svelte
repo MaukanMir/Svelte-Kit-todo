@@ -1,6 +1,5 @@
 <script>
-// @ts-nocheck
-
+ // @ts-nocheck
     //Component imports here
     import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte"
@@ -57,7 +56,7 @@
         const res = await fetch("http://localhost:5000/api/deletegoals/" + deletedpost[0]._id, {
             method: 'DELETE'
         }).then(response =>{
-            if(!response.ok){console.log("opps")}
+            if(!response.ok){console.log("Post did not delete on goals page")}
             else{console.log("success");}
         })
     };
