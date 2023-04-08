@@ -30,7 +30,6 @@ import Nav from "../../lib/Nav.svelte";
             user = storeValue.user;
         }
     })
-
         // API Call HERE
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);

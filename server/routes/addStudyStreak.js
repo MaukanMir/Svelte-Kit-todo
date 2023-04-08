@@ -44,7 +44,7 @@ router.get("/find/:username", async (req,res)=>{
 
     try {
         const streak = await Streak.find({username:req.params.username});
-        const { password, ...others } = user._doc;
+        // const { password, ...others } = user._doc;
         res.status(200).json(streak);
     } catch (err) {
         console.log(err + req.params.username)
