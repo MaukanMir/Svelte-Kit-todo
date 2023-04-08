@@ -1,5 +1,4 @@
 <script>
-
 // import components here
 import Nav from "../../lib/Nav.svelte";
     import Footer from "../../lib/Footer.svelte"
@@ -14,13 +13,6 @@ import Nav from "../../lib/Nav.svelte";
     
     let user;
 
-    userSession.subscribe(storeValue =>{
-        if(storeValue.user){
-            user = storeValue.user;
-            console.log(storeValue._id)
-        }
-    })
-
     /**
    * @type {any[]}
    */
@@ -33,11 +25,11 @@ import Nav from "../../lib/Nav.svelte";
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
 
-//         userSession.subscribe(storeValue => {
-//         if (storeValue.user) {
-//         user = storeValue.user.user;
-//     }
-// });
+        userSession.subscribe(storeValue =>{
+        if(storeValue.user){
+            user = storeValue.user;
+        }
+    })
 
         // API Call HERE
         if(user){
