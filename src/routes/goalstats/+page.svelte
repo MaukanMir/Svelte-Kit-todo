@@ -92,10 +92,8 @@ import Nav from "../../lib/Nav.svelte";
         const checkInterval = ()=>{
             const currTime = new Date();
             const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
-            let diff = (currTime.getTime() - pastTime.getTime())/1000;
-            diff /= (60 *60);
-
-            return diff <= 8 ? true: false;
+            let diff = (currTime.getTime() - pastTime.getTime()) / 3600000;
+            return diff >= 8;
 
         }
 
@@ -116,6 +114,7 @@ import Nav from "../../lib/Nav.svelte";
         }
         // Check time period
         const check = checkInterval();
+        console.log(check)
         // Make api call here
         updateStreak(check);
         window = !window;
