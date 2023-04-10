@@ -63,6 +63,13 @@ import Nav from "../../lib/Nav.svelte";
         }
     };
 
+    async function reloadStreakComponent(){
+        if(user){
+            const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
+            interval = await interval_res.json();
+        }
+    }
+
     // Check in button fix here
     const onCheck = async(username,id, index) =>{
 
