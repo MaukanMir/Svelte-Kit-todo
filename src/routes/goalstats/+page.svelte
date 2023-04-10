@@ -68,6 +68,7 @@ import Nav from "../../lib/Nav.svelte";
             const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
             interval = await interval_res.json();
         }
+
     }
 
     // Check in button fix here
@@ -127,6 +128,7 @@ import Nav from "../../lib/Nav.svelte";
         updateStreak(check);
         //Reload everything
         reloadStreakComponent()
+        window = checkInterval();
 
     };
 </script>
