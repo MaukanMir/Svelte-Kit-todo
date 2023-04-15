@@ -125,7 +125,6 @@ import Nav from "../../lib/Nav.svelte";
     };
 
     const calcInterval = async()=>{
-
         const updateStreak = async(check)=>{
 
             const res = await fetch("http://localhost:5000/api/streak/update/" + interval[0]._id,{
@@ -151,7 +150,6 @@ import Nav from "../../lib/Nav.svelte";
 
     };
 </script>
-
 <!--HTML Components-->
 
 <body>
@@ -206,7 +204,6 @@ body{
         margin: 0;
         padding: 0;
     }
-
 
     .check-in{
         display:flex;
