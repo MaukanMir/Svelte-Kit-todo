@@ -101,7 +101,7 @@ import Nav from "../../lib/Nav.svelte";
 
     const markAsComplete = async (username, id, index)=>{
 
-        console.log(posts)
+        const goal_post = posts[index];
 
     //     const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
     //         method:"POST",
