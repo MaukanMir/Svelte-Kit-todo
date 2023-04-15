@@ -25,7 +25,7 @@ import Nav from "../../lib/Nav.svelte";
             const currTime = new Date();
             const pastTime = interval.length >0 ? new Date(interval[0].interval):new Date();
             let diff = (currTime.getTime() - pastTime.getTime()) / 3600000;
-            return diff >= 8;
+            return (diff >= 8 && diff <= 24);
         }
         return false;
         }
@@ -100,7 +100,6 @@ import Nav from "../../lib/Nav.svelte";
 
 
     const markAsComplete = async (username, id, index)=>{
-
 
 
     };
