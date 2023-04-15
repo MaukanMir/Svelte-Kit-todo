@@ -177,7 +177,6 @@ onDestroy(()=>{
 </body>
 <Footer/>
 
-
 <style>
     body{
         background-color: #1e1e1e;
