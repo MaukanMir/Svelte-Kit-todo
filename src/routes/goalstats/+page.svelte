@@ -103,25 +103,25 @@ import Nav from "../../lib/Nav.svelte";
 
         const goal_post = posts[index];
 
-    //     const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
-    //         method:"POST",
-    //         headers:{"Content-Type":"application/json"},
-    //         body:JSON.stringify({
-    //             username,
-    //             goalCompleted:[
-    //                 {
-    //                 goal:"",
-    //                 startDate:"",
-    //                 endDate:"",
-    //                 studyTime:0,
-    //                 numberOfDays:0
-    //                 }
-    //             ],
-    //             numberOfGoalsCompleted:0,
-    //             hoursStudied:0,
-    //             studyStreak:0
-    //         })
-    //     });
+        const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                username,
+                goalCompleted:[
+                    {
+                    goal:goal_post.goal,
+                    startDate:goal_post.startDate,
+                    endDate:"",
+                    studyTime:goal_post.checkIn,
+                    numberOfDays:0
+                    }
+                ],
+                numberOfGoalsCompleted:0,
+                hoursStudied:0,
+                studyStreak:0
+            })
+        });
     };
 
     const calcInterval = async()=>{
