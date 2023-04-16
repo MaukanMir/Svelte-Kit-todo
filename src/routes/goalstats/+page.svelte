@@ -109,7 +109,7 @@ import Nav from "../../lib/Nav.svelte";
         console.log(diffDays)
 
         const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
-            method:"POST",
+            method:"PUT",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
                 username,
