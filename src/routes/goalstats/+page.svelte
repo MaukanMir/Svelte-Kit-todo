@@ -112,7 +112,7 @@ import Nav from "../../lib/Nav.svelte";
                     {
                     goal:goal_post.goal,
                     startDate:goal_post.startDate,
-                    endDate:"",
+                    endDate:new Date(),
                     studyTime:goal_post.checkIn,
                     numberOfDays:0
                     }
