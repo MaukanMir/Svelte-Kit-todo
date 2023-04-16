@@ -103,8 +103,10 @@ import Nav from "../../lib/Nav.svelte";
 
         const goal_post = posts[index];
 
-        const diff_time = Math.abs(new Date().getTime() - goal_post.startDate.getTime())
+
+        const diff_time = Math.abs(new Date().getTime() - new Date(goal_post.setDate).getTime())
         const diffDays = Math.round(diff_time/ (24*60*60*1000))
+        console.log(diffDays)
 
         const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
             method:"POST",
