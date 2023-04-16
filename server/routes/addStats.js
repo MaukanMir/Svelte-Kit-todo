@@ -24,7 +24,7 @@ router.put("/find/:username", async (req,res)=>{
 
     try{
         const updatedStat = await Stats.findByIdAndUpdate(
-            req.params.id,
+            req.params.username,
             {
                 $set:req.body,
             },
