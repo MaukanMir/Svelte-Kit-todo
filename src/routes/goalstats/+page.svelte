@@ -141,7 +141,6 @@ import Nav from "../../lib/Nav.svelte";
                     streak: check === true ? interval[0].streak+1:0,
                 })
             })
-
             console.log(res.status)
 
         }
