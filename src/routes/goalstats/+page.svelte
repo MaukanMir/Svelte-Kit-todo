@@ -162,7 +162,7 @@ import Nav from "../../lib/Nav.svelte";
     <div class="check-in">
     {#if !window}
     <h2 class = "display">Check in again in 8 hours</h2>
-    <h2>Your Current Streak is: { stats.streak <= 1 ? stats.streak.toString() + " day": stats.streak.toString() +" days in a row."}</h2>
+    <h2>Your Current Streak is: { stats.streak <= 1 ? stats.streak.toString() + " days": stats.streak.toString() +" days in a row."}</h2>
     {:else}
     <h1 class ="header">Click to Extend the Streak!</h1>
     <button on:click ={()=> calcInterval()} class ="img-button">
