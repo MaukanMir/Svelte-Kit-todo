@@ -103,6 +103,9 @@ import Nav from "../../lib/Nav.svelte";
 
         const goal_post = posts[index];
 
+        const diff_time = Math.abs(new Date().getTime() - goal_post.startDate.getTime())
+        const diffDays = Math.round(diff_time/ (24*60*60*1000))
+
         const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -114,12 +117,12 @@ import Nav from "../../lib/Nav.svelte";
                     startDate:goal_post.startDate,
                     endDate:new Date(),
                     studyTime:goal_post.checkIn,
-                    numberOfDays:0
+                    numberOfDays:diffDays
                     }
                 ],
                 numberOfGoalsCompleted:0,
-                hoursStudied:0,
-                studyStreak:0
+                hoursStudied:goal_post.checkIn * goal_post.studyTime,
+                studyStreak:goal_post.checkIn
             })
         });
     };
