@@ -44,7 +44,7 @@ import Nav from "../../lib/Nav.svelte";
         if(user){
             const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
             const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
-            const statsDocRes = await fetch("http://localhost:5000/api/streak/find/" +user)
+            const statsDocRes = await fetch("http://localhost:5000/api/stats/getAllStats/" +user)
         // load in data to variable
         posts = await res.json();
         statsDoc = await statsDocRes.json();
