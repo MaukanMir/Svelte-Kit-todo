@@ -122,7 +122,7 @@ import Nav from "../../lib/Nav.svelte";
                     numberOfDays:diffDays
                     }
                 ],
-                numberOfGoalsCompleted:0,
+                numberOfGoalsCompleted:1,
                 hoursStudied:goal_post.checkIn * goal_post.studyTime,
                 studyStreak:goal_post.checkIn
             })
@@ -184,12 +184,12 @@ import Nav from "../../lib/Nav.svelte";
                 <div class ="button-format"> 
                 <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
+                <p class = {"completed"}>Completed</p>
                 </div>
             </div>
     
         {/each}
         {#if posts.length ===0}
-
         <div class ="posts-delete"> 
             <h1>You Currently do not have any Goals</h1>
             <a href="/creategoals">Click Here to get <strong> Started! </strong> </a>
@@ -232,10 +232,6 @@ body{
     .daily-streak{
         color:#fff;
         margin-bottom: 80px;
-    }
-
-    .notDisplay{
-        display: none;
     }
 
     .display{
