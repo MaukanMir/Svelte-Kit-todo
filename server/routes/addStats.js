@@ -37,4 +37,17 @@ router.put("/find/:username", async (req,res)=>{
     }
 })
 
+
+// Get request to update user stats
+router.get("getAllStats/:username", async (req,res)=>{
+
+    try {
+        const allStats = await Stats.find({username:req.params.username});
+        res.status(200).json(allStats);
+    } catch (err) {
+        console.log(err + req.params.username)
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
