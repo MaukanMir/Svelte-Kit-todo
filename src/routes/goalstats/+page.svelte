@@ -107,27 +107,26 @@ import Nav from "../../lib/Nav.svelte";
 
         const goal_post = posts[index];
 
-
         const diff_time = Math.abs(new Date().getTime() - new Date(goal_post.setDate).getTime())
         const diffDays = Math.round(diff_time/ (24*60*60*1000))
         
-        const res = await fetch("http://localhost:5000/api/editgoals/" + clientInfo._id,{
+        const res = await fetch("http://localhost:5000/api/editgoals/" + goal_post._id,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
                     userId:goal_post,
-                    id:clientInfo.id,
-                    goal:clientInfo.goal,
-                    how:clientInfo.how,
-                    date:clientInfo.date,
-                    studyTime:clientInfo.studyTime,
-                    checkIn:clientInfo.checkIn,
+                    id:goal_post.id,
+                    goal:goal_post.goal,
+                    how:goal_post.how,
+                    date:goal_post.date,
+                    studyTime:goal_post.studyTime,
+                    checkIn:goal_post.checkIn,
                     completed:true,
 
                 })
             });
 
-        const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
+        const stats_result = await fetch("http://localhost:5000/api/stats/" + user,{
             method:"PUT",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
@@ -159,7 +158,7 @@ import Nav from "../../lib/Nav.svelte";
                     streak: check === true ? interval[0].streak+1:0,
                 })
             })
-            
+
             console.log(res.status)
 
         }
