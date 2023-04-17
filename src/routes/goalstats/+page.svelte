@@ -114,7 +114,7 @@ import Nav from "../../lib/Nav.svelte";
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
-                    userId:goal_post,
+                    userId:user,
                     id:goal_post.id,
                     goal:goal_post.goal,
                     how:goal_post.how,
