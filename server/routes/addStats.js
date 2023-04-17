@@ -39,7 +39,7 @@ router.put("/find/:username", async (req,res)=>{
 
 
 // Get request to update user stats
-router.get("getAllStats/:username", async (req,res)=>{
+router.get("/getAllStats/:username", async (req,res)=>{
 
     try {
         const allStats = await Stats.find({username:req.params.username});

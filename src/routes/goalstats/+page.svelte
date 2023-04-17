@@ -20,6 +20,7 @@ import Nav from "../../lib/Nav.svelte";
     let window = false;
     let dailySteak;
     let statsDoc = [];
+    let markAsDone = false;
 
     const checkInterval = ()=>{
         if(interval){
@@ -105,6 +106,7 @@ import Nav from "../../lib/Nav.svelte";
 
     const markAsComplete = async (username, id, index)=>{
 
+        markAsDone = true;
         const goal_post = posts[index];
 
 
@@ -126,7 +128,7 @@ import Nav from "../../lib/Nav.svelte";
                     numberOfDays:diffDays
                     }
                 ],
-                numberOfGoalsCompleted:1,
+                numberOfGoalsCompleted:statsDoc[0].numberOfGoalsCompleted+1,
                 hoursStudied:goal_post.checkIn * goal_post.studyTime,
                 studyStreak:goal_post.checkIn
             })
@@ -188,7 +190,7 @@ import Nav from "../../lib/Nav.svelte";
                 <div class ="button-format"> 
                 <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
-                <p class = {"completed"}>Completed</p>
+                <p class = {markAsDone ? "completed":"NotCompleted"}>Completed</p>
                 </div>
             </div>
     
@@ -304,4 +306,9 @@ body{
     .posts-delete strong{
         color:blueviolet;
     }
+
+    .NotCompleted{
+        display: none;
+    }
+
 </style>
