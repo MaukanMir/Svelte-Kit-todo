@@ -126,11 +126,11 @@ import Nav from "../../lib/Nav.svelte";
                 })
             });
 
-        const stats_result = await fetch("http://localhost:5000/api/stats/" + user,{
+        const stats_result = await fetch("http://localhost:5000/api/stats/" + statsDoc[0].id,{
             method:"PUT",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
-                username,
+                user,
                 goalCompleted:[
                     {
                     goal:goal_post.goal,
