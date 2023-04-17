@@ -84,7 +84,7 @@ import Nav from "../../lib/Nav.svelte";
                 })
             });
             const json = await res.json();
-            update();
+            await loadData()
 
     };
 
@@ -131,6 +131,7 @@ import Nav from "../../lib/Nav.svelte";
                 studyStreak:goal_post.checkIn
             })
         });
+        await loadData()
     };
 
     const calcInterval = async()=>{
@@ -153,6 +154,7 @@ import Nav from "../../lib/Nav.svelte";
         // Make api call here
         updateStreak(check);
         window = checkInterval();
+        await loadData()
 
     };
 </script>
