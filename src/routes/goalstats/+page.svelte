@@ -112,7 +112,22 @@ import Nav from "../../lib/Nav.svelte";
 
         const diff_time = Math.abs(new Date().getTime() - new Date(goal_post.setDate).getTime())
         const diffDays = Math.round(diff_time/ (24*60*60*1000))
-        console.log(diffDays)
+        
+        const res = await fetch("http://localhost:5000/api/editgoals/" + clientInfo._id,{
+                method:"PUT",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({
+                    userId:clientInfo.userId,
+                    id:clientInfo.id,
+                    goal:clientInfo.goal,
+                    how:clientInfo.how,
+                    date:clientInfo.date,
+                    studyTime:clientInfo.studyTime,
+                    checkIn:clientInfo.checkIn,
+                    completed:true,
+
+                })
+            });
 
         const stats_result = await fetch("http://localhost:5000/api/stats/" + username,{
             method:"PUT",
@@ -190,7 +205,7 @@ import Nav from "../../lib/Nav.svelte";
                 <div class ="button-format"> 
                 <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
-                <p class = {markAsDone ? "completed":"NotCompleted"}>Completed</p>
+                <p class = {task.completed ? "completed":"NotCompleted"}>Completed</p>
                 </div>
             </div>
     
