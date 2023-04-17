@@ -202,7 +202,8 @@ import Nav from "../../lib/Nav.svelte";
                 <div class ="button-format"> 
                 <button class ="finish" on:click={()=> onCheck(task.username, task.id, index)}>Check In</button>
                 <button class ="finish" on:click={()=> markAsComplete(task.username, task.id, index)}>Mark As Complete</button>
-                <p class = {task.completed ? "completed":"NotCompleted"}>Completed</p>
+                <p class ="goalStatus">Goal Status:</p>
+                <p class = {task.completed ? "completed":"NotCompleted"}>{task.completed ? "Completed":"Not Completed"}</p>
                 </div>
             </div>
     
@@ -320,7 +321,21 @@ body{
     }
 
     .NotCompleted{
-        display: none;
+        color:red;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .completed{
+        color:red;
+        text-align: center;
+        font-size: 20px;
+        text-decoration: line-through;
+    }
+
+    .goalStatus{
+        text-align: center;
+        font-size: 20px;
     }
 
 </style>
