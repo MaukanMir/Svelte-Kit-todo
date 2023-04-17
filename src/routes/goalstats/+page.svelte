@@ -330,7 +330,6 @@ body{
         color:red;
         text-align: center;
         font-size: 20px;
-        text-decoration: line-through;
     }
 
     .goalStatus{
