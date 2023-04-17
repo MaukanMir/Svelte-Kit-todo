@@ -30,6 +30,16 @@ import Nav from "../../lib/Nav.svelte";
         }
         return false;
         }
+    
+    const loadData = async () => {
+    const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
+    const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user);
+    const statsDocRes = await fetch("http://localhost:5000/api/stats/getAllStats/" + user)
+    posts = await res.json();
+    statsDoc = await statsDocRes.json();
+    interval = await interval_res.json()
+    window = checkInterval();
+}
 
     // As soon as the page loads, goals will be viewed.
     onMount(async ()=>{
@@ -38,42 +48,16 @@ import Nav from "../../lib/Nav.svelte";
         if(storeValue.user){
             user = storeValue.user;
             dailySteak = storeValue.dailySteak;
-        }
-    })
-        // GET API Call HERE
-        if(user){
-            const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
-            const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
-            const statsDocRes = await fetch("http://localhost:5000/api/stats/getAllStats/" +user)
-        // load in data to variable
-        posts = await res.json();
-        statsDoc = await statsDocRes.json();
-        console.log(statsDoc)
-        if (interval_res.status === 200){
-            interval = await interval_res.json()
-        window = checkInterval();
-        }
         }else{
             goto("/register")
         }
+    })
+    if(user){
+        await loadData()
+    }
     });
 
-    // reload component
-    async function update(){
-        if(user){
-        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
-        // load in data to variable
-        posts = await res.json();
-        }
-    };
 
-    async function reloadStreakComponent(){
-        if(user){
-            const interval_res = await fetch("http://localhost:5000/api/streak/find/" +user);
-            interval = await interval_res.json();
-        }
-
-    }
 
     // Check in button fix here
     const onCheck = async(username,id, index) =>{
@@ -166,8 +150,6 @@ import Nav from "../../lib/Nav.svelte";
         const check = checkInterval();
         // Make api call here
         updateStreak(check);
-        //Reload everything
-        reloadStreakComponent()
         window = checkInterval();
 
     };
