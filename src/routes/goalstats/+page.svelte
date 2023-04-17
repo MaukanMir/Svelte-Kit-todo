@@ -32,13 +32,13 @@ import Nav from "../../lib/Nav.svelte";
         }
     
     const loadData = async () => {
-    const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
-    const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user);
-    const statsDocRes = await fetch("http://localhost:5000/api/stats/getAllStats/" + user)
-    posts = await res.json();
-    statsDoc = await statsDocRes.json();
-    interval = await interval_res.json()
-    window = checkInterval();
+        const res = await fetch("http://localhost:5000/api/getgoals/find/" + user);
+        const interval_res = await fetch("http://localhost:5000/api/streak/find/" + user);
+        const statsDocRes = await fetch("http://localhost:5000/api/stats/getAllStats/" + user)
+        posts = await res.json();
+        statsDoc = await statsDocRes.json();
+        interval = await interval_res.json()
+        window = checkInterval();
 }
 
     // As soon as the page loads, goals will be viewed.
@@ -54,6 +54,8 @@ import Nav from "../../lib/Nav.svelte";
     })
     if(user){
         await loadData()
+    }else{
+        goto("/register")
     }
     });
 
