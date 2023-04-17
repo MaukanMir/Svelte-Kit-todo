@@ -117,7 +117,7 @@ import Nav from "../../lib/Nav.svelte";
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({
-                    userId:clientInfo.userId,
+                    userId:goal_post,
                     id:clientInfo.id,
                     goal:clientInfo.goal,
                     how:clientInfo.how,
@@ -152,7 +152,6 @@ import Nav from "../../lib/Nav.svelte";
 
     const calcInterval = async()=>{
         const updateStreak = async(check)=>{
-
             const res = await fetch("http://localhost:5000/api/streak/update/" + interval[0]._id,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
