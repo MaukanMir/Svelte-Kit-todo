@@ -20,7 +20,6 @@ import Nav from "../../lib/Nav.svelte";
     let window = false;
     let dailySteak;
     let statsDoc = [];
-    let markAsDone = false;
 
     const checkInterval = ()=>{
         if(interval){
@@ -106,7 +105,6 @@ import Nav from "../../lib/Nav.svelte";
 
     const markAsComplete = async (username, id, index)=>{
 
-        markAsDone = true;
         const goal_post = posts[index];
 
 
