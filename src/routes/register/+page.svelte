@@ -20,13 +20,11 @@ async function load(){
     }
 }
 
-//Set user here
 async function setUsername (auth){
 if(auth ===200){
     load()
 }
 }
-console.log(new Date());
 
 // Submit form here
 const onSubmit = async () =>{
