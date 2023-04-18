@@ -71,7 +71,7 @@
 <Nav/>
 <body>
 
-<h1 class ="carousel-header">{ posts.length ===0 ? "": "Tasks To Complete Today"}</h1>
+<h1 class ="carousel-header">{ posts.length ===0 ? "": "Tasks To Work On Today"}</h1>
 
 <div class ="carousel">
     {#if posts.length !==0}
