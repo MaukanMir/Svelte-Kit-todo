@@ -9,15 +9,10 @@ import {userSession} from "../../stores/userSession";
 import {onDestroy} from "svelte"
 import { goto } from '$app/navigation'
 
-
-// Login variables here
 let email = "";
 let username ="";
 let password ="";
-// create error state
-
 let error = false;
-
 
 async function load(){
     if(username && email && password){
@@ -31,7 +26,6 @@ if(auth ===200){
     load()
 }
 }
-
 console.log(new Date());
 
 // Submit form here
@@ -114,15 +108,11 @@ const onSubmit = async () =>{
     createUserStats();
     // Call createUser Interval Here
     createUserInterval()
-
-
 };
 
 onDestroy(()=>{
         console.log("Recycled")
     });
-
-
 </script>
 
 
@@ -189,11 +179,9 @@ onDestroy(()=>{
         text-align: center;
         color:white;
     }
-
 .container{
     display:flex;
     justify-content: center;
-
 }
 
 .form{
@@ -207,14 +195,12 @@ onDestroy(()=>{
     height: 500px;
     width: 400px;
 }
-
 .inner-form {
     display:flex;
     margin:10px;
     flex-direction: column;
 
 }
-
 .inner-form label{
     margin-bottom:10px;
     font-size: 20px;
@@ -233,15 +219,10 @@ onDestroy(()=>{
     color:white;
     background-color: blueviolet;
 }
-
-
-
 .submit:hover{
     background-color: green;
     color:white;
 }
-
-
 .form-sub-title{
     text-align: center;
     margin-top:50px;
@@ -251,9 +232,7 @@ onDestroy(()=>{
     color:red;
     text-align: center;
 }
-
 .notDisplay{
     display: None;
 }
-
 </style>
