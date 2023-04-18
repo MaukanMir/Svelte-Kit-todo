@@ -61,7 +61,6 @@ let toggle = false;
             }else{
                 toggle = true;
             }
-    
         }
         catch(err){
             console.log(err)
@@ -75,7 +74,6 @@ let toggle = false;
 
 
     </script>
-    
     <!--HTML COMPONENTS HERE-->
     <body>
     <Nav/>
@@ -119,12 +117,10 @@ let toggle = false;
     <Footer/>
     </body>
     <style>
-    
 
         .hide{
             display: none;
         }
-
         .display{
             color:red;
             text-align: center;
@@ -141,11 +137,9 @@ let toggle = false;
             text-align: center;
             color:white;
         }
-    
     .container{
         display:flex;
         justify-content: center;
-    
     }
     
     .form{
@@ -160,19 +154,15 @@ let toggle = false;
         width: 400px;
         color:blueviolet;
     }
-    
     .inner-form {
         display:flex;
         margin:10px;
         flex-direction: column;
-    
     }
-    
     .inner-form label{
         margin-bottom:10px;
         font-size: 20px;
     }
-    
     .inner-form input{
         padding:10px;
         border-radius: 10px;
@@ -186,8 +176,6 @@ let toggle = false;
         color:white;
         font-size: 16px;
     }
-    
-    
     .submit:hover {
         background-color: green;
         color:white
