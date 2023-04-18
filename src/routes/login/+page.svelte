@@ -9,21 +9,14 @@
     //Svelte key componets here
     import { goto } from '$app/navigation'
 
-    //Set user Database here
 let toggle = false;
 
-    //user authenticate 
     function login(metaData){
-
-        // Update user information here
         userSession.set(metaData)
     }
-    
-    // Login variables here
+
     let username ="";
     let password ="";
-
-    // error state
     let error =""
 
     // Reroute user here
