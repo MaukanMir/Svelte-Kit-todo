@@ -77,7 +77,6 @@
     <Footer/>
 </body>
 
-
 <style>
     body{
         height:100vh;
@@ -121,15 +120,12 @@
         border-radius: 10px;
         height: 650px;
         width:500px;
-
     }
-
     .profile h2, h3{
         margin:20px;
         border-bottom: 3px solid blueviolet;
         padding:5px;
     }
-
     .signout{
         background-color: green;
         color:white;
@@ -140,17 +136,13 @@
         font-size: 16px;
         border: white;
     }
-
     .signout:hover{
         background-color: red;
     }
-
     .edit-container{
         display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-
-
 </style>
