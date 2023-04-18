@@ -5,34 +5,23 @@
     // import components here
     import Nav from "../lib/Nav.svelte";
     import Footer from "../lib/Footer.svelte"
-    // import svelte components imported here
-    import {onMount} from "svelte";
-    // import Svelte store import here
-    import {userDataBase} from "../stores/userDataBase";
     import {userSession} from "../stores/userSession"
-    import {get} from "svelte/store"
-    // import Svelte routing imports here
-    import { goto } from '$app/navigation'
     // import Svelte icons here
     import IoIosArrowRoundForward from 'svelte-icons/io/IoIosArrowRoundForward.svelte'
 
-    // console.log(get(userSession))
-    // Create user
     let user;
     userSession.subscribe(storeValue => {
 
-  if (storeValue.user) {
-    user = storeValue.user
-  }
+    if (storeValue.user) {
+        user = storeValue.user
+    }
 
 });
 
 </script>
 <body>
 <Nav/>
-
 <div class ="container">
-
     <div class="section-divider-div">
     <section class ="header">
         <h1 class ="header-h1">Accomplish your goals like never before. 
@@ -47,10 +36,7 @@
             </div>
         </div>
     </section>
-
     </div>
-
-
     <div class="card-container">
         <div class="inner-l">
             <h3>Login, create, edit, check-In and track the status of your goals</h3>
@@ -88,20 +74,12 @@
             With our system, you'll see the work you're putting in.
             Once you track your progression for your long term aspirations, 
             you'll become a Beliver.</p>
-
         </div>
-
     </div>
-
-
 </div>
-
 <Footer/>
-
 </body>
-
 <style>
-
     body{
         background-color: #1e1e1e;
         color:white;
@@ -109,7 +87,6 @@
         margin: 0;
         padding: 0;
     }
-
     .section-divider-div{
         display: flex;
         flex-direction: row;
@@ -133,7 +110,6 @@
         transform: translate(-50%, -50%);
         margin: 0;
         padding:20px;
-
     }
 
     .inner-graphic h1{
@@ -148,7 +124,6 @@
         transform: translate(-50%, -50%);
         font-size: 3em;
     }
-
     .graphic{
         background-color: #fff;
         height:550px;
@@ -165,7 +140,6 @@
         font-size: 2.5em;
         width:400px;
         margin-left: 0px;
-
     }
     .p-tag{
         margin-left: 0px;
@@ -262,16 +236,6 @@
     .reg:hover{
         color:#F75D59;
         text-decoration:none;
-
     }
-
-
-
-
-
-
-
-
-
 </style>
 
