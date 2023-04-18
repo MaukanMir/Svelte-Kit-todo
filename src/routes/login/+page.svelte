@@ -12,7 +12,6 @@
     //Set user Database here
 let toggle = false;
 
-
     //user authenticate 
     function login(metaData){
 
@@ -35,7 +34,6 @@ let toggle = false;
     }
     // Submit form here
     const onSubmit = async () =>{
-    
         // Create user information here
         async function createUser(){
             try{
@@ -48,13 +46,10 @@ let toggle = false;
                     password
                 })
             });
-
-
             const json = await res.json();
             const result = JSON.stringify(json);
             console.log(result)
             if(res.status === 200){
-
             //Printing information here
             console.log(res.status)
             toggle = false;
@@ -66,12 +61,9 @@ let toggle = false;
                 dailySteak:0,
                 authenticated:true
             };
-
             // Login information here
             login(metaData);
             load();
-
-            // User login with local store here store here
             
             }else{
                 toggle = true;
