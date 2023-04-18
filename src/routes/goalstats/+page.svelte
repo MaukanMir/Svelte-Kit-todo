@@ -61,7 +61,6 @@ import Nav from "../../lib/Nav.svelte";
 
     // Check in button fix here
     const onCheck = async(username,id, index) =>{
-
         //Save client info here
         const clientInfo = posts[index];
         // Update checkIn
@@ -89,10 +88,9 @@ import Nav from "../../lib/Nav.svelte";
     const markAsComplete = async (username, id, index)=>{
 
         const goal_post = posts[index];
-
         const diff_time = Math.abs(new Date().getTime() - new Date(goal_post.setDate).getTime())
         const diffDays = Math.round(diff_time/ (24*60*60*1000))
-        
+
         const res = await fetch("http://localhost:5000/api/editgoals/" + goal_post._id,{
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
@@ -105,7 +103,6 @@ import Nav from "../../lib/Nav.svelte";
                     studyTime:goal_post.studyTime,
                     checkIn:goal_post.checkIn,
                     completed:true,
-
                 })
             });
 
@@ -142,7 +139,6 @@ import Nav from "../../lib/Nav.svelte";
                     streak: check === true ? interval[0].streak+1:0,
                 })
             })
-
         }
         // Check time period
         const check = checkInterval();
