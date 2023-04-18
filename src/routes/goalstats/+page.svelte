@@ -143,8 +143,6 @@ import Nav from "../../lib/Nav.svelte";
                 })
             })
 
-            console.log(res.status)
-
         }
         // Check time period
         const check = checkInterval();
@@ -152,7 +150,6 @@ import Nav from "../../lib/Nav.svelte";
         updateStreak(check);
         window = checkInterval();
         await loadData()
-
     };
 </script>
 <!--HTML Components-->
