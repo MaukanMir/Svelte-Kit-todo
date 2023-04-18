@@ -59,8 +59,6 @@ import Nav from "../../lib/Nav.svelte";
     }
     });
 
-
-
     // Check in button fix here
     const onCheck = async(username,id, index) =>{
 
@@ -85,7 +83,6 @@ import Nav from "../../lib/Nav.svelte";
             });
             const json = await res.json();
             await loadData()
-
     };
 
 
